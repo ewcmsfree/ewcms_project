@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>ewcms_project</display-name>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>ewcms_project</param-value>
+	</context-param>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+            classpath*:applicationContext.xml
+        </param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
+	</listener>
+
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>ewcmsContext</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ewcmsContext</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>CharacterEncoding</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharacterEncoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>SpringOpenEntityManagerInViewFilter</filter-name>
+		<filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>SpringOpenEntityManagerInViewFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+
+    <filter>
+        <filter-name>cacheControlHeaderFilter</filter-name>
+        <filter-class>com.ewcms.web.filter.CacheControlHeaderFilter</filter-class>
+        <init-param>
+            <param-name>expiresSeconds</param-name>
+            <param-value>31536000</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>cacheControlHeaderFilter</filter-name>
+        <url-pattern>/ewcmssource/*</url-pattern>
+    </filter-mapping>
+    
+	<filter>
+		<filter-name>previewFilter</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>previewFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>error404Filter</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>error404Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<servlet>
+		<servlet-name>jcaptcha</servlet-name>
+		<servlet-class>com.ewcms.web.servlet.ImageCaptchaServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jcaptcha</servlet-name>
+		<url-pattern>/checkcode.jpg</url-pattern>
+	</servlet-mapping>
+
+  <servlet>
+    <servlet-name>pubsub</servlet-name>
+    <servlet-class> com.ewcms.web.pubsub.PubsubServlet</servlet-class>
+    <init-param>
+        <param-name>/pubsub/progress</param-name>
+        <param-value>com.ewcms.web.pubsub.ProgressSender</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>/pubsub/message</param-name>
+    	<param-value>com.ewcms.web.pubsub.MessageSender</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>pubsub</servlet-name>
+    <url-pattern>/pubsub/*</url-pattern>
+  </servlet-mapping>
+
+	<servlet>
+		<servlet-name>voteSubmit</servlet-name>
+		<servlet-class>com.ewcms.plugin.vote.manager.web.SubmitServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>voteSubmit</servlet-name>
+		<url-pattern>/submit.vote</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>voteView</servlet-name>
+		<servlet-class>com.ewcms.plugin.vote.manager.web.ViewServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>voteView</servlet-name>
+		<url-pattern>/view.vote</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>voteResult</servlet-name>
+		<servlet-class>com.ewcms.plugin.vote.manager.web.ResultServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>voteResult</servlet-name>
+		<url-pattern>/result.vote</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.do</welcome-file>
+	</welcome-file-list>
+</web-app>

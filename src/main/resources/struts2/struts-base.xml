@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="home"  extends="struts-default"> 	
+        <action name="index" class="com.ewcms.web.HomeAction">
+            <result>/WEB-INF/page/home.jsp</result>
+        </action>
+        <action name="siteswitch" class="com.ewcms.web.SiteSwitchAction">
+            <result>/WEB-INF/page/siteswitch.jsp</result>
+        </action>
+        <action name="siteQuery" class="com.ewcms.web.SiteSwitchAction" method="query"/>
+        <action name="login">
+            <result>/WEB-INF/page/login.jsp</result>
+        </action>
+        <action name="accessDenied" class="com.ewcms.web.AccessDeniedAction">
+            <result>/WEB-INF/page/accessDenied.jsp</result>
+        </action>
+        <action name="progress" class="com.ewcms.web.EwcmsBaseAction">
+            <result>/WEB-INF/page/progress.jsp</result>
+        </action>
+        <action name="createArticle" class="com.ewcms.web.FcfAction" method="createArticle"/>
+        <action name="releaseArticle" class="com.ewcms.web.FcfAction" method="releaseArticle"/>
+        <action name="releaseArticlePerson" class="com.ewcms.web.FcfAction" method="releaseArticlePerson"/>
+    </package>
+</struts>

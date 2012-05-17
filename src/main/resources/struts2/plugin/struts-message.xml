@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="message" extends="struts-default" namespace="/message">
+		<action name="index">
+			<result>/WEB-INF/page/plugin/message/index.jsp</result>
+		</action>
+	</package>
+	<package name="message.send" extends="struts-default" namespace="/message/send">
+		<action name="index">
+			<result>/WEB-INF/page/plugin/message/send.jsp</result>
+		</action>
+		<action name="delete" class="com.ewcms.plugin.message.manager.web.MsgSendAction" method="delete"/>
+		<action name="input" class="com.ewcms.plugin.message.manager.web.MsgSendAction" method="input">
+			<result name="input">/WEB-INF/page/plugin/message/edit.jsp</result>
+		</action>
+		<action name="save" class="com.ewcms.plugin.message.manager.web.MsgSendAction" method="save">
+			<result>/WEB-INF/page/plugin/message/edit.jsp</result>
+			<result name="input">/WEB-INF/page/plugin/message/edit.jsp</result>
+		</action>
+		<action name="query" class="com.ewcms.plugin.message.manager.web.MsgSendQueryAction" method="query"/>
+		<action name="notice" class="com.ewcms.plugin.message.manager.web.MsgSendAction" method="notice"/>
+		<action name="subscription" class="com.ewcms.plugin.message.manager.web.MsgSendAction" method="subscription"/>
+		<action name="userInfo" class="com.ewcms.plugin.message.manager.web.MsgSendAction" method="userInfo"/>
+	</package>
+	<package name="message.receive" extends="struts-default" namespace="/message/receive">
+		<action name="index">
+			<result>/WEB-INF/page/plugin/message/receive.jsp</result>
+		</action>
+		<action name="delete" class="com.ewcms.plugin.message.manager.web.MsgReceiveAction" method="delete"/>
+		<action name="query" class="com.ewcms.plugin.message.manager.web.MsgReceiveQueryAction" method="query"/>
+		<action name="markRead" class="com.ewcms.plugin.message.manager.web.MsgReceiveAction" method="markRead"/>
+		<action name="unRead" class="com.ewcms.plugin.message.manager.web.MsgReceiveAction" method="unRead"/>
+	</package>
+	<package name="message.content" extends="struts-default" namespace="/message/content">
+		<action name="delete" class="com.ewcms.plugin.message.manager.web.MsgContentAction" method="delete"/>
+		<action name="input" class="com.ewcms.plugin.message.manager.web.MsgContentAction" method="input">
+			<result name="input">/WEB-INF/page/plugin/message/edit_subscription.jsp</result>
+		</action>
+		<action name="save" class="com.ewcms.plugin.message.manager.web.MsgContentAction" method="save">
+			<result>/WEB-INF/page/plugin/message/edit_subscription.jsp</result>
+			<result name="input">/WEB-INF/page/plugin/message/edit_subscription.jsp</result>
+		</action>
+	</package>
+	<package name="message.detail" extends="struts-default" namespace="/message/detail">
+		<action name="index" class="com.ewcms.plugin.message.manager.web.MsgDetailAction">
+			<result>/WEB-INF/page/plugin/message/detail.jsp</result>
+		</action>
+		<action name="subscribe" class="com.ewcms.plugin.message.manager.web.MsgDetailAction" method="subscribe"/>
+	</package>
+	<package name="message.more" extends="struts-default" namespace="/message/more">
+		<action name="index" class="com.ewcms.plugin.message.manager.web.MoreAction">
+			<result>/WEB-INF/page/plugin/message/more.jsp</result>
+		</action>
+		<action name="query" class="com.ewcms.plugin.message.manager.web.MoreQueryAction" method="query"/>
+	</package>
+</struts>	
