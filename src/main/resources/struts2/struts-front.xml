@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="front"  extends="struts-default"> 	
+        <action name="index" class="com.ewcms.frontweb.MainHomeAction">
+            <result>/WEB-INF/page/front/index.jsp</result>
+        </action>
+        
+        <action name="projectdetail" class="com.ewcms.frontweb.DetailAction" method="projectDetail">
+            <result>/WEB-INF/page/front/projectdetail.jsp</result>
+        </action>
+        <action name="projectdir">
+            <result>/WEB-INF/page/front/projectdir.jsp</result>
+        </action>
+        <action name="projectdescripe">
+            <result>/WEB-INF/page/front/projectdescripe.jsp</result>
+        </action>  
+        <action name="projectshare">
+            <result>/WEB-INF/page/front/projectshare.jsp</result>
+        </action> 
+        <action name="trustdir">
+            <result>/WEB-INF/page/front/trustdir.jsp</result>
+        </action> 
+        <action name="trustdescripe">
+            <result>/WEB-INF/page/front/trustdescripe.jsp</result>
+        </action>                                     
+         <action name="employedetail" class="com.ewcms.frontweb.DetailAction" method="employeDetail">
+            <result>/WEB-INF/page/front/employedetail.jsp</result>
+        </action>
+        <action name="enterprisedetail" class="com.ewcms.frontweb.DetailAction" method="enterpriseDetail">
+            <result>/WEB-INF/page/front/enterprisedetail.jsp</result>
+        </action>  
+             
+        <action name="projectlist" class="com.ewcms.frontweb.ListAction" method="projectArticleListByPage">
+            <result>/WEB-INF/page/front/projectlist.jsp</result>
+        </action> 
+        <action name="projectchannellist" class="com.ewcms.frontweb.ListAction" method="projectChannelArticleListByPage">
+            <result>/WEB-INF/page/front/projectchannellist.jsp</result>
+        </action>         
+        <action name="employelist" class="com.ewcms.frontweb.ListAction" method="employeArticleListByPage">
+            <result>/WEB-INF/page/front/employelist.jsp</result>
+        </action> 
+        <action name="employechannellist" class="com.ewcms.frontweb.ListAction" method="employeChannelArticleListByPage">
+            <result>/WEB-INF/page/front/employechannellist.jsp</result>
+        </action>         
+        <action name="enterpriselist" class="com.ewcms.frontweb.ListAction" method="enterpriseArticleListByPage">
+            <result>/WEB-INF/page/front/enterpriselist.jsp</result>
+        </action> 
+        <action name="enterprisechannellist" class="com.ewcms.frontweb.ListAction" method="enterpriseChannelArticleListByPage">
+            <result>/WEB-INF/page/front/enterprisechannellist.jsp</result>
+        </action>         
+    </package>
+</struts>  

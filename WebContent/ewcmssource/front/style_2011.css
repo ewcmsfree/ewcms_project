@@ -1,0 +1,22 @@
+@charset "utf-8";
+* { font-size:12px; padding:0; margin:0;}
+body { margin-top: 0px; margin-bottom: 0px; background-image:url(beijing-1.jpg);background-repeat: repeat; margin-left: 0px;}
+img{ border:0; vertical-align:top;}
+a{ color: #000000;text-decoration:none;}
+a:hover{ color: #FF0000;text-decoration:none;}
+
+
+.Nav{ width:1003px; height:34px;}
+.Nav td a b{display:none;}
+.Nav td.home a{background: url(banner-001.jpg) no-repeat;  height:34px; display:block;}
+.Nav td.home a:hover, .Nav td.home a.hover{background: url(banner-01.jpg) no-repeat;background-position:center}
+.Nav td.nav_zzjg a{background: url(banner-002.jpg) no-repeat;  height:34px; display:block;background-position:center}
+.Nav td.nav_zzjg a:hover, .Nav td.nav_zzjg a.hover{background: url(banner-02.jpg) no-repeat;background-position:center}
+.Nav td.nav_gzdt a{background: url(banner-003.jpg) no-repeat;  height:34px; display:block;}
+.Nav td.nav_gzdt a:hover, .Nav td.nav_gzdt a.hover{background: url(banner-03.jpg) no-repeat;background-position:center}
+.Nav td.nav_xmgk a{background: url(banner-004.jpg) no-repeat; height:34px; display:block;}
+.Nav td.nav_xmgk a:hover, .Nav td.nav_xmgk a.hover{background: url(banner-04.jpg) no-repeat;background-position:center}
+.Nav td.nav_xygk a{background: url(banner-005.jpg) no-repeat;  height:34px; display:block;}
+.Nav td.nav_xygk a:hover, .Nav td.nav_xygk a.hover{background: url(banner-05.jpg) no-repeat;background-position:center}
+.Nav td.nav_fgwj a{background: url(banner-006.jpg) no-repeat;  height:34px; display:block;}
+.Nav td.nav_fgwj a:hover, .Nav td.nav_fgwj a.hover{background: url(banner-06.jpg) no-repeat;background-position:center}
