@@ -30,6 +30,7 @@ import javax.persistence.TemporalType;
  * <li>cardType:证件类型</li>
  * <li>cardCode:证件号码</li>
  * <li>dense:所属密级</li>
+ * <li>channelId:专栏编号</li>
  * </ul>
  * 
  * @author wuzhijun
@@ -85,7 +86,7 @@ public class EmployeBasic implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Sex sex;
 	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH }, targetEntity = PublishingSector.class)
-	@JoinColumn(name = "publishing_sector", nullable = false, referencedColumnName = "code")
+	@JoinColumn(name = "publishing_sector", referencedColumnName = "code")
 	private PublishingSector publishingSector;
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "published")
@@ -98,7 +99,9 @@ public class EmployeBasic implements Serializable {
 	@Column(name = "dense", nullable = false)
 	@Enumerated(EnumType.STRING)
 	private Dense dense;
-
+	@Column(name = "channel_id")
+	private Integer channelId;
+	
 	public Long getId() {
 		return id;
 	}
@@ -185,6 +188,14 @@ public class EmployeBasic implements Serializable {
 	
 	public void setDense(Dense dense) {
 		this.dense = dense;
+	}
+
+	public Integer getChannelId() {
+		return channelId;
+	}
+
+	public void setChannelId(Integer channelId) {
+		this.channelId = channelId;
 	}
 
 	@Override

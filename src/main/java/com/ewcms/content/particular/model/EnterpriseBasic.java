@@ -40,6 +40,7 @@ import javax.persistence.TemporalType;
  * <li>jyqx:经营期限</li> 
  * <li>zs:住所</li> 
  * <li>dense:所属密级</li>
+ * <li>channelId:专栏编号</li>
  * 
  * @author wuzhijun
  */
@@ -57,7 +58,7 @@ public class EnterpriseBasic implements Serializable {
 	@Column(name = "name", length = 200)
 	private String name;
 	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE, CascadeType.REFRESH}, targetEntity = PublishingSector.class)
-	@JoinColumn(name="publishing_sector", nullable = false, referencedColumnName = "code")
+	@JoinColumn(name="publishing_sector", referencedColumnName = "code")
 	private PublishingSector publishingSector;
 	private Date published;
 	@OneToOne(cascade = { CascadeType.ALL }, targetEntity = ParticularContent.class)
@@ -91,6 +92,8 @@ public class EnterpriseBasic implements Serializable {
 	@Column(name = "dense")
 	@Enumerated(EnumType.STRING)	
 	private Dense dense;
+	@Column(name = "channel_id")
+	private Integer channelId;
 
 	public Long getId() {
 		return id;
@@ -242,5 +245,38 @@ public class EnterpriseBasic implements Serializable {
 	
 	public void setDense(Dense dense) {
 		this.dense = dense;
+	}
+
+	public Integer getChannelId() {
+		return channelId;
+	}
+
+	public void setChannelId(Integer channelId) {
+		this.channelId = channelId;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		EnterpriseBasic other = (EnterpriseBasic) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
 	}
 }

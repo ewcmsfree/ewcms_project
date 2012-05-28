@@ -35,6 +35,7 @@ import javax.persistence.TemporalType;
  * <li>zoningCode:行政区划代码</li>
  * <li>organizationCode:组织机构代码</li>
  * <li>industryCode:行业编码</li>
+ * <li>category:项目类别</li>
  * <li>approvalRecord:审批备案机关编号</li>
  * <li>contact:项目联系人</li>
  * <li>phone:项目联系人电话</li>
@@ -45,6 +46,7 @@ import javax.persistence.TemporalType;
  * <li>documentId:文号</li>
  * <li>participation:参建单位</li>
  * <li>publishingSector:发布部门</li>
+ * <li>channelId:专栏编号</li>
  * </ul>
  * 
  * @author wuzhijun
@@ -59,7 +61,6 @@ public class ProjectBasic implements Serializable {
 
 	/**
 	 * 建设性质
-	 * @author wuzhijun
 	 */
 	public enum Nature {
 		NEW("新建"),EXPANSION("扩建"),TRANSFORM("改建和技术改造"),FACILITY("单纯建造生活设施"),RESTORATION("迁建恢复"),PURCHASE("单纯购置");
@@ -73,7 +74,6 @@ public class ProjectBasic implements Serializable {
 		public String getDescription(){
 			return description;
 		}
-
 	}
 	
 	@Id
@@ -104,6 +104,8 @@ public class ProjectBasic implements Serializable {
 	private ZoningCode zoningCode;
 	@Column(name = "organization_code", length = 9, nullable = false)
 	private String organizationCode;
+	@Column(name = "category")
+	private String category;
 	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE, CascadeType.REFRESH}, targetEntity = IndustryCode.class)
 	@JoinColumn(name="industry_code", nullable = false, referencedColumnName = "code")
 	private IndustryCode industryCode;
@@ -128,8 +130,10 @@ public class ProjectBasic implements Serializable {
 	@Column(name = "participation", length = 200)
 	private String participation;
 	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE, CascadeType.REFRESH}, targetEntity = PublishingSector.class)
-	@JoinColumn(name="publishing_sector", nullable = false, referencedColumnName = "code")
+	@JoinColumn(name="publishing_sector", referencedColumnName = "code")
 	private PublishingSector publishingSector;
+	@Column(name = "channel_id")
+	private Integer channelId;
 
 	public Long getId() {
 		return id;
@@ -217,6 +221,14 @@ public class ProjectBasic implements Serializable {
 
 	public void setZoningCode(ZoningCode zoningCode) {
 		this.zoningCode = zoningCode;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public String getOrganizationCode() {
@@ -321,6 +333,14 @@ public class ProjectBasic implements Serializable {
 
 	public void setPublishingSector(PublishingSector publishingSector) {
 		this.publishingSector = publishingSector;
+	}
+
+	public Integer getChannelId() {
+		return channelId;
+	}
+
+	public void setChannelId(Integer channelId) {
+		this.channelId = channelId;
 	}
 
 	@Override

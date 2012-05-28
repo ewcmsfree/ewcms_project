@@ -28,6 +28,7 @@ import javax.persistence.TemporalType;
  * <li>content:内容</li>
  * <li>published:发布日期</li>
  * <li>dense:所属密级</li>
+ * <li>channelId:专栏编号</li>
  * </ul>
  * 
  * @author wuzhijun
@@ -49,7 +50,7 @@ public class ProjectArticle implements Serializable {
 	private ProjectBasic projectBasic;
 	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE,
 			CascadeType.REFRESH }, targetEntity = PublishingSector.class)
-	@JoinColumn(name = "publishingsector_code", nullable = false, referencedColumnName = "code")
+	@JoinColumn(name = "publishingsector_code", referencedColumnName = "code")
 	private PublishingSector publishingSector;
 	@OneToOne(cascade = { CascadeType.ALL }, targetEntity = ParticularContent.class)
 	@JoinColumn(name = "content_id")
@@ -60,6 +61,8 @@ public class ProjectArticle implements Serializable {
 	@Column(name = "dense")
 	@Enumerated(EnumType.STRING)
 	private Dense dense;
+	@Column(name = "channel_id")
+	private Integer channelId;
 
 	public Long getId() {
 		return id;
@@ -115,6 +118,14 @@ public class ProjectArticle implements Serializable {
 	
 	public void setDense(Dense dense) {
 		this.dense = dense;
+	}
+
+	public Integer getChannelId() {
+		return channelId;
+	}
+
+	public void setChannelId(Integer channelId) {
+		this.channelId = channelId;
 	}
 
 	@Override

@@ -28,6 +28,7 @@ import javax.persistence.TemporalType;
  * <li>content:内容</li>
  * <li>published:发布日期</li>
  * <li>dense:所属密级</li>
+ * <li>channelId:专栏编号</li>
  * </ul>
  * 
  * @author wuzhijun
@@ -48,7 +49,7 @@ public class EnterpriseArticle implements Serializable {
 	@JoinColumn(name = "enterprisebasic_yyzzzch", nullable = false, referencedColumnName = "yyzzzch")
 	private EnterpriseBasic enterpriseBasic;
 	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH }, targetEntity = PublishingSector.class)
-	@JoinColumn(name = "publishingsector_code", nullable = false, referencedColumnName = "code")
+	@JoinColumn(name = "publishingsector_code", referencedColumnName = "code")
 	private PublishingSector publishingSector;
 	@OneToOne(cascade = { CascadeType.ALL }, targetEntity = ParticularContent.class)
 	@JoinColumn(name = "content_id")
@@ -59,6 +60,8 @@ public class EnterpriseArticle implements Serializable {
 	@Column(name = "dense")
 	@Enumerated(EnumType.STRING)
 	private Dense dense;
+	@Column(name = "channel_id")
+	private Integer channelId;
 
 	public Long getId() {
 		return id;
@@ -116,6 +119,14 @@ public class EnterpriseArticle implements Serializable {
 		this.dense = dense;
 	}
 
+	public Integer getChannelId() {
+		return channelId;
+	}
+
+	public void setChannelId(Integer channelId) {
+		this.channelId = channelId;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -123,7 +134,6 @@ public class EnterpriseArticle implements Serializable {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
