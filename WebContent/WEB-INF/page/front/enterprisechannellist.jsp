@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>项目审批公开信息</title>
+<title><s:property value="channelVO.channelName"/></title>
 <s:include value="/header.jsp"/>
   <tr>
     <td valign="top" bgcolor="#FFFFFF"><table width="983" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -23,7 +23,7 @@
                           <td height="27" valign="bottom" background="<s:url value="/ewcmssource/front/main-07.jpg"/>"><table border="0" cellspacing="0" cellpadding="0">
                               <tr>
                                 <td width="10" height="23">&nbsp;</td>
-                                <td background="<s:url value="/ewcmssource/front/main-07-3.jpg"/>" align="center" style="padding-left:10px; padding-right:10px"><span class="STYLE4">从业 单位公开信息</span></td>
+                                <td background="<s:url value="/ewcmssource/front/main-07-3.jpg"/>" align="center" style="padding-left:10px; padding-right:10px"><span class="STYLE4"><s:property value="channelVO.channelName"/></span></td>
                               </tr>
                           </table></td>
                         </tr>

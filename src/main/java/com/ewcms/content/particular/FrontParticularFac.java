@@ -11,6 +11,7 @@ import com.ewcms.content.particular.model.ProjectArticle;
 import com.ewcms.content.particular.service.FrontEmployeArticleServiceable;
 import com.ewcms.content.particular.service.FrontEnterpriseArticleServiceable;
 import com.ewcms.content.particular.service.FrontProjectArticleServiceable;
+import com.ewcms.frontweb.ChannelVO;
 
 
 @Service
@@ -56,6 +57,11 @@ public class FrontParticularFac implements FrontParticularFacable {
 	public List<ProjectArticle> findProjectChannelArticleByPage(int channelId,
 			int page, int row) {
 		return projectArticleService.findProjectChannelArticleByPage(channelId, page, row);
+	}
+
+	@Override
+	public ChannelVO findChannel(int channelId) {
+		return projectArticleService.findChannel(channelId);
 	}
 
 	@Override

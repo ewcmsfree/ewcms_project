@@ -137,7 +137,7 @@ function SearchForm_onsubmit() {
   </tr>
   <tr>
     <td height="33" background="<s:url value="/ewcmssource/front/banner-2.jpg"/>">
-	<form  name="SearchForm" method="post"  accept-charset="utf-8"  action="http://app.jiangxi.gov.cn/was40/search" target="_blank" style="margin:0; padding:0" onsubmit="SearchForm_onsubmit();return false;">
+	<form  name="SearchForm" method="get"    action="http://www.xunyang.gov.cn/search" target="_blank" style="margin:0; padding:0" onsubmit="SearchForm_onsubmit();return false;">
 	<table width="1003" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="165" align="right"><span class="STYLE1"><SCRIPT> 
@@ -157,7 +157,7 @@ function SearchForm_onsubmit() {
           <td width="67" height="33">&nbsp;</td>
           <td width="364" class="STYLE1" valign="middle"><iframe frameborder=0 width=360px height=14px marginheight=0 marginwidth=0 scrolling=no src="http://www.weather.cn/tianqi.asp"></iframe></td>
           <td width="169" align="right" class="STYLE1"><input type="hidden" name="searchword" /><input type="hidden" name="channelid" value="30933" />站内搜索：</td>
-          <td width="238"><input type="text" name="keyword" id="keyword" style="width:150px; height:20px" />&nbsp;&nbsp;&nbsp;<input name="submit" type="submit" class="STYLE1" id="submit" value="检索" /></td>
+          <td width="238"><input type="text" name="query" id="keyword" style="width:150px; height:20px" />&nbsp;&nbsp;&nbsp;<input name="submit" type="submit" class="STYLE1" id="submit" value="检索" /></td>
         </tr>
       </table>
 	  </form>

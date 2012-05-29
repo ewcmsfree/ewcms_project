@@ -16,6 +16,7 @@ public class ListAction {
 	    protected int row = DEFAULT_ROW;
 	    protected Page page;
 	    private int channelId;
+	    private ChannelVO channelVO;
 	@Autowired
 	private FrontParticularFacable particularFac;
 	private List<ProjectArticle> projectArticleList;
@@ -24,8 +25,17 @@ public class ListAction {
 	private List<ProjectArticle> projectChannelArticleList;
 	private List<EmployeArticle> employeChannelArticleList;
 	private List<EnterpriseArticle> enterpriseChannelArticleList;
+
 	
-    public void setPageNumber(int pageNumber) {
+    public ChannelVO getChannelVO() {
+		return channelVO;
+	}
+
+	public void setChannelVO(ChannelVO channelVO) {
+		this.channelVO = channelVO;
+	}
+
+	public void setPageNumber(int pageNumber) {
         this.pageNumber = pageNumber;
     }
 
@@ -104,6 +114,7 @@ public class ListAction {
 	public String projectChannelArticleListByPage(){
 		projectChannelArticleList = particularFac.findProjectChannelArticleByPage(channelId,pageNumber, row);
 		page =  new Page.Builder(particularFac.getProjectArticleCount(channelId), pageNumber + 1).setPageSize(row).build();
+		this.setChannelVO(particularFac.findChannel(channelId));
 		return "success";		
 	}
 	public String employeArticleListByPage(){
@@ -114,6 +125,7 @@ public class ListAction {
 	public String employeChannelArticleListByPage(){
 		employeChannelArticleList = particularFac.findEmployeChannelArticleByPage(channelId,pageNumber, row);
 		page =  new Page.Builder(particularFac.getEmployeArticleCount(channelId), pageNumber + 1).setPageSize(row).build();
+		this.setChannelVO(particularFac.findChannel(channelId));
 		return "success";
 	}	
 	
@@ -125,6 +137,7 @@ public class ListAction {
 	public String enterpriseChannelArticleListByPage(){
 		enterpriseChannelArticleList = particularFac.findEnterpriseChannelArticleByPage(channelId,pageNumber, row);
 		page =  new Page.Builder(particularFac.getEnterpriseArticleCount(channelId), pageNumber + 1).setPageSize(row).build();
+		this.setChannelVO(particularFac.findChannel(channelId));
 		return "success";
 	}	
 	

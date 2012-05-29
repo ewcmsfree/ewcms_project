@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.ewcms.content.particular.dao.FrontProjectArticleDAO;
 import com.ewcms.content.particular.model.ProjectArticle;
+import com.ewcms.frontweb.ChannelVO;
 
 @Service
 public class FrontProjectArticleService implements FrontProjectArticleServiceable {
@@ -43,6 +44,11 @@ public class FrontProjectArticleService implements FrontProjectArticleServiceabl
 	public List<ProjectArticle> findProjectChannelArticleByPage(int channelId,
 			int page, int row) {
 		return projectArticleDAO.findProjectChannelArticleByPage(channelId, page, row);
+	}
+
+	@Override
+	public ChannelVO findChannel(int channelId) {
+		return projectArticleDAO.findChannel(channelId);
 	}
 	
 	

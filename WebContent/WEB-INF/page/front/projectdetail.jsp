@@ -8,7 +8,7 @@
    <tr>
     <td valign="top" bgcolor="#FFFFFF"><table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
-          <td style="font-size:15px" height="30px" valign="middle"><strong>项目审批公开信息</strong> </td>
+          <td style="font-size:15px" height="30px" valign="middle"><strong><s:property value="channelVO.channelName"/></strong> </td>
         </tr>
         <tr>
           <td width="100" height="5px" bgcolor="#2F8DBB"></td>
@@ -47,12 +47,16 @@
 		<tr id="">
           <td valign="top" align="center"><table cellpadding="0" cellspacing="0" width="80%" border="0">
               <tr>
-                <td height="40px" class="fenlei">项目书详细 内容</td>
+                <td height="40px" class="fenlei"><s:property value="channelVO.channelName"/></td>
               </tr>
               <tr>
                 <td><table cellpadding="0" cellspacing="0" border="1" width="100%" class="box">
                     <tr>
-                      <td align="left" height="100px" valign="top"><s:property value="paVO.content.detail"/></td>
+                      <td align="left" height="100px" valign="top" id="articlecontent">
+                    
+                      		<s:property value="paVO.content.detail" escape="false"/>
+                      
+                      </td>
                     </tr>
                   </table></td>
               </tr>

@@ -3,6 +3,7 @@ package com.ewcms.content.particular.service;
 import java.util.List;
 
 import com.ewcms.content.particular.model.ProjectArticle;
+import com.ewcms.frontweb.ChannelVO;
 
 public interface FrontProjectArticleServiceable {
 	public ProjectArticle findProjectArticleById(Long id);
@@ -11,4 +12,5 @@ public interface FrontProjectArticleServiceable {
 	public int getProjectArticleCount(Integer channelId) ;
 	public List<ProjectArticle> findProjectChannellArticleLimit(Integer channelId,Integer number);
 	public List<ProjectArticle> findProjectChannelArticleByPage(int channelId,int page, int row);
+	public ChannelVO findChannel(int channelId) ;
 }

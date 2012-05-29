@@ -17,6 +17,7 @@ import com.ewcms.content.particular.model.Dense;
 import com.ewcms.content.particular.model.ProjectArticle;
 import com.ewcms.content.particular.model.ProjectBasic;
 import com.ewcms.content.particular.model.PublishingSector;
+import com.ewcms.frontweb.ChannelVO;
 
 @Repository
 public class FrontProjectArticleDAO extends JpaDAO<Long, ProjectArticle> {
@@ -94,6 +95,30 @@ public class FrontProjectArticleDAO extends JpaDAO<Long, ProjectArticle> {
         });
 
         return list;
-    }
+    } 
     
+    public ChannelVO findChannel(int channelId) {
+        String sql = "Select * "
+                + "From site_channel "
+        		+ "where id=? ";
+        Object[] params = new Object[]{channelId};
+        List<ChannelVO> list = jdbcTemplate.query(sql, params, new RowMapper<ChannelVO>() {
+
+            @Override
+            public ChannelVO mapRow(ResultSet rs, int rowNum) throws SQLException {
+                return channelRowMapper(rs);
+            }
+        });
+        if(list!=null&&list.size()>0){
+        	return list.get(0);
+        }
+        return null;
+    }  
+    
+    private ChannelVO channelRowMapper(ResultSet rs) throws SQLException {
+    	ChannelVO vo = new ChannelVO();
+    	vo.setId(rs.getInt("id"));
+    	vo.setChannelName(rs.getString("name"));
+        return vo;
+    }     
 }

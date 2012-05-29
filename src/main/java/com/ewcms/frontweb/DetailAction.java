@@ -12,9 +12,18 @@ public class DetailAction {
 	private ProjectArticle paVO;
 	private EmployeArticle eaVO;
 	private EnterpriseArticle epaVO;
+	private ChannelVO channelVO;
 	@Autowired
 	private FrontParticularFacable particularFac;
 
+
+	public ChannelVO getChannelVO() {
+		return channelVO;
+	}
+
+	public void setChannelVO(ChannelVO channelVO) {
+		this.channelVO = channelVO;
+	}
 
 	public Long getArticleId() {
 		return articleId;
@@ -49,16 +58,19 @@ public class DetailAction {
 
 	public String projectDetail(){
 		setPaVO(particularFac.findProjectArticleById(articleId));
+		this.setChannelVO(particularFac.findChannel(paVO.getChannelId()));
 		return "success";
 	}
 	
 	public String employeDetail(){
 		setEaVO(particularFac.getEmployeArticle(articleId));
+		this.setChannelVO(particularFac.findChannel(eaVO.getChannelId()));
 		return "success";
 	}
 	
 	public String enterpriseDetail(){
 		setEpaVO(particularFac.getEnterpriseArticle(articleId));
+		this.setChannelVO(particularFac.findChannel(epaVO.getChannelId()));
 		return "success";
 	}	
 }
