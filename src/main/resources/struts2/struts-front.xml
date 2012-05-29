@@ -12,7 +12,7 @@
         
         <action name="projectdetail" class="com.ewcms.frontweb.DetailAction" method="projectDetail">
             <result>/WEB-INF/page/front/projectdetail.jsp</result>
-        </action>
+        </action>      
         <action name="projectdir">
             <result>/WEB-INF/page/front/projectdir.jsp</result>
         </action>
