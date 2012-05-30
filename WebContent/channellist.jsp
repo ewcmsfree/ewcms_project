@@ -26,57 +26,57 @@
                       <td width="100%" align="center"><table cellpadding="0" cellspacing="0" border="0" width="80%">
 					      
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">项目建议书批复结果信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=4"><span class="STYLE1">项目建议书批复结果信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">可行性研究报告批复结果信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=5"><span class="STYLE1">可行性研究报告批复结果信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">初步设计方案批复结果信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=6"><span class="STYLE1">初步设计方案批复结果信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">节能评估审查批复结果信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=7"><span class="STYLE1">节能评估审查批复结果信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">规划选址意见批复结果信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=8"><span class="STYLE1">规划选址意见批复结果信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">用地批复文件结果信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=9"><span class="STYLE1">用地批复文件结果信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">环境影响评价审批的结果信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=10"><span class="STYLE1">环境影响评价审批的结果信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">建设项目安全设施预评价</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=11"><span class="STYLE1">建设项目安全设施预评价</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">项目核准信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=14"><span class="STYLE1">项目核准信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">建筑工程施工许可行政许可</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=12"><span class="STYLE1">建筑工程施工许可行政许可</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">安全设施竣工验收评价信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=13"><span class="STYLE1">安全设施竣工验收评价信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
@@ -100,47 +100,47 @@
                       <td width="100%" align="center"><table cellpadding="0" cellspacing="0" border="0" width="80%">
 					      
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">项目基本信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=16"><span class="STYLE1">项目基本信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">招标投标信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=17"><span class="STYLE1">招标投标信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">征地拆迁信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=18"><span class="STYLE1">征地拆迁信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">重大设计变更信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=19"><span class="STYLE1">重大设计变更信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">施工管理信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=20"><span class="STYLE1">施工管理信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">合同履约信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=21"><span class="STYLE1">合同履约信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">质量安全检查信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=22"><span class="STYLE1">质量安全检查信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">资金管理信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=23"><span class="STYLE1">资金管理信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">交竣工验收信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=56"><span class="STYLE1">交竣工验收信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
@@ -164,17 +164,17 @@
                       <td width="100%" align="center"><table cellpadding="0" cellspacing="0" border="0" width="80%">
 					      
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">土地招标拍卖挂牌出让信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=25"><span class="STYLE1">土地招标拍卖挂牌出让信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">国有土地使用权出让合同信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=26"><span class="STYLE1">国有土地使用权出让合同信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">建设用地审批信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=27"><span class="STYLE1">建设用地审批信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
@@ -198,22 +198,22 @@
                       <td width="100%" align="center"><table cellpadding="0" cellspacing="0" border="0" width="80%">
 					      
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">探矿权审批信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=29"><span class="STYLE1">探矿权审批信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">探矿权出让信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=30"><span class="STYLE1">探矿权出让信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">采矿权审批信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=31"><span class="STYLE1">采矿权审批信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=1"><span class="STYLE1">采矿权出让信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=32"><span class="STYLE1">采矿权出让信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
@@ -256,32 +256,32 @@
                       <td width="100%" align="center"><table cellpadding="0" cellspacing="0" border="0" width="80%">
 					      
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="enterprisechannellist"/>?channelId=1"><span class="STYLE1">企业基本信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="enterprisechannellist"/>?channelId=35"><span class="STYLE1">企业基本信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="enterprisechannellist"/>?channelId=1"><span class="STYLE1">资质信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="enterprisechannellist"/>?channelId=36"><span class="STYLE1">资质信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="enterprisechannellist"/>?channelId=1"><span class="STYLE1">项目业绩信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="enterprisechannellist"/>?channelId=37"><span class="STYLE1">项目业绩信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="enterprisechannellist"/>?channelId=1"><span class="STYLE1">信用评价信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="enterprisechannellist"/>?channelId=38"><span class="STYLE1">信用评价信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="enterprisechannellist"/>?channelId=1"><span class="STYLE1">良好行为记录信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="enterprisechannellist"/>?channelId=39"><span class="STYLE1">良好行为记录信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="enterprisechannellist"/>?channelId=1"><span class="STYLE1">不良行为记录信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="enterprisechannellist"/>?channelId=40"><span class="STYLE1">不良行为记录信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
@@ -305,22 +305,22 @@
                       <td width="100%" align="center"><table cellpadding="0" cellspacing="0" border="0" width="80%">
 					      
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="employechannellist"/>?channelId=1"><span class="STYLE1">人员基本信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="employechannellist"/>?channelId=42"><span class="STYLE1">人员基本信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="employechannellist"/>?channelId=1"><span class="STYLE1">执业资格信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="employechannellist"/>?channelId=43"><span class="STYLE1">执业资格信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="employechannellist"/>?channelId=1"><span class="STYLE1">人员良好行为记录信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="employechannellist"/>?channelId=44"><span class="STYLE1">人员良好行为记录信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  
                           <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="employechannellist"/>?channelId=1"><span class="STYLE1">人员不良行为记录信息</span></a></td>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="employechannellist"/>?channelId=45"><span class="STYLE1">人员不良行为记录信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
 						  

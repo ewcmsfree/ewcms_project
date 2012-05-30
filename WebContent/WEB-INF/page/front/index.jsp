@@ -345,47 +345,47 @@ function SearchForm_onsubmit() {
                                       <tr>
                                         <td align="left" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008.jpg"/>" id="jsgl1" onMouseOver="sp_change(this)" class="STYLE7"><a href="<s:url action="projectchannellist"/>?channelId=2">基本信息</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008.jpg"/>" id="jsgl1" onMouseOver="sp_change(this)" class="STYLE7"><a href="<s:url action="projectchannellist"/>?channelId=16">基本信息</a></td>
                                             </tr>
                                           </table></td>
                                         <td align="left" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl2" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=2">招标投标</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl2" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=17">招标投标</a></td>
                                             </tr>
                                           </table></td>
                                         <td align="left" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl3" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=2">征地拆迁</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl3" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=18">征地拆迁</a></td>
                                             </tr>
                                           </table></td>
                                         <td align="left" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl4" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=2">重大变更设计</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl4" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=19">重大变更设计</a></td>
                                             </tr>
                                           </table></td>
                                         <td align="right" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl5" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=2">施工管理</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl5" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=20">施工管理</a></td>
                                             </tr>
                                           </table></td>
                                         <td align="right" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl6" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=2">合同履约</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl6" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=21">合同履约</a></td>
                                             </tr>
                                           </table></td>
                                         <td align="right" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl7" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=2">质量安全</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl7" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=22">质量安全</a></td>
                                             </tr>
                                           </table></td>
                                         <td align="right" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl8" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=2">资金管理</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl8" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=23">资金管理</a></td>
                                             </tr>
                                           </table></td>
                                         <td align="right" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl9" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=2">交(竣)验工</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl9" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=56">交(竣)验工</a></td>
                                             </tr>
                                           </table></td>
                                       </tr>
@@ -610,17 +610,17 @@ function SearchForm_onsubmit() {
                                       <tr>
                                         <td width="210" height="21" valign="bottom"><table width="200" border="0" cellpadding="0" cellspacing="0">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008.jpg"/>" id="tdzb1" onMouseOver="sp_change(this)" class="STYLE7"><a href="<s:url action="projectchannellist"/>?channelId=2">土地招标卖挂牌出让信息</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008.jpg"/>" id="tdzb1" onMouseOver="sp_change(this)" class="STYLE7"><a href="<s:url action="projectchannellist"/>?channelId=25">土地招标卖挂牌出让信息</a></td>
                                             </tr>
                                           </table></td>
                                         <td width="210"><table width="200" border="0" cellpadding="0" cellspacing="0">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="tdzb2" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=2">国有土地使用权出让结果信息</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="tdzb2" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=26">国有土地使用权出让结果信息</a></td>
                                             </tr>
                                           </table></td>
                                         <td><table width="204" border="0" cellpadding="0" cellspacing="0">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="tdzb3" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=2">建设用地审批信息</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="tdzb3" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=27">建设用地审批信息</a></td>
                                             </tr>
                                           </table></td>
                                       </tr>
@@ -796,22 +796,22 @@ function SearchForm_onsubmit() {
                                 <tr>
                                   <td width="87" height="21" align="left" valign="bottom"><table width="85" border="0" cellpadding="0" cellspacing="0">
                                       <tr>
-                                        <td width="86" height="21" align="center" background="<s:url value="/ewcmssource/front/main-008.jpg"/>" onMouseOver="sp_change(this)" id="ky1" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=2">探矿权审批</a></td>
+                                        <td width="86" height="21" align="center" background="<s:url value="/ewcmssource/front/main-008.jpg"/>" onMouseOver="sp_change(this)" id="ky1" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=29">探矿权审批</a></td>
                                       </tr>
                                     </table></td>
                                   <td width="87" align="right"><table width="85" border="0" cellpadding="0" cellspacing="0">
                                       <tr>
-                                        <td width="86" height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" onMouseOver="sp_change(this)" id="ky2" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=2">探矿权出让</a></td>
+                                        <td width="86" height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" onMouseOver="sp_change(this)" id="ky2" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=30">探矿权出让</a></td>
                                       </tr>
                                     </table></td>
                                   <td width="88" align="right"><table width="85" border="0" cellpadding="0" cellspacing="0">
                                       <tr>
-                                        <td width="86" height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" onMouseOver="sp_change(this)" id="ky3" class="STYLE7"><a href="<s:url action="projectchannellist"/>?channelId=2">采矿权审批</a></td>
+                                        <td width="86" height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" onMouseOver="sp_change(this)" id="ky3" class="STYLE7"><a href="<s:url action="projectchannellist"/>?channelId=31">采矿权审批</a></td>
                                       </tr>
                                     </table></td>
                                   <td width="88" align="right"><table width="85" border="0" cellpadding="0" cellspacing="0">
                                       <tr>
-                                        <td width="86" height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" onMouseOver="sp_change(this)" id="ky4" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=2">采矿权出让</a></td>
+                                        <td width="86" height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" onMouseOver="sp_change(this)" id="ky4" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=32">采矿权出让</a></td>
                                       </tr>
                                     </table></td>
                                 </tr>
