@@ -761,8 +761,9 @@ function SearchForm_onsubmit() {
 								  
                                   <td height="32" align="left" valign="middle"><a href='http://www.gongqing.gov.cn/sites/gongqing/xmxxgk.jsp' title="共青城市" target="_blank" class="STYLE3">&nbsp;&nbsp;共青城市</a></td>
   
-   									<td height="32" align="left" valign="middle">&nbsp;</td>
+   									
                                   <td height="32" align="left" valign="middle"><a href='http://www.jjkfq.gov.cn/xxgs/' title="九江开发区管委会" target="_blank" class="STYLE3">&nbsp;&nbsp;九江开发区管委会</a></td>
+                                  <td height="32" align="left" valign="middle">&nbsp;</td>
                                  
 								 </tr>
 								
