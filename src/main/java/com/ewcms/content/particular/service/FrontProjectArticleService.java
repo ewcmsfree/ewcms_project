@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.ewcms.content.particular.dao.FrontProjectArticleDAO;
+import com.ewcms.content.particular.dao.FrontProjectBasicDAO;
 import com.ewcms.content.particular.model.ProjectArticle;
+import com.ewcms.content.particular.model.ProjectBasic;
 import com.ewcms.frontweb.ChannelVO;
 
 @Service
@@ -49,6 +51,17 @@ public class FrontProjectArticleService implements FrontProjectArticleServiceabl
 	@Override
 	public ChannelVO findChannel(int channelId) {
 		return projectArticleDAO.findChannel(channelId);
+	}
+
+	@Override
+	public List<ProjectArticle> findProjectShenPiArticleLimit(String shape,
+			Integer number) {
+		return projectArticleDAO.findProjectShenPiArticleLimit(shape, number);
+	}
+
+	@Override
+	public int getProjectShapeArticleCount(String shape) {
+		return projectArticleDAO.getProjectShapeArticleCount(shape);
 	}
 	
 	

@@ -16,6 +16,7 @@ import com.ewcms.common.dao.JpaDAO;
 import com.ewcms.content.particular.model.Dense;
 import com.ewcms.content.particular.model.ProjectArticle;
 import com.ewcms.content.particular.model.ProjectBasic;
+import com.ewcms.content.particular.model.ProjectBasic.Shape;
 import com.ewcms.content.particular.model.PublishingSector;
 import com.ewcms.frontweb.ChannelVO;
 
@@ -31,6 +32,13 @@ public class FrontProjectArticleDAO extends JpaDAO<Long, ProjectArticle> {
 	public List<ProjectArticle> findProjectArticleLimit(Integer number){
 		String hql = "From ProjectArticle As p Order By p.published desc limit "+number;
 		TypedQuery<ProjectArticle> query = this.getEntityManager().createQuery(hql, ProjectArticle.class);
+		return query.getResultList();
+	}
+	
+	public List<ProjectArticle> findProjectShenPiArticleLimit(String shape,Integer number){
+		String hql = "From ProjectArticle As p where p.projectBasic.shape=:shape Order By p.published desc limit "+number;
+		TypedQuery<ProjectArticle> query = this.getEntityManager().createQuery(hql, ProjectArticle.class);
+		query.setParameter("shape", Shape.valueOf(shape));
 		return query.getResultList();
 	}
 	
@@ -68,6 +76,13 @@ public class FrontProjectArticleDAO extends JpaDAO<Long, ProjectArticle> {
             Object[] params = new Object[]{channelId};
             return (int) jdbcTemplate.queryForLong(sql,params);    		
     	}
+    } 
+  
+    public int getProjectShapeArticleCount(String shape) {
+
+            String sql = "Select count(*) From particular_project_article t1 ,particular_project_basic t2 where t1.project_basic_code=t2.code and t2.shape=?";
+            Object[] params = new Object[]{shape};
+            return (int) jdbcTemplate.queryForLong(sql,params);
     } 
     
     private ProjectArticle interactionRowMapper(ResultSet rs) throws SQLException {

@@ -141,4 +141,15 @@ public class ListAction {
 		return "success";
 	}	
 	
+	public String projectShenPiListByPage(){
+		projectArticleList = particularFac.findProjectShenPiArticleLimit("APPROVAL", 99999);
+		page =  new Page.Builder(particularFac.getProjectShapeArticleCount("APPROVAL"), pageNumber + 1).setPageSize(row).build();
+		return "success";		
+	}
+	
+	public String projectHeZhunListByPage(){
+		projectArticleList = particularFac.findProjectShenPiArticleLimit("APPROVED", 99999);
+		page =  new Page.Builder(particularFac.getProjectShapeArticleCount("APPROVED"), pageNumber + 1).setPageSize(row).build();
+		return "success";		
+	}	
 }

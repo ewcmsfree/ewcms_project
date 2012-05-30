@@ -5,6 +5,7 @@ import java.util.List;
 import com.ewcms.content.particular.model.EmployeArticle;
 import com.ewcms.content.particular.model.EnterpriseArticle;
 import com.ewcms.content.particular.model.ProjectArticle;
+import com.ewcms.content.particular.model.ProjectBasic;
 import com.ewcms.frontweb.ChannelVO;
 
 public interface FrontParticularFacable {
@@ -15,6 +16,8 @@ public interface FrontParticularFacable {
 	public List<ProjectArticle> findProjectChannellArticleLimit(Integer channelId,Integer number);
 	public List<ProjectArticle> findProjectChannelArticleByPage(int channelId,int page, int row);
 	public ChannelVO findChannel(int channelId) ;
+	public List<ProjectArticle> findProjectShenPiArticleLimit(String shape,Integer number);
+	public int getProjectShapeArticleCount(String shape);
 	
 	public List<EnterpriseArticle> findEnterpriseArticleLimit(Integer number);
 	public List<EnterpriseArticle> findEnterpriseArticleByPage(int page, int row);

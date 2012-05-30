@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.ewcms.content.particular.model.EmployeArticle;
 import com.ewcms.content.particular.model.EnterpriseArticle;
 import com.ewcms.content.particular.model.ProjectArticle;
+import com.ewcms.content.particular.model.ProjectBasic;
 import com.ewcms.content.particular.service.FrontEmployeArticleServiceable;
 import com.ewcms.content.particular.service.FrontEnterpriseArticleServiceable;
 import com.ewcms.content.particular.service.FrontProjectArticleServiceable;
@@ -62,6 +63,17 @@ public class FrontParticularFac implements FrontParticularFacable {
 	@Override
 	public ChannelVO findChannel(int channelId) {
 		return projectArticleService.findChannel(channelId);
+	}
+
+	@Override
+	public int getProjectShapeArticleCount(String shape) {
+		return projectArticleService.getProjectShapeArticleCount(shape);
+	}
+
+	@Override
+	public List<ProjectArticle> findProjectShenPiArticleLimit(String shape,
+			Integer number) {
+		return projectArticleService.findProjectShenPiArticleLimit(shape, number);
 	}
 
 	@Override
@@ -128,5 +140,4 @@ public class FrontParticularFac implements FrontParticularFacable {
 		return employeArticleService.findEmployeChannelArticleByPage(channelId, page, row);
 	}
 
-	
 }

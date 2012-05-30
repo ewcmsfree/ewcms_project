@@ -18,11 +18,11 @@ public class MainHomeAction extends ActionSupport{
 		return "success";
 	}
 	public List<ProjectArticle> getProjectChannel1Articles(){//项目审批信息 
-		return particularFac.findProjectChannellArticleLimit(Integer.valueOf(getText("project.channel1")),5);
+		return particularFac.findProjectShenPiArticleLimit("APPROVAL", 5);
 	}
 
 	public List<ProjectArticle> getProjectChannel2Articles(){//项目 核准信息
-		return particularFac.findProjectChannellArticleLimit(Integer.valueOf(getText("project.channel2")), 5);
+		return particularFac.findProjectShenPiArticleLimit("APPROVED", 5);
 	}
 	public List<ProjectArticle> getProjectChannel3Articles(){//基本信息 
 		return particularFac.findProjectChannellArticleLimit(Integer.valueOf(getText("project.channel3")),5);

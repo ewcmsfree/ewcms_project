@@ -47,7 +47,13 @@
                     </tr>
                     <tr>
                       <td width="20%" align="center" height="30px">成立日期 </td>
-                      <td align="left">&nbsp;&nbsp;<s:property value="epaVO.enterpriseBasic.clrq"/></td>
+                      <td align="left">&nbsp;&nbsp;
+	                  <script type="text/javascript">
+	                      var clrq = "<s:property value="%{getText('global.date',{epaVO.enterpriseBasic.clrq})}"/>";    
+	                      if(clrq!="null"){
+	                    	  document.write(clrq);
+	                      }
+                      </script>                      
                     </tr>
 					<tr>
                       <td width="20%" align="center" height="30px">住所 </td>

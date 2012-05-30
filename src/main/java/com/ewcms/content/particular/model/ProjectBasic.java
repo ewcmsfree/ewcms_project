@@ -1,3 +1,8 @@
+/**
+ * Copyright (c)2010-2011 Enterprise Website Content Management System(EWCMS), All rights reserved.
+ * EWCMS PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ * http://www.ewcms.com
+ */
 package com.ewcms.content.particular.model;
 
 import java.io.Serializable;
@@ -76,6 +81,20 @@ public class ProjectBasic implements Serializable {
 		}
 	}
 	
+	public enum Shape{
+		APPROVAL("审批"),APPROVED("核准"),RECORD("备案");
+		
+		private String description;
+		
+		private Shape(String description){
+			this.description = description;
+		}
+		
+		public String getDescription(){
+			return description;
+		}
+	}
+	
 	@Id
 	@GeneratedValue(generator = "seq_particular_project_basic",strategy = GenerationType.SEQUENCE)
 	@Column(name = "id")
@@ -124,7 +143,8 @@ public class ProjectBasic implements Serializable {
 	@Enumerated(EnumType.STRING)	
 	private Nature bildNature;
 	@Column(name = "shape")
-	private String shape;
+	@Enumerated(EnumType.STRING)
+	private Shape shape;
 	@Column(name = "document_id", length = 200)
 	private String documentId;
 	@Column(name = "participation", length = 200)
@@ -303,11 +323,19 @@ public class ProjectBasic implements Serializable {
 		this.bildNature = bildNature;
 	}
 
-	public String getShape() {
+	public Shape getShape() {
 		return shape;
 	}
+	
+	public String getShapeDescription(){
+		if (shape != null){
+			return shape.getDescription();
+		}else{
+			return Shape.APPROVAL.getDescription();
+		}
+	}
 
-	public void setShape(String shape) {
+	public void setShape(Shape shape) {
 		this.shape = shape;
 	}
 

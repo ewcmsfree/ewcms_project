@@ -6,10 +6,10 @@
 	        <td height="20"></td>
 	      </tr>
 	      <tr>
-	        <td align="center" class="STYLE1 STYLE5">主办：九江市监察局 九江市工信委　承办：九江市政府信息办</td>
+	        <td align="center" class="STYLE1 STYLE5">主办：浔阳区监察局 浔阳区工信委　承办：浔阳区政府信息办</td>
 	      </tr>
 	      <tr>
-	        <td align="center" class="STYLE6">ICP备案编号：赣ICP备05005076号 E-Mail：webmaster@jiujiang.gov.cn</td>
+	        <td align="center" class="STYLE6">ICP备案编号：赣ICP备05005243号 E-Mail：xunyang@jiujiang.gov.cn</td>
 	      </tr>
 	      <tr>
 	        <td height="30"></td>

@@ -30,11 +30,26 @@
                     </tr>
 					<tr>
                       <td width="10%" align="center" height="30px">建设时间</td>
-                      <td align="left">&nbsp;&nbsp;<s:property value="paVO.projectBasic.buildTime"/></td>
+                      <td align="left">&nbsp;&nbsp;
+                      <script type="text/javascript">
+                      var jsrq = "<s:property value="%{getText('global.date',{paVO.projectBasic.buildTime})}"/>";    
+                      if(jsrq!="null"){
+                    	  document.write(jsrq);
+                      }
+                      </script>
+                      
+                      </td>
                     </tr>
 					<tr>
                       <td width="10%" align="center" height="30px">发布时间</td>
-                      <td align="left">&nbsp;&nbsp;<s:property value="%{getText('global.date',{paVO.published})}"/></td>
+                      <td align="left">&nbsp;&nbsp;
+                      <script type="text/javascript">
+                      var fbsj = "<s:property value="%{getText('global.date',{paVO.published})}"/>";    
+                      if(fbsj!="null"){
+                    	  document.write(fbsj);
+                      }
+                      </script>               
+                      </td>
                     </tr>
 					
                   </table></td>

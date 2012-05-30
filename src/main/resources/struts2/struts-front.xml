@@ -34,7 +34,13 @@
         <action name="enterprisedetail" class="com.ewcms.frontweb.DetailAction" method="enterpriseDetail">
             <result>/WEB-INF/page/front/enterprisedetail.jsp</result>
         </action>  
-             
+        <action name="projectshenpilist" class="com.ewcms.frontweb.ListAction" method="projectShenPiListByPage">
+            <result>/WEB-INF/page/front/projectlist.jsp</result>
+        </action> 
+        <action name="projecthezhunlist" class="com.ewcms.frontweb.ListAction" method="projectHeZhunListByPage">
+            <result>/WEB-INF/page/front/projectlist.jsp</result>
+        </action> 
+                             
         <action name="projectlist" class="com.ewcms.frontweb.ListAction" method="projectArticleListByPage">
             <result>/WEB-INF/page/front/projectlist.jsp</result>
         </action> 
