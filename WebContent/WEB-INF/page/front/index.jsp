@@ -728,7 +728,7 @@ function SearchForm_onsubmit() {
                             <td valign="top"><table width="615" border="0" align="center" cellpadding="0" cellspacing="0">
 							    
                                 <tr>
-                                  <td height="32" align="left" valign="middle"><a href='http://218.204.68.90:81/Constr/default.html' title="庐山管理局" target="_blank" class="STYLE3">&nbsp;&nbsp;庐山管理局</a></td>
+                                  
                                   
                                   <td height="32" align="left" valign="middle"><a href='http://www.lsq.gov.cn/SWGK/GcFille/Gc_index.aspx' title="庐山区" target="_blank" class="STYLE3">&nbsp;&nbsp;庐山区</a></td>
 								  
@@ -737,6 +737,7 @@ function SearchForm_onsubmit() {
                                   <td height="32" align="left" valign="middle"><a href='http://www.dean.gov.cn/web/dean_gcly.asp?ts=10&lm=251|252|254|253|255|256|257' title="德安县" target="_blank" class="STYLE3">&nbsp;&nbsp;德安县</a></td>
 								  
                                   <td height="32" align="left" valign="middle"><a href='http://www.yongxiu.gov.cn/yxxgcly/' title="永修县" target="_blank" class="STYLE3">&nbsp;&nbsp;永修县</a></td>
+								     <td height="32" align="left" valign="middle"><a href='http://218.204.68.90:81/Constr/default.html' title="庐山管理局" target="_blank" class="STYLE3">&nbsp;&nbsp;庐山管理局</a></td>                            
 								                                  </tr>
 								
                                 <tr>
@@ -759,10 +760,10 @@ function SearchForm_onsubmit() {
                                   <td height="32" align="left" valign="middle"><a href='http://www.pengze.gov.cn/indexgc.htm' title="彭泽县" target="_blank" class="STYLE3">&nbsp;&nbsp;彭泽县</a></td>
 								  
                                   <td height="32" align="left" valign="middle"><a href='http://www.gongqing.gov.cn/sites/gongqing/xmxxgk.jsp' title="共青城市" target="_blank" class="STYLE3">&nbsp;&nbsp;共青城市</a></td>
-								  
-                                  
-								  
+  
+   									<td height="32" align="left" valign="middle">&nbsp;</td>
                                   <td height="32" align="left" valign="middle"><a href='http://www.jjkfq.gov.cn/xxgs/' title="九江开发区管委会" target="_blank" class="STYLE3">&nbsp;&nbsp;九江开发区管委会</a></td>
+                                 
 								 </tr>
 								
                                 <tr>
