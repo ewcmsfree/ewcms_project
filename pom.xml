@@ -7,9 +7,6 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-		<!-- Springframework Security -->
-		<springframework.security.version>3.0.5.RELEASE</springframework.security.version>
-		
 		<!-- Hibernate -->
 		<hibernate.entitymanager.version>3.6.10.Final</hibernate.entitymanager.version>
 		<hibernate.c3p0.version>3.6.10.Final</hibernate.c3p0.version>
@@ -43,13 +40,6 @@
 		
 		<!-- Database Connection -->
 		<postgresql.version>9.1-901.jdbc4</postgresql.version>
-		
-		<!-- Crawler -->
-		<httpcomponents.httpcore.version>4.1.4</httpcomponents.httpcore.version>
-		<httpcomponents.httpclient.version>4.1.2</httpcomponents.httpclient.version>
-		<je.version>4.0.92</je.version>
-		<tika.parsers.version>1.0</tika.parsers.version>
-		<jsoup.version>1.6.1</jsoup.version>
 		
 		<!-- Servlet -->
 		<tomcat.catalina>6.0.35</tomcat.catalina>
@@ -206,44 +196,6 @@
 			<artifactId>commons-beanutils</artifactId>
 			<version>${commons.beanutils.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-vfs2</artifactId>
-			<version>${commons.vfs2.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>maven-scm-api</artifactId>
-					<groupId>org.apache.maven.scm</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>
-						maven-scm-provider-svn-commons
-					</artifactId>
-					<groupId>org.apache.maven.scm</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>maven-scm-provider-svnexe</artifactId>
-					<groupId>org.apache.maven.scm</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>commons-net</groupId>
-			<artifactId>commons-net</artifactId>
-			<version>${commons.net.version}</version>
-			<classifier>ftp</classifier>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.jcraft</groupId>
-			<artifactId>jsch</artifactId>
-			<version>${jcraft.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.samba.jcifs</groupId>
-			<artifactId>jcifs</artifactId>
-			<version>${jcifs.version}</version>
-		</dependency>
 		
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -269,107 +221,11 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpcore</artifactId>
-			<version>${httpcomponents.httpcore.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>${httpcomponents.httpclient.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sleepycat</groupId>
-			<artifactId>je</artifactId>
-			<version>${je.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jsoup</groupId>
-			<artifactId>jsoup</artifactId>
-			<version>${jsoup.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.tika</groupId>
-			<artifactId>tika-parsers</artifactId>
-			<version>${tika.parsers.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>poi-ooxml-schemas</artifactId>
-					<groupId>org.apache.poi</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>poi-ooxml</artifactId>
-					<groupId>org.apache.poi</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>poi-scratchpad</artifactId>
-					<groupId>org.apache.poi</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>fontbox</artifactId>
-					<groupId>org.apache.pdfbox</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>poi</artifactId>
-					<groupId>org.apache.poi</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>pdfbox</artifactId>
-					<groupId>org.apache.pdfbox</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>netcdf</artifactId>
-					<groupId>edu.ucar</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>jdom</artifactId>
-					<groupId>jdom</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>rome</artifactId>
-					<groupId>rome</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>bcmail-jdk15</artifactId>
-					<groupId>org.bouncycastle</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>bcprov-jdk15</artifactId>
-					<groupId>org.bouncycastle</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.6.8</version>
 		</dependency>
 		
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-core</artifactId>
-			<version>${springframework.security.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-web</artifactId>
-			<version>${springframework.security.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-taglibs</artifactId>
-			<version>${springframework.security.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-config</artifactId>
-			<version>${springframework.security.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-acl</artifactId>
-			<version>${springframework.security.version}</version>
-		</dependency>		
 	</dependencies>
 	<build>
 		<plugins>
