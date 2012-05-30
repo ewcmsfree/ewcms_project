@@ -25,8 +25,8 @@ public class FrontProjectBasicDAO extends JpaDAO<Long, ProjectBasic> {
 		return projectBasic;
 	}
 	
-	public List<ProjectBasic> findAllProjectBasic(){
-		String hql = "From ProjectBasic As p Order By p.buildTime desc";
+	public List<ProjectBasic> findAllProjectBasicLimit(Integer number){
+		String hql = "From ProjectBasic As p Order By p.buildTime desc limit "+number;
 		TypedQuery<ProjectBasic> query = this.getEntityManager().createQuery(hql, ProjectBasic.class);
 		return query.getResultList();
 	}	

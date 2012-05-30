@@ -25,7 +25,7 @@ public class MainHomeAction extends ActionSupport{
 		return particularFac.findProjectShenPiArticleLimit("APPROVED", 5);
 	}
 	public List<ProjectArticle> getProjectChannel3Articles(){//基本信息 
-		return particularFac.findProjectChannellArticleLimit(Integer.valueOf(getText("project.channel3")),5);
+		return particularFac.findProjectArticleLimit(5);
 	}
 
 	public List<ProjectArticle> getProjectChannel4Articles(){//招标投标 
