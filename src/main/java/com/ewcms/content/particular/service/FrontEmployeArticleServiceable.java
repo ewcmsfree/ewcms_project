@@ -3,6 +3,7 @@ package com.ewcms.content.particular.service;
 import java.util.List;
 
 import com.ewcms.content.particular.model.EmployeArticle;
+import com.ewcms.content.particular.model.EmployeBasic;
 
 
 public interface FrontEmployeArticleServiceable {
@@ -12,4 +13,6 @@ public interface FrontEmployeArticleServiceable {
 	public EmployeArticle getEmployeArticle(Long id);
 	public List<EmployeArticle> findEmployeChannelArticleLimit(Integer channelId,Integer number);
 	public List<EmployeArticle> findEmployeChannelArticleByPage(int channelId,int page, int row);
+	public List<EmployeBasic> findEmployeBasicAll(Integer number);
+	public int getEmployeBasicCount();
 }

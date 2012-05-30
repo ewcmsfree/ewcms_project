@@ -4,15 +4,24 @@ import java.util.List;
 
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
+import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.ewcms.common.dao.JpaDAO;
+import com.ewcms.content.particular.model.EmployeBasic;
 import com.ewcms.content.particular.model.ProjectArticle;
 import com.ewcms.content.particular.model.ProjectBasic;
 
 @Repository
 public class FrontProjectBasicDAO extends JpaDAO<Long, ProjectBasic> {
+	private JdbcTemplate jdbcTemplate;
+    @Autowired
+    public void setDataSource(DataSource dataSource) {
+        jdbcTemplate = new JdbcTemplate(dataSource);
+    }	
 	public ProjectBasic findProjectBasicByCode(final String code){
 		String hql = "From ProjectBasic As p Where p.code=:code";
 		TypedQuery<ProjectBasic> query = this.getEntityManager().createQuery(hql, ProjectBasic.class);
@@ -25,9 +34,20 @@ public class FrontProjectBasicDAO extends JpaDAO<Long, ProjectBasic> {
 		return projectBasic;
 	}
 	
-	public List<ProjectBasic> findAllProjectBasicLimit(Integer number){
-		String hql = "From ProjectBasic As p Order By p.buildTime desc limit "+number;
-		TypedQuery<ProjectBasic> query = this.getEntityManager().createQuery(hql, ProjectBasic.class);
-		return query.getResultList();
-	}	
+	public List<ProjectBasic> findProjectBasicAll(Integer number){
+		if(number==null){
+			String hql = "From ProjectBasic As e Order By e.cardCode";
+			TypedQuery<ProjectBasic> query = this.getEntityManager().createQuery(hql, ProjectBasic.class);
+			return query.getResultList();
+		}else{
+			String hql = "From ProjectBasic As p Order By p.buildTime desc limit "+number;
+			TypedQuery<ProjectBasic> query = this.getEntityManager().createQuery(hql, ProjectBasic.class);
+			return query.getResultList();		
+		}
+	}
+	
+    public int getProjectBasicCount() {
+        String sql = "Select count(id) From particular_project_basic";
+        return (int) jdbcTemplate.queryForLong(sql);
+    } 	
 }

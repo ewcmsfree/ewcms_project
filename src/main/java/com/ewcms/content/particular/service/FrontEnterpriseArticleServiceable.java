@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.ewcms.content.particular.model.EmployeArticle;
 import com.ewcms.content.particular.model.EnterpriseArticle;
+import com.ewcms.content.particular.model.EnterpriseBasic;
 
 
 public interface FrontEnterpriseArticleServiceable {
@@ -13,4 +14,6 @@ public interface FrontEnterpriseArticleServiceable {
 	public EnterpriseArticle getEnterpriseArticle(Long id);
 	public List<EnterpriseArticle> findEnterpriseChannelArticleByPage(int channelId,int page, int row);
 	public List<EnterpriseArticle> findEnterpriseChannelArticleLimit(Integer channelId,Integer number);
+	public List<EnterpriseBasic> findEnterpriseBasicAll(Integer number);
+	public int getEnterpriseBasicCount();
 }

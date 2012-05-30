@@ -403,9 +403,16 @@ function SearchForm_onsubmit() {
                                      <s:iterator value="projectChannel3Articles" status="st">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
-	                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
-	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
-	                                        <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
+	                                        <td align="center" class="STYLE1"><s:property value="code"/></td>
+	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="name"/>" target="_blank" class="STYLE3"><s:property value="name"/></a></td>
+	                                        <td align="center" class="STYLE1">&nbsp;
+	                                         <script type="text/javascript">
+						                      var jsrq = "<s:property value="%{getText('global.date',{buildTime})}"/>";    
+						                      if(jsrq!="null"){
+						                    	  document.write(jsrq);
+						                      }
+						                     </script>
+	                                        </td>
 	                                      </tr>
                                       </s:iterator>
                                       
@@ -1002,7 +1009,7 @@ function SearchForm_onsubmit() {
                                      <s:iterator value="ryjbxxArticles" status="st">
                                       <tr>
                                         <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
-                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="employedetail"/>?articleId=<s:property value="id"/>' title="<s:property value="employeBasic.name"/>" target="_blank" class="STYLE3"><s:property value="employeBasic.name"/></a></td>
+                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="employedetail"/>?articleId=<s:property value="id"/>' title="<s:property value="name"/>" target="_blank" class="STYLE3"><s:property value="name"/></a></td>
                                         <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
                                       </tr>
                                       </s:iterator>  

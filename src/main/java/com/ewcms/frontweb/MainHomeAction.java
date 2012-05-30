@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.ewcms.content.particular.FrontParticularFacable;
 import com.ewcms.content.particular.model.EmployeArticle;
+import com.ewcms.content.particular.model.EmployeBasic;
 import com.ewcms.content.particular.model.EnterpriseArticle;
 import com.ewcms.content.particular.model.ProjectArticle;
+import com.ewcms.content.particular.model.ProjectBasic;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class MainHomeAction extends ActionSupport{
@@ -24,8 +26,8 @@ public class MainHomeAction extends ActionSupport{
 	public List<ProjectArticle> getProjectChannel2Articles(){//项目 核准信息
 		return particularFac.findProjectShenPiArticleLimit("APPROVED", 5);
 	}
-	public List<ProjectArticle> getProjectChannel3Articles(){//基本信息 
-		return particularFac.findProjectArticleLimit(5);
+	public List<ProjectBasic> getProjectChannel3Articles(){//基本信息 
+		return particularFac.findProjectBasicAll(5);
 	}
 
 	public List<ProjectArticle> getProjectChannel4Articles(){//招标投标 
@@ -81,8 +83,8 @@ public class MainHomeAction extends ActionSupport{
 		return particularFac.findProjectChannellArticleLimit(Integer.valueOf(getText("project.channel18")), 5);
 	}
 	
-	public List<EmployeArticle> getRyjbxxArticles(){//人员 基本信息 
-		return particularFac.findEmployeChannelArticleLimit(Integer.valueOf(getText("employe.ryjbxx")), 4);
+	public List<EmployeBasic> getRyjbxxArticles(){//人员 基本信息 
+		return particularFac.findEmployeBasicAll(4);
 	}	
 	public List<EmployeArticle> getZyzgxxArticles(){//职业 资格 信息 
 		return particularFac.findEmployeChannelArticleLimit(Integer.valueOf(getText("employe.zyzgxx")), 4);

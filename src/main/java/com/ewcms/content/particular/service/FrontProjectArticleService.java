@@ -15,7 +15,8 @@ public class FrontProjectArticleService implements FrontProjectArticleServiceabl
 
 	@Autowired
 	private FrontProjectArticleDAO projectArticleDAO;
-
+	@Autowired
+	private FrontProjectBasicDAO projectBasicAO;
 	@Override
 	public List<ProjectArticle> findProjectArticleLimit(Integer number) {
 		return projectArticleDAO.findProjectArticleLimit(number);
@@ -62,6 +63,16 @@ public class FrontProjectArticleService implements FrontProjectArticleServiceabl
 	@Override
 	public int getProjectShapeArticleCount(String shape) {
 		return projectArticleDAO.getProjectShapeArticleCount(shape);
+	}
+
+	@Override
+	public List<ProjectBasic> findProjectBasicAll(Integer number) {
+		return projectBasicAO.findProjectBasicAll(number);
+	}
+
+	@Override
+	public int getProjectBasicCount() {
+		return projectBasicAO.getProjectBasicCount();
 	}
 	
 	

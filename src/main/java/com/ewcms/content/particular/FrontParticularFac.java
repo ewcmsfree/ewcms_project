@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ewcms.content.particular.model.EmployeArticle;
+import com.ewcms.content.particular.model.EmployeBasic;
 import com.ewcms.content.particular.model.EnterpriseArticle;
+import com.ewcms.content.particular.model.EnterpriseBasic;
 import com.ewcms.content.particular.model.ProjectArticle;
 import com.ewcms.content.particular.model.ProjectBasic;
 import com.ewcms.content.particular.service.FrontEmployeArticleServiceable;
@@ -77,6 +79,16 @@ public class FrontParticularFac implements FrontParticularFacable {
 	}
 
 	@Override
+	public List<ProjectBasic> findProjectBasicAll(Integer number) {
+		return projectArticleService.findProjectBasicAll(number);
+	}
+
+	@Override
+	public int getProjectBasicCount() {
+		return projectArticleService.getProjectBasicCount();
+	}
+
+	@Override
 	public List<EnterpriseArticle> findEnterpriseArticleLimit(Integer number) {
 		return enterpriseArticleService.findEnterpriseArticleLimit(number);
 	}
@@ -109,6 +121,16 @@ public class FrontParticularFac implements FrontParticularFacable {
 	}
 
 	@Override
+	public List<EnterpriseBasic> findEnterpriseBasicAll(Integer number) {
+		return enterpriseArticleService.findEnterpriseBasicAll(number);
+	}
+
+	@Override
+	public int getEnterpriseBasicCount() {
+		return enterpriseArticleService.getEnterpriseBasicCount();
+	}
+
+	@Override
 	public List<EmployeArticle> findEmployeArticleLimit(Integer number) {
 		return employeArticleService.findEmployeArticleLimit(number);
 	}
@@ -138,6 +160,16 @@ public class FrontParticularFac implements FrontParticularFacable {
 	public List<EmployeArticle> findEmployeChannelArticleByPage(int channelId,
 			int page, int row) {
 		return employeArticleService.findEmployeChannelArticleByPage(channelId, page, row);
+	}
+
+	@Override
+	public List<EmployeBasic> findEmployeBasicAll(Integer number) {
+		return employeArticleService.findEmployeBasicAll(number);
+	}
+
+	@Override
+	public int getEmployeBasicCount() {
+		return employeArticleService.getEmployeBasicCount();
 	}
 
 }

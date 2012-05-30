@@ -16,4 +16,6 @@ public interface FrontProjectArticleServiceable {
 	public ChannelVO findChannel(int channelId) ;
 	public List<ProjectArticle> findProjectShenPiArticleLimit(String shape,Integer number);
 	public int getProjectShapeArticleCount(String shape);
+	public List<ProjectBasic> findProjectBasicAll(Integer number);
+	 public int getProjectBasicCount() ;
 }
