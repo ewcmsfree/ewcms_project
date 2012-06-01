@@ -23,7 +23,7 @@ public class ListAction {
 	    protected Page page;
 	    private int channelId;
 	    private ChannelVO channelVO;
-	    private String code;
+	    
 	@Autowired
 	private FrontParticularFacable particularFac;
 	private List<ProjectBasic> projectBasicList;

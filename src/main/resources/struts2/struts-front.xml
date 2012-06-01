@@ -27,7 +27,8 @@
         </action> 
         <action name="trustdescripe">
             <result>/WEB-INF/page/front/trustdescripe.jsp</result>
-        </action>                                     
+        </action>   
+                                          
          <action name="employedetail" class="com.ewcms.frontweb.DetailAction" method="employeDetail">
             <result>/WEB-INF/page/front/employedetail.jsp</result>
         </action>
@@ -58,6 +59,10 @@
         </action> 
         <action name="enterprisechannellist" class="com.ewcms.frontweb.ListAction" method="enterpriseChannelArticleListByPage">
             <result>/WEB-INF/page/front/enterprisechannellist.jsp</result>
-        </action>         
+        </action> 
+        
+         <action name="sectorarticlelist" class="com.ewcms.frontweb.SectorAction" method="sectorArticleList">
+            <result>/WEB-INF/page/front/sectorarticlelist.jsp</result>
+        </action>                
     </package>
 </struts>  

@@ -45,7 +45,8 @@ public class FrontProjectArticleDAO extends JpaDAO<Long, ProjectArticle> {
 		TypedQuery<ProjectArticle> query = this.getEntityManager().createQuery(hql, ProjectArticle.class);
 		query.setParameter("code", code);
 		return query.getResultList();
-	}	
+	}
+	
 	public List<ProjectArticle> findProjectShenPiArticleLimit(String shape,Integer number){
 		String hql = "From ProjectArticle As p where p.projectBasic.shape=:shape Order By p.published desc limit "+number;
 		TypedQuery<ProjectArticle> query = this.getEntityManager().createQuery(hql, ProjectArticle.class);

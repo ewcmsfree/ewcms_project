@@ -1096,7 +1096,7 @@ function SearchForm_onsubmit() {
                                      <s:if test="#st.index%6==0">
                                 	 </tr><tr>
                                   </s:if> 
-                                  	<td height="32" align="left" valign="middle"><a href='<s:url action="selectorarticlelist"/>?code=<s:property value="code"/>'  target="_blank" class="STYLE3">&nbsp;&nbsp;<s:property value="name"/></a></td>                        					
+                                  	<td height="32" align="left" valign="middle"><a href='<s:url action="sectorarticlelist"/>?code=<s:property value="code"/>'  target="_blank" class="STYLE3">&nbsp;&nbsp;<s:property value="name"/></a></td>                        					
 								</s:iterator>
                            								                               
 	                                <tr>
