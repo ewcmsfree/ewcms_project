@@ -64,11 +64,7 @@
                             <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=11"><span class="STYLE1">建设项目安全设施预评价</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
-						  
-                          <tr>
-                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=14"><span class="STYLE1">项目核准信息</span></a></td>
-                          </tr>
-						  <tr><td width="100%" height="5px"></td></tr>
+
 						  
                           <tr>
                             <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=12"><span class="STYLE1">建筑工程施工许可行政许可</span></a></td>
@@ -79,7 +75,10 @@
                             <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=13"><span class="STYLE1">安全设施竣工验收评价信息</span></a></td>
                           </tr>
 						  <tr><td width="100%" height="5px"></td></tr>
-						  
+                          <tr>
+                            <td width="100%" height="30px" background="<s:url value="/ewcmssource/front/chnl_bg_20110926.jpg"/>" class="STYLE1" valign="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<s:url action="projectchannellist"/>?channelId=14"><span class="STYLE1">项目核准信息</span></a></td>
+                          </tr>						  
+						  <tr><td width="100%" height="5px"></td></tr>						  
                         </table></td>
                     </tr>
 					

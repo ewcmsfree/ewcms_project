@@ -236,12 +236,22 @@ function SearchForm_onsubmit() {
                                         <td width="129" align="center" class="STYLE1"><span class="STYLE4">发布日期</span></td>
                                       </tr>
                                       <s:iterator value="projectChannel1Articles" status="st">
+                                      <s:if test="#st.index<5">
                                       <tr>
                                         <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
-                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
-                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
-                                        <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
+                                        <td align="center" class="STYLE1"><s:property value="code"/></td>
+                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?codeId=<s:property value="code"/>' title="<s:property value="name"/>" target="_blank" class="STYLE3"><s:property value="name"/></a></td>
+                                        <td align="center" class="STYLE1">
+                                        &nbsp;
+                                        	<script type="text/javascript">
+						                      var jsrq = "<s:property value="%{getText('global.date',{buildTime})}"/>";    
+						                      if(jsrq!="null"){
+						                    	  document.write(jsrq);
+						                      }
+						                     </script>
+                                        </td>
                                       </tr>
+                                      </s:if>
                                       </s:iterator>  
                                       <tr>
                                         <td colspan="4"></td>
@@ -256,12 +266,21 @@ function SearchForm_onsubmit() {
                                       </tr>
                                       
                                       <s:iterator value="projectChannel2Articles" status="st">
+                                      <s:if test="#st.index<5">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
-	                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
-	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
-	                                        <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
+	                                        <td align="center" class="STYLE1"><s:property value="code"/></td>
+	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?codeId=<s:property value="code"/>' title="<s:property value="name"/>" target="_blank" class="STYLE3"><s:property value="name"/></a></td>
+	                                        <td align="center" class="STYLE1">&nbsp;
+	                                      	<script type="text/javascript">
+						                      var jsrq = "<s:property value="%{getText('global.date',{buildTime})}"/>";    
+						                      if(jsrq!="null"){
+						                    	  document.write(jsrq);
+						                      }
+						                     </script>
+	                                        </td>
 	                                      </tr>
+	                                      </s:if>
                                       </s:iterator>  
                                       
                                       <tr>
@@ -401,6 +420,7 @@ function SearchForm_onsubmit() {
                                       </tr>
                                       
                                      <s:iterator value="projectChannel3Articles" status="st">
+                                     <s:if test="#st.index<5">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
 	                                        <td align="center" class="STYLE1"><s:property value="code"/></td>
@@ -414,6 +434,7 @@ function SearchForm_onsubmit() {
 						                     </script>
 	                                        </td>
 	                                      </tr>
+	                                      </s:if>
                                       </s:iterator>
                                       
                                       <tr>
@@ -429,12 +450,14 @@ function SearchForm_onsubmit() {
                                       </tr>
                                       
                                      <s:iterator value="projectChannel4Articles" status="st">
+                                     <s:if test="#st.index<5">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
 	                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
 	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
 	                                        <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
 	                                      </tr>
+	                                  </s:if>
                                       </s:iterator>
                                       
                                       <tr>
@@ -449,12 +472,14 @@ function SearchForm_onsubmit() {
                                         <td width="129" align="center" class="STYLE1"><span class="STYLE4">发布日期</span></td>
                                       </tr>
                                       <s:iterator value="projectChannel5Articles" status="st">
+                                      <s:if test="#st.index<5">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
 	                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
 	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
 	                                        <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
 	                                      </tr>
+	                                      </s:if>
                                       </s:iterator>                                     
                                       <tr>
                                         <td colspan="4"></td>
@@ -469,12 +494,14 @@ function SearchForm_onsubmit() {
                                       </tr>
                                       
                                      <s:iterator value="projectChannel6Articles" status="st">
+                                     <s:if test="#st.index<5">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
 	                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
 	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
 	                                        <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
 	                                      </tr>
+	                                      </s:if>
                                       </s:iterator>
                                       
                                       <tr>
@@ -490,12 +517,14 @@ function SearchForm_onsubmit() {
                                       </tr>
                                       
                                      <s:iterator value="projectChannel7Articles" status="st">
+                                     <s:if test="#st.index<5">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
 	                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
 	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
 	                                        <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
 	                                      </tr>
+	                                      </s:if>
                                       </s:iterator>
                                       
                                       <tr>
@@ -511,12 +540,14 @@ function SearchForm_onsubmit() {
                                       </tr>
                                       
                                      <s:iterator value="projectChannel8Articles" status="st">
+                                     <s:if test="#st.index<5">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
 	                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
 	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
 	                                        <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
 	                                      </tr>
+	                                      </s:if>
                                       </s:iterator>
                                       
                                       <tr>
@@ -531,12 +562,14 @@ function SearchForm_onsubmit() {
                                         <td width="129" align="center" class="STYLE1"><span class="STYLE4">发布日期</span></td>
                                       </tr>
                                      <s:iterator value="projectChannel9Articles" status="st">
+                                     <s:if test="#st.index<5">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
 	                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
 	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
 	                                        <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
 	                                      </tr>
+	                                      </s:if>
                                       </s:iterator>
                                       
                                       <tr>
@@ -552,12 +585,14 @@ function SearchForm_onsubmit() {
                                       </tr>
                                       
                                      <s:iterator value="projectChannel10Articles" status="st">
+                                     <s:if test="#st.index<5">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
 	                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
 	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
 	                                        <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
 	                                      </tr>
+	                                      </s:if>
                                       </s:iterator>
                                       
                                       <tr>
@@ -573,12 +608,14 @@ function SearchForm_onsubmit() {
                                       </tr>
                                       
                                      <s:iterator value="projectChannel11Articles" status="st">
+                                     <s:if test="#st.index<5">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
 	                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
 	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
 	                                        <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
 	                                      </tr>
+	                                      </s:if>
                                       </s:iterator>
                                       
                                       <tr>
@@ -646,12 +683,14 @@ function SearchForm_onsubmit() {
                                       </tr>
                                       
                                       <s:iterator value="projectChannel12Articles" status="st">
+                                      <s:if test="#st.index<5">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
 	                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
 	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
 	                                        <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
 	                                      </tr>
+	                                      </s:if>
                                       </s:iterator>
                                       
                                       <tr>
@@ -667,12 +706,14 @@ function SearchForm_onsubmit() {
                                       </tr>
                                       
                                      <s:iterator value="projectChannel13Articles" status="st">
+                                     <s:if test="#st.index<5">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
 	                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
 	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
 	                                        <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
 	                                      </tr>
+	                                      </s:if>
                                       </s:iterator>
                                       
                                       <tr>
@@ -687,12 +728,14 @@ function SearchForm_onsubmit() {
                                         <td width="129" align="center" class="STYLE1"><span class="STYLE4">发布日期</span></td>
                                       </tr>
                                      <s:iterator value="projectChannel14Articles" status="st">
+                                     <s:if test="#st.index<5">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
 	                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
 	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
 	                                        <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
 	                                      </tr>
+	                                      </s:if>
                                       </s:iterator>
                                       
                                       <tr>
@@ -726,47 +769,12 @@ function SearchForm_onsubmit() {
                           </tr>
                           <tr>
                             <td valign="top"><table width="615" border="0" align="center" cellpadding="0" cellspacing="0">
-							    
-                                <tr>
-                                  
-                                  
-                                  <td height="32" align="left" valign="middle"><a href='http://www.lsq.gov.cn/SWGK/GcFille/Gc_index.aspx' title="庐山区" target="_blank" class="STYLE3">&nbsp;&nbsp;庐山区</a></td>
-								  
-                                  <td height="32" align="left" valign="middle"><a href='http://www.jjx.gov.cn/html/cc/cc1/gcjslyxmxxhxyxxgkgxpt/' title="九江县" target="_blank" class="STYLE3">&nbsp;&nbsp;九江县</a></td>
-								  
-                                  <td height="32" align="left" valign="middle"><a href='http://www.dean.gov.cn/web/dean_gcly.asp?ts=10&lm=251|252|254|253|255|256|257' title="德安县" target="_blank" class="STYLE3">&nbsp;&nbsp;德安县</a></td>
-								  
-                                  <td height="32" align="left" valign="middle"><a href='http://www.yongxiu.gov.cn/yxxgcly/' title="永修县" target="_blank" class="STYLE3">&nbsp;&nbsp;永修县</a></td>
-								     <td height="32" align="left" valign="middle"><a href='http://218.204.68.90:81/Constr/default.html' title="庐山管理局" target="_blank" class="STYLE3">&nbsp;&nbsp;庐山管理局</a></td>                            
-								                                  </tr>
-								
-                                <tr>
-								  
-                                  <td height="32" align="left" valign="middle"><a href='http://www.xingzi.gov.cn/xingzi/zhuanti/index.asp?newtype=40F13F' title="星子县" target="_blank" class="STYLE3">&nbsp;&nbsp;星子县</a></td>
-								  
-                                  <td height="32" align="left" valign="middle"><a href='http://www.xiushui.gov.cn/ProjectPublicInfo/index.aspx' title="修水县" target="_blank" class="STYLE3">&nbsp;&nbsp;修水县</a></td>
-								  
-                                  <td height="32" align="left" valign="middle"><a href='http://www.wuning.gov.cn/?list-371.html' title="武宁县" target="_blank" class="STYLE3">&nbsp;&nbsp;武宁县</a></td>
-								  
-                                  <td height="32" align="left" valign="middle"><a href='http://www.ruichang.gov.cn/ztzl/gcjs.asp?types=项目审批公开' title="瑞昌市" target="_blank" class="STYLE3">&nbsp;&nbsp;瑞昌市</a></td>
-								  
-                                  <td height="32" align="left" valign="middle"><a href='http://www.hukou.gov.cn/gc/index.asp' title="湖口县" target="_blank" class="STYLE3">&nbsp;&nbsp;湖口县</a></td>
-								                                  </tr>
-								
-                                <tr>
-								  
-                                  <td height="32" align="left" valign="middle"><a href='http://www.duchang.gov.cn/dcxgcly/' title="都昌县" target="_blank" class="STYLE3">&nbsp;&nbsp;都昌县</a></td>
-								  
-                                  <td height="32" align="left" valign="middle"><a href='http://www.pengze.gov.cn/indexgc.htm' title="彭泽县" target="_blank" class="STYLE3">&nbsp;&nbsp;彭泽县</a></td>
-								  
-                                  <td height="32" align="left" valign="middle"><a href='http://www.gongqing.gov.cn/sites/gongqing/xmxxgk.jsp' title="共青城市" target="_blank" class="STYLE3">&nbsp;&nbsp;共青城市</a></td>
-  
-   									
-                                  <td height="32" align="left" valign="middle"><a href='http://www.jjkfq.gov.cn/xxgs/' title="九江开发区管委会" target="_blank" class="STYLE3">&nbsp;&nbsp;九江开发区管委会</a></td>
-                                  <td height="32" align="left" valign="middle">&nbsp;</td>
-                                 
-								 </tr>
-								
+							    <s:iterator value="xianShiLinkList" status="st">
+                                     <s:if test="#st.index%5==0">
+                                	 </tr><tr>
+                                  </s:if> 
+                                  	<td height="32" align="left" valign="middle"><a href='<s:property value="link"/>'  target="_blank" class="STYLE3">&nbsp;&nbsp;<s:property value="title"/></a></td>                        					
+								</s:iterator>
                                 <tr>
                                   <td align="center" valign="middle" colspan="5"></td>
                                 </tr>
@@ -834,10 +842,12 @@ function SearchForm_onsubmit() {
                                   <!--<td width="80" bgcolor="#EBEBEB" align="center">发布时间</td>-->
                                       </tr>
                                      <s:iterator value="projectChannel15Articles" status="st">
+                                     <s:if test="#st.index<4">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
 	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
 	                                      </tr>
+	                                      </s:if>
                                       </s:iterator>                                      
                                       <tr>
                                         <td colspan="4"></td>
@@ -851,10 +861,12 @@ function SearchForm_onsubmit() {
                                   <!--<td width="80" bgcolor="#EBEBEB" align="center">发布时间</td>-->
                                       </tr>
                                       <s:iterator value="projectChannel16Articles" status="st">
+                                      <s:if test="#st.index<4">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
 	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
 	                                      </tr>
+	                                      </s:if>
                                       </s:iterator>                                     
                                       <tr>
                                         <td colspan="4"></td>
@@ -869,10 +881,12 @@ function SearchForm_onsubmit() {
                                       </tr>
                                       
                                      <s:iterator value="projectChannel17Articles" status="st">
+                                      <s:if test="#st.index<4">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
 	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
 	                                      </tr>
+	                                      </s:if>
                                       </s:iterator>
                                       
                                       <tr>
@@ -887,10 +901,12 @@ function SearchForm_onsubmit() {
                                   <!--<td width="80" bgcolor="#EBEBEB" align="center">发布时间</td>-->
                                       </tr>
                                       <s:iterator value="projectChannel18Articles" status="st">
+                                       <s:if test="#st.index<4">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
 	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
 	                                      </tr>
+	                                      </s:if>
                                       </s:iterator>                                     
                                       <tr>
                                         <td colspan="4"></td>
@@ -947,12 +963,14 @@ function SearchForm_onsubmit() {
                                         <td width="230" align="center">单位名称 </td>
                                         <td width="80" align="center">发布时间</td>
                                       </tr>
-                                     <s:iterator value="lhxwjlxxEnterprises" status="st">
+                                     <s:iterator value="lhxwjlxxEnterprises" status="st">\
+                                      <s:if test="#st.index<4">
                                       <tr>
                                         <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
                                         <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="enterprisedetail"/>?articleId=<s:property value="id"/>' title="<s:property value="enterpriseBasic.name"/>" target="_blank" class="STYLE3"><s:property value="enterpriseBasic.name"/></a></td>
                                         <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
                                       </tr>
+                                      </s:if>
                                       </s:iterator>                
                                       <tr>
                                         <td colspan="3" width="100%"></td>
@@ -965,11 +983,13 @@ function SearchForm_onsubmit() {
                                         <td width="80" align="center">发布时间</td>
                                       </tr>
                                      <s:iterator value="blxwjlxxEnterprises" status="st">
+                                      <s:if test="#st.index<4">
                                       <tr>
                                         <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
                                         <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="enterprisedetail"/>?articleId=<s:property value="id"/>' title="<s:property value="enterpriseBasic.name"/>" target="_blank" class="STYLE3"><s:property value="enterpriseBasic.name"/></a></td>
                                         <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
                                       </tr>
+                                      </s:if>
                                       </s:iterator>                                       
                                       <tr>
                                         <td colspan="3" width="100%"></td>
@@ -1008,11 +1028,13 @@ function SearchForm_onsubmit() {
                                         <td width="80" align="center">发布时间</td>
                                       </tr>
                                      <s:iterator value="ryjbxxArticles" status="st">
+                                      <s:if test="#st.index<4">
                                       <tr>
                                         <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
                                         <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="employedetail"/>?articleId=<s:property value="id"/>' title="<s:property value="name"/>" target="_blank" class="STYLE3"><s:property value="name"/></a></td>
                                         <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
                                       </tr>
+                                      </s:if>
                                       </s:iterator>  
                                       <tr>
                                         <td colspan="3" width="100%"></td>
@@ -1025,11 +1047,13 @@ function SearchForm_onsubmit() {
                                         <td width="80" align="center">发布时间</td>
                                       </tr>
                                      <s:iterator value="zyzgxxArticles" status="st" >
+                                      <s:if test="#st.index<4">
                                       <tr>
                                         <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
                                         <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="employedetail"/>?articleId=<s:property value="id"/>' title="<s:property value="employeBasic.name"/>" target="_blank" class="STYLE3"><s:property value="employeBasic.name"/></a></td>
                                         <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
                                       </tr>
+                                       </s:if>
                                       </s:iterator>
                                       
                                       <tr>
@@ -1060,59 +1084,21 @@ function SearchForm_onsubmit() {
 		  <tr>
 	　　　　　 <td valign="bottom" width="135"><img src="<s:url value="/ewcmssource/front/main-15-01.jpg"/>" width="135" height="29" border="0" /></td>
 			  <td width="286" align="right" valign="bottom"><a href="http://gc.cio360.org/index.html" target="_blank"><img src="<s:url value="/ewcmssource/front/20120428jl_1.jpg"/>" width="286" height="30" border="0" /></a></td>
-	          <td width="286" align="right" valign="bottom"><a href="http://gc.cio360.org/index.html" target="_blank"><img src="<s:url value="/ewcmssource/front/20120428jl_2.jpg"/>" width="286" height="30" border="0" /></a></td>
-	          <td width="286" align="right" valign="bottom"><a href="http://xxgk.jiangxi.gov.cn/gcly/" target="_blank"><img src="<s:url value="/ewcmssource/front/20120428jl_3.jpg"/>" width="286" height="30" border="0" /></a></td>	
+	          <td width="286" align="right" valign="bottom"><a href="http://xxgk.jiangxi.gov.cn/gcly/" target="_blank"><img src="<s:url value="/ewcmssource/front/20120428jl_2.jpg"/>" width="286" height="30" border="0" /></a></td>
+	          <td width="286" align="right" valign="bottom"><a href="http://www.jiujiang.gov.cn/gcjsly/" target="_blank"><img src="<s:url value="/ewcmssource/front/20120428jl_3.jpg"/>" width="286" height="30" border="0" /></a></td>	
 	      </tr></table>
 	 </td>
 	    </tr>
 	        <tr>
 	          <td colspan="3" valign="top" background="<s:url value="/ewcmssource/front/main-15-05.jpg"/>" style="border:#CCCCCC 1px solid"><table width="950" border="0" align="center" cellpadding="0" cellspacing="0">
 	                                
-	                                <tr>
-					
-	                                  <td width="13%" height="30" align="left" valign="middle"><a href='http://218.65.3.189/dwfllm/215/1470/index_115.htm' target="_blank" class="STYLE3">浔阳区监察局</a></td>
-									  
-	                                  <td width="13%" height="30" align="left" valign="middle"><a href='http://218.65.3.189/dwfllm/215/229/index_115.htm' target="_blank" class="STYLE3">浔阳区财政局</a></td>
-									  
-	                                  <td width="13%" height="30" align="left" valign="middle"><a href='http://218.65.3.188/bmgkxx/jjrmyh/' target="_blank" class="STYLE3">浔阳区工信委</a></td>
-									  
-	                                  <td width="13%" height="30" align="left" valign="middle"><a href='http://218.65.3.189/temp/index2.asp' target="_blank" class="STYLE3">浔阳区发改委</a></td>
-									  
-	                                  <td width="13%" height="30" align="left" valign="middle"><a href='http://218.65.3.164:8080/Kxfz/Kxfz.asp' target="_blank" class="STYLE3">浔阳区商务局</a></td>
-									  
-	                                  <td width="13%" height="30" align="left" valign="middle"><a href='http://218.65.3.189/dwfllm/215/221/index_115.htm' target="_blank" class="STYLE3">浔阳区建设环保局</a></td>
-	                                </tr>
-									
-	                                <tr>
-					
-	                                  <td width="13%" height="30" align="left" valign="middle"><a href='http://www.jjgs.gov.cn/' target="_blank" class="STYLE3">浔阳区房产局</a></td>
-									  
-	                                  <td width="13%" height="30" align="left" valign="middle"><a href='http://218.65.3.189/temp/index1.asp' target="_blank" class="STYLE3">浔阳区安监局</a></td>
-									  
-	                                  <td width="13%" height="30" align="left" valign="middle"><a href='http://218.65.3.189/dwfllm/215/220/index_115.htm' target="_blank" class="STYLE3">浔阳区国土局</a></td>
-									  
-	                                  <td width="13%" height="30" align="left" valign="middle"><a href='http://218.65.3.189/dwfllm/215/1466/index_115.htm' target="_blank" class="STYLE3">浔阳区检察院</a></td>
-									  
-	                                  <td width="13%" height="30" align="left" valign="middle"><a href='http://www.jjjcy.gov.cn/c31.aspx' target="_blank" class="STYLE3">浔阳区国税局</a></td>
-									  
-	                                  <td width="13%" height="30" align="left" valign="middle"><a href='http://218.65.3.189/dwfllm/215/1469/index_115.htm' target="_blank" class="STYLE3">浔阳区地税局</a></td>
-									                                  </tr>
-									
-	                                <tr>
-					
-	                                  <td width="13%" height="30" align="left" valign="middle"><a href='http://218.65.3.170/jjswj/web/jj_more.asp?lm2=143' target="_blank" class="STYLE3">浔阳区工商局</a></td>
-									  
-	                                  <td width="13%" height="30" align="left" valign="middle"><a href='http://www.jjslj.gov.cn/zlnews.aspx?classid=80' target="_blank" class="STYLE3">浔阳区园区办</a></td>
-									  
-	                                  <td width="13%" height="30" align="left" valign="middle"><a href='http://218.65.3.189/dwfllm/215/219/index_115.htm' target="_blank" class="STYLE3">浔阳区城投公司</a></td>
-									  
-	                                  <td width="13%" height="30" align="left" valign="middle"><a href='http://www.jjf.gov.cn/caizhenju/zhuanti/ziye.asp?nid=9&newtype=18F10F' target="_blank" class="STYLE3">浔阳区大中路管理办公室</a></td>
-									  
-	                                  <td width="13%" height="30" align="left" valign="middle"><a href='http://218.65.3.189/dwfllm/215/216/index_115.htm' target="_blank" class="STYLE3"></a></td>
-									  
-	                                  <td width="13%" height="30" align="left" valign="middle"><a href='http://www.jjciit.gov.cn/gcly/' target="_blank" class="STYLE3"></a></td>
-									                                  </tr>
-									                               
+							    <s:iterator value="danWeiLinkList" status="st">
+                                     <s:if test="#st.index%5==0">
+                                	 </tr><tr>
+                                  </s:if> 
+                                  	<td height="32" align="left" valign="middle"><a href='<s:url action="selectorarticlelist"/>?code=<s:property value="code"/>'  target="_blank" class="STYLE3">&nbsp;&nbsp;<s:property value="name"/></a></td>                        					
+								</s:iterator>
+                           								                               
 	                                <tr>
 	                                  <td align="center" valign="middle" colspan="6"></td>
 	                                </tr>

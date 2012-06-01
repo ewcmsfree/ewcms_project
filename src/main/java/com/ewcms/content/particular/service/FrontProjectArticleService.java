@@ -5,6 +5,7 @@
  */
 package com.ewcms.content.particular.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +14,12 @@ import com.ewcms.content.particular.dao.FrontProjectArticleDAO;
 import com.ewcms.content.particular.dao.FrontProjectBasicDAO;
 import com.ewcms.content.particular.model.ProjectArticle;
 import com.ewcms.content.particular.model.ProjectBasic;
+import com.ewcms.frontweb.ArticleMainVO;
 import com.ewcms.frontweb.ChannelVO;
+import com.ewcms.frontweb.ProjectArticleVO;
 
 @Service
 public class FrontProjectArticleService implements FrontProjectArticleServiceable {
-
 	@Autowired
 	private FrontProjectArticleDAO projectArticleDAO;
 	@Autowired
@@ -79,6 +81,28 @@ public class FrontProjectArticleService implements FrontProjectArticleServiceabl
 	public int getProjectBasicCount() {
 		return projectBasicAO.getProjectBasicCount();
 	}
-	
-	
+
+	@Override
+	public List<ProjectBasic> findProjectShenPiBasicLimit(String shape,
+			Integer number) {
+		return projectBasicAO.findProjectShenPiBasicLimit(shape, number);
+	}
+
+	@Override
+	public List<ProjectArticleVO> findProjectArticleByCode(String code) {
+		List<ProjectArticle> paList=projectArticleDAO.findProjectArticleByCode(code);
+		List<ProjectArticleVO> paVOList = new ArrayList<ProjectArticleVO>();
+		for(ProjectArticle vo:paList){
+			ProjectArticleVO paVO = new ProjectArticleVO();
+			paVO.setProjectArticle(vo);
+			paVO.setChannelVO(findChannel(vo.getChannelId()));
+			paVOList.add(paVO);
+		}
+		return paVOList;
+	}
+
+	@Override
+	public ProjectBasic findProjectBasicByCode(String code) {
+		return projectBasicAO.findProjectBasicByCode(code);
+	}
 }

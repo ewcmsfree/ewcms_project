@@ -19,6 +19,7 @@ import com.ewcms.common.dao.JpaDAO;
 import com.ewcms.content.particular.model.EmployeBasic;
 import com.ewcms.content.particular.model.ProjectArticle;
 import com.ewcms.content.particular.model.ProjectBasic;
+import com.ewcms.content.particular.model.ProjectBasic.Shape;
 
 @Repository
 public class FrontProjectBasicDAO extends JpaDAO<Long, ProjectBasic> {
@@ -54,5 +55,12 @@ public class FrontProjectBasicDAO extends JpaDAO<Long, ProjectBasic> {
     public int getProjectBasicCount() {
         String sql = "Select count(id) From particular_project_basic";
         return (int) jdbcTemplate.queryForLong(sql);
-    } 	
+    } 
+    
+	public List<ProjectBasic> findProjectShenPiBasicLimit(String shape,Integer number){
+		String hql = "From ProjectBasic As p where p.shape=:shape Order By p.buildTime desc limit "+number;
+		TypedQuery<ProjectBasic> query = this.getEntityManager().createQuery(hql, ProjectBasic.class);
+		query.setParameter("shape", Shape.valueOf(shape));
+		return query.getResultList();
+	}
 }

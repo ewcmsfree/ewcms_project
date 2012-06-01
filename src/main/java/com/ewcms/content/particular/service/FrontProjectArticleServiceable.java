@@ -9,7 +9,9 @@ import java.util.List;
 
 import com.ewcms.content.particular.model.ProjectArticle;
 import com.ewcms.content.particular.model.ProjectBasic;
+import com.ewcms.frontweb.ArticleMainVO;
 import com.ewcms.frontweb.ChannelVO;
+import com.ewcms.frontweb.ProjectArticleVO;
 
 public interface FrontProjectArticleServiceable {
 	public ProjectArticle findProjectArticleById(Long id);
@@ -23,4 +25,8 @@ public interface FrontProjectArticleServiceable {
 	public int getProjectShapeArticleCount(String shape);
 	public List<ProjectBasic> findProjectBasicAll(Integer number);
 	 public int getProjectBasicCount() ;
+	 public List<ProjectBasic> findProjectShenPiBasicLimit(String shape,Integer number);
+	 public List<ProjectArticleVO> findProjectArticleByCode(String code);
+	 public ProjectBasic findProjectBasicByCode(final String code);
+	
 }

@@ -43,12 +43,19 @@
                                       <td align="center"><span class="STYLE4">项目名称</span></td>
                                       <td width="100" align="center"><span class="STYLE4">发布日期</span></td>
                                     </tr>
-									<s:iterator value="projectArticleList" status="st">
+									<s:iterator value="projectBasicList" status="st">
                                     <tr>
                                       <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1+((page.page-1)*20)'/></td>
-                                      <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
-                                      <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
-                                      <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/></td>
+                                      <td align="center" class="STYLE1"><s:property value="code"/></td>
+                                      <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?codeId=<s:property value="code"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="name"/></a></td>
+                                      <td align="center" class="STYLE1">&nbsp;
+                                        	<script type="text/javascript">
+						                      var jsrq = "<s:property value="%{getText('global.date',{buildTime})}"/>";    
+						                      if(jsrq!="null"){
+						                    	  document.write(jsrq);
+						                      }
+						                     </script>
+                                      </td>
                                     </tr>
                                     </s:iterator>
 								</table>

@@ -15,6 +15,7 @@ import com.ewcms.content.particular.model.EmployeBasic;
 import com.ewcms.content.particular.model.EnterpriseArticle;
 import com.ewcms.content.particular.model.ProjectArticle;
 import com.ewcms.content.particular.model.ProjectBasic;
+import com.ewcms.content.particular.model.PublishingSector;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class MainHomeAction extends ActionSupport{
@@ -24,12 +25,12 @@ public class MainHomeAction extends ActionSupport{
 		
 		return "success";
 	}
-	public List<ProjectArticle> getProjectChannel1Articles(){//项目审批信息 
-		return particularFac.findProjectShenPiArticleLimit("APPROVAL", 5);
+	public List<ProjectBasic> getProjectChannel1Articles(){//项目审批信息 
+		return particularFac.findProjectShenPiBasicLimit("APPROVAL", 5);
 	}
 
-	public List<ProjectArticle> getProjectChannel2Articles(){//项目 核准信息
-		return particularFac.findProjectShenPiArticleLimit("APPROVED", 5);
+	public List<ProjectBasic> getProjectChannel2Articles(){//项目 核准信息
+		return particularFac.findProjectShenPiBasicLimit("APPROVED", 5);
 	}
 	public List<ProjectBasic> getProjectChannel3Articles(){//基本信息 
 		return particularFac.findProjectBasicAll(5);
@@ -101,5 +102,12 @@ public class MainHomeAction extends ActionSupport{
 	}	
 	public List<EnterpriseArticle> getBlxwjlxxEnterprises(){//从业单位不良行为记录信息
 		return particularFac.findEnterpriseChannelArticleLimit(Integer.valueOf(getText("enterprise.blxwjlxx")),4);
+	}
+	
+	public List<ArticleMainVO> getXianShiLinkList(){
+		return particularFac.findArticleMainByChannelId(Integer.valueOf(getText("link.xiangshi")));
+	}
+	public List<PublishingSector> getDanWeiLinkList(){
+		return particularFac.findPublishSelectorAll();
 	}	
 }

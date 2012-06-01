@@ -13,7 +13,10 @@ import com.ewcms.content.particular.model.EnterpriseArticle;
 import com.ewcms.content.particular.model.EnterpriseBasic;
 import com.ewcms.content.particular.model.ProjectArticle;
 import com.ewcms.content.particular.model.ProjectBasic;
+import com.ewcms.content.particular.model.PublishingSector;
+import com.ewcms.frontweb.ArticleMainVO;
 import com.ewcms.frontweb.ChannelVO;
+import com.ewcms.frontweb.ProjectArticleVO;
 
 public interface FrontParticularFacable {
 	public ProjectArticle findProjectArticleById(Long id);
@@ -27,8 +30,10 @@ public interface FrontParticularFacable {
 	public int getProjectShapeArticleCount(String shape);
 	public List<ProjectBasic> findProjectBasicAll(Integer number);
 	public int getProjectBasicCount() ;
-	 
-	 
+	public List<ProjectBasic> findProjectShenPiBasicLimit(String shape,Integer number); 
+	public List<ProjectArticleVO> findProjectArticleByCode(String code);
+	public ProjectBasic findProjectBasicByCode(String code);
+	
 	public List<EnterpriseArticle> findEnterpriseArticleLimit(Integer number);
 	public List<EnterpriseArticle> findEnterpriseArticleByPage(int page, int row);
 	public int getEnterpriseArticleCount(Integer channelId);
@@ -47,4 +52,7 @@ public interface FrontParticularFacable {
 	public List<EmployeArticle> findEmployeChannelArticleByPage(int channelId,int page, int row);
 	public List<EmployeBasic> findEmployeBasicAll(Integer number);
 	public int getEmployeBasicCount();	
+	
+	public List<ArticleMainVO> findArticleMainByChannelId(int channelId);
+	public List<PublishingSector> findPublishSelectorAll();
 }
