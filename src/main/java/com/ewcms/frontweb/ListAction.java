@@ -23,6 +23,7 @@ public class ListAction {
 	    protected Page page;
 	    private int channelId;
 	    private ChannelVO channelVO;
+	    private String code;
 	@Autowired
 	private FrontParticularFacable particularFac;
 	private List<ProjectBasic> projectBasicList;
@@ -31,7 +32,6 @@ public class ListAction {
 	private List<ProjectArticle> projectChannelArticleList;
 	private List<EmployeArticle> employeChannelArticleList;
 	private List<EnterpriseArticle> enterpriseChannelArticleList;
-
 	
     public ChannelVO getChannelVO() {
 		return channelVO;

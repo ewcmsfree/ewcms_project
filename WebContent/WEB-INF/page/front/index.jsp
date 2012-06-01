@@ -1093,7 +1093,7 @@ function SearchForm_onsubmit() {
 	          <td colspan="3" valign="top" background="<s:url value="/ewcmssource/front/main-15-05.jpg"/>" style="border:#CCCCCC 1px solid"><table width="950" border="0" align="center" cellpadding="0" cellspacing="0">
 	                                
 							    <s:iterator value="danWeiLinkList" status="st">
-                                     <s:if test="#st.index%5==0">
+                                     <s:if test="#st.index%6==0">
                                 	 </tr><tr>
                                   </s:if> 
                                   	<td height="32" align="left" valign="middle"><a href='<s:url action="selectorarticlelist"/>?code=<s:property value="code"/>'  target="_blank" class="STYLE3">&nbsp;&nbsp;<s:property value="name"/></a></td>                        					
