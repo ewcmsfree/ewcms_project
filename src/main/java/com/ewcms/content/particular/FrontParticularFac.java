@@ -16,10 +16,14 @@ import com.ewcms.content.particular.model.EnterpriseArticle;
 import com.ewcms.content.particular.model.EnterpriseBasic;
 import com.ewcms.content.particular.model.ProjectArticle;
 import com.ewcms.content.particular.model.ProjectBasic;
+import com.ewcms.content.particular.model.PublishingSector;
+import com.ewcms.content.particular.service.FontArticleMainServiceable;
 import com.ewcms.content.particular.service.FrontEmployeArticleServiceable;
 import com.ewcms.content.particular.service.FrontEnterpriseArticleServiceable;
 import com.ewcms.content.particular.service.FrontProjectArticleServiceable;
+import com.ewcms.frontweb.ArticleMainVO;
 import com.ewcms.frontweb.ChannelVO;
+import com.ewcms.frontweb.ProjectArticleVO;
 
 
 @Service
@@ -32,7 +36,8 @@ public class FrontParticularFac implements FrontParticularFacable {
 	private FrontEnterpriseArticleServiceable enterpriseArticleService;
 	@Autowired
 	private FrontEmployeArticleServiceable employeArticleService;
-	
+	@Autowired
+	private FontArticleMainServiceable articleMainService;
 
 
 	@Override
@@ -91,6 +96,22 @@ public class FrontParticularFac implements FrontParticularFacable {
 	@Override
 	public int getProjectBasicCount() {
 		return projectArticleService.getProjectBasicCount();
+	}
+
+	@Override
+	public List<ProjectBasic> findProjectShenPiBasicLimit(String shape,
+			Integer number) {
+		return projectArticleService.findProjectShenPiBasicLimit(shape, number);
+	}
+
+	@Override
+	public List<ProjectArticleVO> findProjectArticleByCode(String code) {
+		return projectArticleService.findProjectArticleByCode(code);
+	}
+
+	@Override
+	public ProjectBasic findProjectBasicByCode(String code) {
+		return projectArticleService.findProjectBasicByCode(code);
 	}
 
 	@Override
@@ -175,6 +196,16 @@ public class FrontParticularFac implements FrontParticularFacable {
 	@Override
 	public int getEmployeBasicCount() {
 		return employeArticleService.getEmployeBasicCount();
+	}
+
+	@Override
+	public List<ArticleMainVO> findArticleMainByChannelId(int channelId) {
+		return articleMainService.findArticleMainByChannelId(channelId);
+	}
+
+	@Override
+	public List<PublishingSector> findPublishSelectorAll() {
+		return articleMainService.findPublishSelectorAll();
 	}
 
 }

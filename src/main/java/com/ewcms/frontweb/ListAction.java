@@ -13,6 +13,7 @@ import com.ewcms.content.particular.FrontParticularFacable;
 import com.ewcms.content.particular.model.EmployeArticle;
 import com.ewcms.content.particular.model.EnterpriseArticle;
 import com.ewcms.content.particular.model.ProjectArticle;
+import com.ewcms.content.particular.model.ProjectBasic;
 
 public class ListAction {
 	 private final static int DEFAULT_ROW = 20;
@@ -22,15 +23,15 @@ public class ListAction {
 	    protected Page page;
 	    private int channelId;
 	    private ChannelVO channelVO;
+	    
 	@Autowired
 	private FrontParticularFacable particularFac;
-	private List<ProjectArticle> projectArticleList;
+	private List<ProjectBasic> projectBasicList;
 	private List<EmployeArticle> employeArticleList;
 	private List<EnterpriseArticle> enterpriseArticleList;
 	private List<ProjectArticle> projectChannelArticleList;
 	private List<EmployeArticle> employeChannelArticleList;
 	private List<EnterpriseArticle> enterpriseChannelArticleList;
-
 	
     public ChannelVO getChannelVO() {
 		return channelVO;
@@ -49,15 +50,14 @@ public class ListAction {
     }
     
     
-	public List<ProjectArticle> getProjectArticleList() {
-		return projectArticleList;
+
+	public List<ProjectBasic> getProjectBasicList() {
+		return projectBasicList;
 	}
 
-	public void setProjectArticleList(List<ProjectArticle> projectArticleList) {
-		this.projectArticleList = projectArticleList;
+	public void setProjectBasicList(List<ProjectBasic> projectBasicList) {
+		this.projectBasicList = projectBasicList;
 	}
-
-	
 
 	public List<EmployeArticle> getEmployeArticleList() {
 		return employeArticleList;
@@ -112,8 +112,8 @@ public class ListAction {
 	}
 
 	public String projectArticleListByPage(){
-		projectArticleList = particularFac.findProjectArticleByPage(pageNumber, row);
-		page =  new Page.Builder(particularFac.getProjectArticleCount(null), pageNumber + 1).setPageSize(row).build();
+//		projectBasicList = particularFac.findProjectArticleByPage(pageNumber, row);
+//		page =  new Page.Builder(particularFac.getProjectArticleCount(null), pageNumber + 1).setPageSize(row).build();
 		return "success";
 	}
 	public String projectChannelArticleListByPage(){
@@ -147,13 +147,13 @@ public class ListAction {
 	}	
 	
 	public String projectShenPiListByPage(){
-		projectArticleList = particularFac.findProjectShenPiArticleLimit("APPROVAL", 99999);
+		projectBasicList = particularFac.findProjectShenPiBasicLimit("APPROVAL", 99999);
 		page =  new Page.Builder(particularFac.getProjectShapeArticleCount("APPROVAL"), pageNumber + 1).setPageSize(row).build();
 		return "success";		
 	}
 	
 	public String projectHeZhunListByPage(){
-		projectArticleList = particularFac.findProjectShenPiArticleLimit("APPROVED", 99999);
+		projectBasicList = particularFac.findProjectShenPiBasicLimit("APPROVED", 99999);
 		page =  new Page.Builder(particularFac.getProjectShapeArticleCount("APPROVED"), pageNumber + 1).setPageSize(row).build();
 		return "success";		
 	}	

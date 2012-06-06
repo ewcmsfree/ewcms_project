@@ -5,22 +5,36 @@
  */
 package com.ewcms.frontweb;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.ewcms.content.particular.FrontParticularFacable;
 import com.ewcms.content.particular.model.EmployeArticle;
 import com.ewcms.content.particular.model.EnterpriseArticle;
 import com.ewcms.content.particular.model.ProjectArticle;
+import com.ewcms.content.particular.model.ProjectBasic;
 
 public class DetailAction {
 	private Long articleId;
+	private String codeId;
 	private ProjectArticle paVO;
 	private EmployeArticle eaVO;
 	private EnterpriseArticle epaVO;
 	private ChannelVO channelVO;
+	private ProjectBasic pbVO;
+	private List<ProjectArticleVO> projectArticleList;
 	@Autowired
 	private FrontParticularFacable particularFac;
 
+
+	public ProjectBasic getPbVO() {
+		return pbVO;
+	}
+
+	public void setPbVO(ProjectBasic pbVO) {
+		this.pbVO = pbVO;
+	}
 
 	public ChannelVO getChannelVO() {
 		return channelVO;
@@ -28,6 +42,14 @@ public class DetailAction {
 
 	public void setChannelVO(ChannelVO channelVO) {
 		this.channelVO = channelVO;
+	}
+
+	public String getCodeId() {
+		return codeId;
+	}
+
+	public void setCodeId(String codeId) {
+		this.codeId = codeId;
 	}
 
 	public Long getArticleId() {
@@ -61,9 +83,19 @@ public class DetailAction {
 		this.epaVO = epaVO;
 	}
 
+
+
+	public List<ProjectArticleVO> getProjectArticleList() {
+		return projectArticleList;
+	}
+
+	public void setProjectArticleList(List<ProjectArticleVO> projectArticleList) {
+		this.projectArticleList = projectArticleList;
+	}
+
 	public String projectDetail(){
-		setPaVO(particularFac.findProjectArticleById(articleId));
-		this.setChannelVO(particularFac.findChannel(paVO.getChannelId()));
+		setPbVO(particularFac.findProjectBasicByCode(codeId));
+		this.setProjectArticleList(particularFac.findProjectArticleByCode(codeId));
 		return "success";
 	}
 	
