@@ -13,6 +13,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -50,7 +51,7 @@ import javax.persistence.TemporalType;
  * <li>shape:形式</li>
  * <li>documentId:文号</li>
  * <li>participation:参建单位</li>
- * <li>publishingSector:发布部门</li>
+ * <li>organ:组织机构</li>
  * <li>channelId:专栏编号</li>
  * <li>release:发布</li>
  * </ul>
@@ -130,7 +131,7 @@ public class ProjectBasic implements Serializable {
 	@JoinColumn(name="industry_code", nullable = false)
 	private IndustryCode industryCode;
 	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE, CascadeType.REFRESH}, targetEntity = ApprovalRecord.class)
-	@JoinColumn(name="approval_code", nullable = false)
+	@JoinColumn(name="approval_code")
 	private ApprovalRecord approvalRecord;
 	@Column(name = "contact", length = 200, nullable = false)
 	private String contact;
@@ -150,9 +151,9 @@ public class ProjectBasic implements Serializable {
 	private String documentId;
 	@Column(name = "participation", length = 200)
 	private String participation;
-	@OneToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE, CascadeType.REFRESH}, targetEntity = PublishingSector.class)
-	@JoinColumn(name="publishing_sector")
-	private PublishingSector publishingSector;
+	@OneToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.EAGER, targetEntity = Organ.class)
+	@JoinColumn(name = "organ_id")
+	private Organ organ;
 	@Column(name = "channel_id")
 	private Integer channelId;
 	@Column(name = "release")
@@ -362,12 +363,12 @@ public class ProjectBasic implements Serializable {
 		this.participation = participation;
 	}
 
-	public PublishingSector getPublishingSector() {
-		return publishingSector;
+	public Organ getOrgan() {
+		return organ;
 	}
 
-	public void setPublishingSector(PublishingSector publishingSector) {
-		this.publishingSector = publishingSector;
+	public void setOrgan(Organ organ) {
+		this.organ = organ;
 	}
 
 	public Integer getChannelId() {

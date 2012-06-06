@@ -13,6 +13,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,7 +31,7 @@ import javax.persistence.TemporalType;
  * <li>id:编号</li>
  * <li>name:人员姓名</li> 
  * <li>sex:性别</li> 
- * <li>publishingSector:发布部门</li>
+ * <li>organ:组织机构</li>
  * <li>published:发布时间</li>
  * <li>cardType:证件类型</li>
  * <li>cardCode:证件号码</li>
@@ -91,9 +92,9 @@ public class EmployeBasic implements Serializable {
 	@Column(name = "sex", nullable = false)
 	@Enumerated(EnumType.STRING)
 	private Sex sex;
-	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH }, targetEntity = PublishingSector.class)
-	@JoinColumn(name = "publishing_sector")
-	private PublishingSector publishingSector;
+	@OneToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.EAGER, targetEntity = Organ.class)
+	@JoinColumn(name = "organ_id")
+	private Organ organ;
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "published")
 	private Date published;
@@ -109,6 +110,10 @@ public class EmployeBasic implements Serializable {
 	private Integer channelId;
 	@Column(name = "release")
 	private Boolean release;
+	
+	public EmployeBasic(){
+		release = false;
+	}
 	
 	public Long getId() {
 		return id;
@@ -142,12 +147,12 @@ public class EmployeBasic implements Serializable {
 		this.sex = sex;
 	}
 
-	public PublishingSector getPublishingSector() {
-		return publishingSector;
+	public Organ getOrgan() {
+		return organ;
 	}
 
-	public void setPublishingSector(PublishingSector publishingSector) {
-		this.publishingSector = publishingSector;
+	public void setOrgan(Organ organ) {
+		this.organ = organ;
 	}
 
 	public Date getPublished() {

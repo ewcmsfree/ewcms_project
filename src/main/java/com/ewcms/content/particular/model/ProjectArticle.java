@@ -13,6 +13,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,12 +30,13 @@ import javax.persistence.TemporalType;
  * <ul>
  * <li>id:编号</li>
  * <li>projectBasic:项目基本数据</li>
- * <li>publishingSector:发布部门</li>
+ * <li>organ:组织机构</li>
  * <li>content:内容</li>
  * <li>published:发布日期</li>
  * <li>dense:所属密级</li>
  * <li>channelId:专栏编号</li>
  * <li>release:发布</li>
+ * <li>organ:组织机构</li>
  * </ul>
  * 
  * @author wuzhijun
@@ -53,9 +55,9 @@ public class ProjectArticle implements Serializable {
 	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH }, targetEntity = ProjectBasic.class)
 	@JoinColumn(name = "project_basic_code", nullable = false)
 	private ProjectBasic projectBasic;
-	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH }, targetEntity = PublishingSector.class)
-	@JoinColumn(name = "publishingsector_code")
-	private PublishingSector publishingSector;
+	@OneToOne(cascade = {CascadeType.REFRESH}, fetch = FetchType.EAGER, targetEntity = Organ.class)
+	@JoinColumn(name = "organ_id")
+	private Organ organ;
 	@OneToOne(cascade = { CascadeType.ALL }, targetEntity = ParticularContent.class)
 	@JoinColumn(name = "content_id")
 	private ParticularContent content;
@@ -70,6 +72,10 @@ public class ProjectArticle implements Serializable {
 	@Column(name = "release")
 	private Boolean release;
 
+	public ProjectArticle(){
+		release = false;
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -86,12 +92,12 @@ public class ProjectArticle implements Serializable {
 		this.projectBasic = projectBasic;
 	}
 
-	public PublishingSector getPublishingSector() {
-		return publishingSector;
+	public Organ getOrgan() {
+		return organ;
 	}
 
-	public void setPublishingSector(PublishingSector publishingSector) {
-		this.publishingSector = publishingSector;
+	public void setOrgan(Organ organ) {
+		this.organ = organ;
 	}
 
 	public ParticularContent getContent() {
