@@ -14,8 +14,9 @@ import com.ewcms.content.particular.model.EmployeArticle;
 import com.ewcms.content.particular.model.EnterpriseArticle;
 import com.ewcms.content.particular.model.ProjectArticle;
 import com.ewcms.content.particular.model.ProjectBasic;
+import com.opensymphony.xwork2.ActionSupport;
 
-public class ListAction {
+public class ListAction extends ActionSupport{
 	 private final static int DEFAULT_ROW = 20;
 	 
 	    protected int pageNumber;
@@ -26,12 +27,10 @@ public class ListAction {
 	    
 	@Autowired
 	private FrontParticularFacable particularFac;
-	private List<ProjectBasic> projectBasicList;
+	private List<ProjectArticle> projectShenPiList;
 	private List<EmployeArticle> employeArticleList;
 	private List<EnterpriseArticle> enterpriseArticleList;
-	private List<ProjectArticle> projectChannelArticleList;
-	private List<EmployeArticle> employeChannelArticleList;
-	private List<EnterpriseArticle> enterpriseChannelArticleList;
+
 	
     public ChannelVO getChannelVO() {
 		return channelVO;
@@ -51,12 +50,12 @@ public class ListAction {
     
     
 
-	public List<ProjectBasic> getProjectBasicList() {
-		return projectBasicList;
+	public List<ProjectArticle> getProjectShenPiList() {
+		return projectShenPiList;
 	}
 
-	public void setProjectBasicList(List<ProjectBasic> projectBasicList) {
-		this.projectBasicList = projectBasicList;
+	public void setProjectShenPiList(List<ProjectArticle> projectShenPiList) {
+		this.projectShenPiList = projectShenPiList;
 	}
 
 	public List<EmployeArticle> getEmployeArticleList() {
@@ -76,23 +75,6 @@ public class ListAction {
 		this.enterpriseArticleList = enterpriseArticleList;
 	}
 
-	public List<EmployeArticle> getEmployeChannelArticleList() {
-		return employeChannelArticleList;
-	}
-
-	public void setEmployeChannelArticleList(
-			List<EmployeArticle> employeChannelArticleList) {
-		this.employeChannelArticleList = employeChannelArticleList;
-	}
-
-	public List<EnterpriseArticle> getEnterpriseChannelArticleList() {
-		return enterpriseChannelArticleList;
-	}
-
-	public void setEnterpriseChannelArticleList(
-			List<EnterpriseArticle> enterpriseChannelArticleList) {
-		this.enterpriseChannelArticleList = enterpriseChannelArticleList;
-	}
 
 	public int getChannelId() {
 		return channelId;
@@ -102,59 +84,29 @@ public class ListAction {
 		this.channelId = channelId;
 	}
 
-	public List<ProjectArticle> getProjectChannelArticleList() {
-		return projectChannelArticleList;
-	}
-
-	public void setProjectChannelArticleList(
-			List<ProjectArticle> projectChannelArticleList) {
-		this.projectChannelArticleList = projectChannelArticleList;
-	}
 
 	public String projectArticleListByPage(){
 //		projectBasicList = particularFac.findProjectArticleByPage(pageNumber, row);
 //		page =  new Page.Builder(particularFac.getProjectArticleCount(null), pageNumber + 1).setPageSize(row).build();
 		return "success";
 	}
-	public String projectChannelArticleListByPage(){
-		projectChannelArticleList = particularFac.findProjectChannelArticleByPage(channelId,pageNumber, row);
-		page =  new Page.Builder(particularFac.getProjectArticleCount(channelId), pageNumber + 1).setPageSize(row).build();
-		this.setChannelVO(particularFac.findChannel(channelId));
-		return "success";		
-	}
-	public String employeArticleListByPage(){
-		employeArticleList = particularFac.findEmployeArticleByPage(pageNumber, row);
-		page =  new Page.Builder(particularFac.getEmployeArticleCount(null), pageNumber + 1).setPageSize(row).build();
-		return "success";
-	}
-	public String employeChannelArticleListByPage(){
-		employeChannelArticleList = particularFac.findEmployeChannelArticleByPage(channelId,pageNumber, row);
-		page =  new Page.Builder(particularFac.getEmployeArticleCount(channelId), pageNumber + 1).setPageSize(row).build();
-		this.setChannelVO(particularFac.findChannel(channelId));
-		return "success";
-	}	
-	
+		
 	public String enterpriseArticleListByPage(){
 		enterpriseArticleList = particularFac.findEnterpriseArticleByPage(pageNumber, row);
 		page =  new Page.Builder(particularFac.getEnterpriseArticleCount(null), pageNumber + 1).setPageSize(row).build();
 		return "success";
 	}
-	public String enterpriseChannelArticleListByPage(){
-		enterpriseChannelArticleList = particularFac.findEnterpriseChannelArticleByPage(channelId,pageNumber, row);
-		page =  new Page.Builder(particularFac.getEnterpriseArticleCount(channelId), pageNumber + 1).setPageSize(row).build();
-		this.setChannelVO(particularFac.findChannel(channelId));
+
+	
+	public String employeArticleListByPage(){
+		employeArticleList = particularFac.findEmployeArticleByPage(pageNumber, row);
+		page =  new Page.Builder(particularFac.getEmployeArticleCount(null), pageNumber + 1).setPageSize(row).build();
 		return "success";
 	}	
-	
 	public String projectShenPiListByPage(){
-		projectBasicList = particularFac.findProjectShenPiBasicLimit("APPROVAL", 99999);
-		page =  new Page.Builder(particularFac.getProjectShapeArticleCount("APPROVAL"), pageNumber + 1).setPageSize(row).build();
-		return "success";		
-	}
-	
-	public String projectHeZhunListByPage(){
-		projectBasicList = particularFac.findProjectShenPiBasicLimit("APPROVED", 99999);
-		page =  new Page.Builder(particularFac.getProjectShapeArticleCount("APPROVED"), pageNumber + 1).setPageSize(row).build();
+		String childrens = particularFac.findChannelChildrensByChannelId(Integer.valueOf(getText("channel.parentId")));
+		projectShenPiList = particularFac.findProjectShenPiArticleLimit(childrens);
+		page =  new Page.Builder(particularFac.getProjectShenPiArticleCount(childrens), pageNumber + 1).setPageSize(row).build();
 		return "success";		
 	}	
 }

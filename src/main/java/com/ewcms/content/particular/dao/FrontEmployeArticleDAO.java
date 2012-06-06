@@ -20,7 +20,6 @@ import org.springframework.stereotype.Repository;
 import com.ewcms.common.dao.JpaDAO;
 import com.ewcms.content.particular.model.Dense;
 import com.ewcms.content.particular.model.EmployeArticle;
-import com.ewcms.content.particular.model.EnterpriseArticle;
 
 @Repository
 public class FrontEmployeArticleDAO extends JpaDAO<Long, EmployeArticle> {
@@ -35,6 +34,20 @@ public class FrontEmployeArticleDAO extends JpaDAO<Long, EmployeArticle> {
 	public List<EmployeArticle> findEmployeArticleLimit(Integer number){
 		String hql = "From EmployeArticle As p Order By p.published desc limit "+number;
 		TypedQuery<EmployeArticle> query = this.getEntityManager().createQuery(hql, EmployeArticle.class);
+		return query.getResultList();
+	}
+	
+	public List<EmployeArticle> findEmployeArticleBySector(Long organId){
+		String hql = "From EmployeArticle As p where p.organ.id=:organId Order By p.published desc ";
+		TypedQuery<EmployeArticle> query = this.getEntityManager().createQuery(hql, EmployeArticle.class);
+		query.setParameter("organId", Integer.valueOf(organId.toString()));
+		return query.getResultList();
+	}
+	
+	public List<EmployeArticle> findEmployeArticleByCode(String code){
+		String hql = "From EmployeArticle As p where p.employeBasic.cardCode=:code Order By p.published desc ";
+		TypedQuery<EmployeArticle> query = this.getEntityManager().createQuery(hql, EmployeArticle.class);
+		query.setParameter("code", code);
 		return query.getResultList();
 	}
 	
@@ -78,7 +91,7 @@ public class FrontEmployeArticleDAO extends JpaDAO<Long, EmployeArticle> {
     	vo.setId(rs.getLong("id"));
     	vo.setDense(Dense.valueOf(rs.getString("dense")));
     	vo.setPublished(rs.getDate("published"));
-    	vo.setEmployeBasic(frontEmployeBasicDAO.findEmployeBasicByCardCode(rs.getString("employebasic_cardcode")));
+    	vo.setEmployeBasic(frontEmployeBasicDAO.get(rs.getLong("employebasic_cardcode")));
         return vo;
     }
     

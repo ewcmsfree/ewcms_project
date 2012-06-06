@@ -42,7 +42,7 @@ public class FrontProjectBasicDAO extends JpaDAO<Long, ProjectBasic> {
 	
 	public List<ProjectBasic> findProjectBasicAll(Integer number){
 		if(number==null){
-			String hql = "From ProjectBasic As e Order By e.cardCode";
+			String hql = "From ProjectBasic As e Order By e.buildTime desc ";
 			TypedQuery<ProjectBasic> query = this.getEntityManager().createQuery(hql, ProjectBasic.class);
 			return query.getResultList();
 		}else{

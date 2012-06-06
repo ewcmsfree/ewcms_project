@@ -2,24 +2,71 @@ package com.ewcms.frontweb;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.ewcms.content.particular.FrontParticularFacable;
+import com.ewcms.content.particular.model.Organ;
 import com.ewcms.content.particular.model.ProjectArticle;
-import com.ewcms.content.particular.model.PublishingSector;
 
 public class SectorAction {
-	private List<ProjectArticle> projectSelectorArticleList;
-	private PublishingSector sectorVO;
-	private String code;
-	public List<ProjectArticle> getProjectSelectorArticleList() {
-		return projectSelectorArticleList;
+	private List<SectorArticleVO> sectorArticleList;
+	private Long organId;
+	@Autowired
+	private FrontParticularFacable particularFac;
+	private Organ organVO;
+	private final static int DEFAULT_ROW = 20;
+
+	protected int pageNumber;
+	protected int row = DEFAULT_ROW;
+	protected Page page;
+
+	public int getPageNumber() {
+		return pageNumber;
 	}
 
-	public void setProjectSelectorArticleList(
-			List<ProjectArticle> projectSelectorArticleList) {
-		this.projectSelectorArticleList = projectSelectorArticleList;
+	public void setPageNumber(int pageNumber) {
+		this.pageNumber = pageNumber;
 	}
-	
-	public String sectorArticleList(){
-		
+
+	public Page getPage() {
+		return page;
+	}
+
+	public void setPage(Page page) {
+		this.page = page;
+	}
+
+
+
+	public Organ getOrganVO() {
+		return organVO;
+	}
+
+	public void setOrganVO(Organ organVO) {
+		this.organVO = organVO;
+	}
+
+
+	public Long getOrganId() {
+		return organId;
+	}
+
+	public void setOrganId(Long organId) {
+		this.organId = organId;
+	}
+
+	public List<SectorArticleVO> getSectorArticleList() {
+		return sectorArticleList;
+	}
+
+	public void setSectorArticleList(List<SectorArticleVO> sectorArticleList) {
+		this.sectorArticleList = sectorArticleList;
+	}
+
+	public String sectorArticleList() {
+		sectorArticleList = particularFac.getSectorArticleList(organId,pageNumber, row);
+		setOrganVO(particularFac.getPublishingSectorByCode(organId));
+		page =  new Page.Builder(particularFac.getSectorArticleListCount(organId), pageNumber + 1).setPageSize(row).build();
 		return "success";
 	}
 }

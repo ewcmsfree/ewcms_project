@@ -20,9 +20,6 @@ import org.springframework.stereotype.Repository;
 import com.ewcms.common.dao.JpaDAO;
 import com.ewcms.content.particular.model.Dense;
 import com.ewcms.content.particular.model.ProjectArticle;
-import com.ewcms.content.particular.model.ProjectBasic;
-import com.ewcms.content.particular.model.ProjectBasic.Shape;
-import com.ewcms.content.particular.model.PublishingSector;
 import com.ewcms.frontweb.ChannelVO;
 
 @Repository
@@ -40,6 +37,13 @@ public class FrontProjectArticleDAO extends JpaDAO<Long, ProjectArticle> {
 		return query.getResultList();
 	}
 	
+	public List<ProjectArticle> findProjectArticleBySector(Long organId){
+		String hql = "From ProjectArticle As p where p.organ.id=:organId Order By p.published desc ";
+		TypedQuery<ProjectArticle> query = this.getEntityManager().createQuery(hql, ProjectArticle.class);
+		query.setParameter("organId", Integer.valueOf(organId.toString()));
+		return query.getResultList();
+	}
+	
 	public List<ProjectArticle> findProjectArticleByCode(String code){
 		String hql = "From ProjectArticle As p where p.projectBasic.code=:code Order By p.published desc ";
 		TypedQuery<ProjectArticle> query = this.getEntityManager().createQuery(hql, ProjectArticle.class);
@@ -47,10 +51,9 @@ public class FrontProjectArticleDAO extends JpaDAO<Long, ProjectArticle> {
 		return query.getResultList();
 	}
 	
-	public List<ProjectArticle> findProjectShenPiArticleLimit(String shape,Integer number){
-		String hql = "From ProjectArticle As p where p.projectBasic.shape=:shape Order By p.published desc limit "+number;
+	public List<ProjectArticle> findProjectShenPiArticleLimit(String channelChildrens){
+		String hql = "From ProjectArticle As p where p.channelId in("+channelChildrens+") Order By p.published desc ";
 		TypedQuery<ProjectArticle> query = this.getEntityManager().createQuery(hql, ProjectArticle.class);
-		query.setParameter("shape", Shape.valueOf(shape));
 		return query.getResultList();
 	}
 	
@@ -90,11 +93,11 @@ public class FrontProjectArticleDAO extends JpaDAO<Long, ProjectArticle> {
     	}
     } 
   
-    public int getProjectShapeArticleCount(String shape) {
+    public int getProjectShenPiArticleCount(String channelChildrens) {
 
-            String sql = "Select count(*) From particular_project_article t1 ,particular_project_basic t2 where t1.project_basic_code=t2.code and t2.shape=?";
-            Object[] params = new Object[]{shape};
-            return (int) jdbcTemplate.queryForLong(sql,params);
+            String sql = "Select count(p.id) From ProjectArticle as p where p.channelId in("+channelChildrens+") ";
+        	TypedQuery<Long> query = this.getEntityManager().createQuery(sql, Long.class);
+        	return Integer.parseInt(query.getSingleResult().toString());
     } 
     
     private ProjectArticle interactionRowMapper(ResultSet rs) throws SQLException {
@@ -102,7 +105,7 @@ public class FrontProjectArticleDAO extends JpaDAO<Long, ProjectArticle> {
     	vo.setId(rs.getLong("id"));
     	vo.setDense(Dense.valueOf(rs.getString("dense")));
     	vo.setPublished(rs.getDate("published"));
-    	vo.setProjectBasic(frontProjectBasicDAO.findProjectBasicByCode(rs.getString("project_basic_code")));
+    	vo.setProjectBasic(frontProjectBasicDAO.get(rs.getLong("project_basic_code")));
         return vo;
     }   
     

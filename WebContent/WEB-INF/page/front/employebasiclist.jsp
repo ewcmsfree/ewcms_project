@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><s:property value="channelVO.channelName"/></title>
+<title>信用信息公开</title>
 <s:include value="/header.jsp"/>
   <tr>
     <td valign="top" bgcolor="#FFFFFF"><table width="983" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -23,7 +23,7 @@
                           <td height="27" valign="bottom" background="<s:url value="/ewcmssource/front/main-07.jpg"/>"><table border="0" cellspacing="0" cellpadding="0">
                               <tr>
                                 <td width="10" height="23">&nbsp;</td>
-                                <td background="<s:url value="/ewcmssource/front/main-07-3.jpg"/>" align="center" style="padding-left:10px; padding-right:10px"><span class="STYLE4"><s:property value="channelVO.channelName"/></span></td>
+                                <td background="<s:url value="/ewcmssource/front/main-07-3.jpg"/>" align="center" style="padding-left:10px; padding-right:10px"><span class="STYLE4">人员基本信息</span></td>
                               </tr>
                           </table></td>
                         </tr>
@@ -39,16 +39,23 @@
                                 <td height="311" valign="top"><table width="700" border="0" align="center" cellpadding="0" cellspacing="0" class="box">
                                     <tr>
                                       <td width="50" align="center" height="30px"><span class="STYLE4">序号</span></td>
-                                      <td width="150" align="center"><span class="STYLE4">项目编码</span></td>
-                                      <td align="center"><span class="STYLE4">项目名称</span></td>
+                                      <td width="150" align="center"><span class="STYLE4">证件号码</span></td>
+                                      <td align="center"><span class="STYLE4">人员名称</span></td>
                                       <td width="100" align="center"><span class="STYLE4">发布日期</span></td>
                                     </tr>
-									<s:iterator value="projectChannelArticleList" status="st">
+									<s:iterator value="employeBasicList" status="st">
                                     <tr>
                                       <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1+((page.page-1)*20)'/></td>
-                                      <td align="center" class="STYLE1">&nbsp;<s:property value="projectBasic.code"/></td>
-                                      <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' target="_blank" class="STYLE3">&nbsp;<s:property value="projectBasic.name"/></a></td>
-                                      <td align="center" class="STYLE1">&nbsp;<s:property value="%{getText('global.date',{published})}"/></td>
+                                      <td align="center" class="STYLE1"><s:property value="cardCode"/></td>
+                                      <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="employebasicdetail"/>?codeId=<s:property value="cardCode"/>'  target="_blank" class="STYLE3"><s:property value="name"/></a></td>
+                                      <td align="center" class="STYLE1">&nbsp;
+                                        	<script type="text/javascript">
+						                      var jsrq = "<s:property value="%{getText('global.date',{published})}"/>";    
+						                      if(jsrq!="null"){
+						                    	  document.write(jsrq);
+						                      }
+						                     </script>
+                                      </td>
                                     </tr>
                                     </s:iterator>
 								</table>
@@ -122,7 +129,7 @@
                                       </td></tr>
                                       </table></td></tr>  
   <tr><td width="100%" height="10px"></td></tr>
-  <s:include value="/footer.jsp"/>
+<s:include value="/footer.jsp"/>
 </table>
 </body>
 <script language="javascript"> 

@@ -5,6 +5,7 @@
  */
 package com.ewcms.content.particular;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,16 +15,19 @@ import com.ewcms.content.particular.model.EmployeArticle;
 import com.ewcms.content.particular.model.EmployeBasic;
 import com.ewcms.content.particular.model.EnterpriseArticle;
 import com.ewcms.content.particular.model.EnterpriseBasic;
+import com.ewcms.content.particular.model.Organ;
 import com.ewcms.content.particular.model.ProjectArticle;
 import com.ewcms.content.particular.model.ProjectBasic;
-import com.ewcms.content.particular.model.PublishingSector;
 import com.ewcms.content.particular.service.FontArticleMainServiceable;
 import com.ewcms.content.particular.service.FrontEmployeArticleServiceable;
 import com.ewcms.content.particular.service.FrontEnterpriseArticleServiceable;
 import com.ewcms.content.particular.service.FrontProjectArticleServiceable;
 import com.ewcms.frontweb.ArticleMainVO;
 import com.ewcms.frontweb.ChannelVO;
+import com.ewcms.frontweb.EmployeArticleVO;
+import com.ewcms.frontweb.EnterpriseArticleVO;
 import com.ewcms.frontweb.ProjectArticleVO;
+import com.ewcms.frontweb.SectorArticleVO;
 
 
 @Service
@@ -78,14 +82,13 @@ public class FrontParticularFac implements FrontParticularFacable {
 	}
 
 	@Override
-	public int getProjectShapeArticleCount(String shape) {
-		return projectArticleService.getProjectShapeArticleCount(shape);
+	public int getProjectShenPiArticleCount(String channelChildrens)  {
+		return projectArticleService.getProjectShenPiArticleCount(channelChildrens);
 	}
 
 	@Override
-	public List<ProjectArticle> findProjectShenPiArticleLimit(String shape,
-			Integer number) {
-		return projectArticleService.findProjectShenPiArticleLimit(shape, number);
+	public List<ProjectArticle> findProjectShenPiArticleLimit(String channelChildrens) {
+		return projectArticleService.findProjectShenPiArticleLimit(channelChildrens);
 	}
 
 	@Override
@@ -157,6 +160,16 @@ public class FrontParticularFac implements FrontParticularFacable {
 	}
 
 	@Override
+	public List<EnterpriseArticleVO> findEnterpriseArticleByCode(String code) {
+		return enterpriseArticleService.findEnterpriseArticleByCode(code);
+	}
+
+	@Override
+	public List<EmployeArticleVO> findEmployeArticleByCode(String code) {
+		return employeArticleService.findEmployeArticleByCode(code);
+	}
+
+	@Override
 	public List<EmployeArticle> findEmployeArticleLimit(Integer number) {
 		return employeArticleService.findEmployeArticleLimit(number);
 	}
@@ -204,8 +217,90 @@ public class FrontParticularFac implements FrontParticularFacable {
 	}
 
 	@Override
-	public List<PublishingSector> findPublishSelectorAll() {
+	public List<Organ> findPublishSelectorAll() {
 		return articleMainService.findPublishSelectorAll();
 	}
 
+	@Override
+	public List<SectorArticleVO> getSectorArticleList(Long organId,int pageNumber,int row){
+		List<SectorArticleVO> saList = new ArrayList<SectorArticleVO>();
+		List<ProjectArticle> paList = projectArticleService.findProjectArticleBySector(organId);
+		List<EnterpriseArticle> eaList = enterpriseArticleService.findEnterpriseArticleBySector(organId);
+		List<EmployeArticle> employeaList = employeArticleService.findEmployeArticleBySector(organId);
+		for(ProjectArticle vo:paList){
+			SectorArticleVO saVO = new SectorArticleVO();
+			saVO.setArticleId(vo.getId());
+			saVO.setCode(vo.getProjectBasic().getCode());
+			saVO.setName(vo.getProjectBasic().getName());
+			saVO.setPublicTime(vo.getPublished());
+			saVO.setType("project");
+			saList.add(saVO);
+		}
+		
+		for(EnterpriseArticle vo:eaList){
+			SectorArticleVO saVO = new SectorArticleVO();
+			saVO.setArticleId(vo.getId());
+			saVO.setCode(vo.getEnterpriseBasic().getYyzzzch());
+			saVO.setName(vo.getEnterpriseBasic().getName());
+			saVO.setPublicTime(vo.getPublished());
+			saVO.setType("enterprise");
+			saList.add(saVO);
+		}	
+		
+		
+		for(EmployeArticle vo:employeaList){
+			SectorArticleVO saVO = new SectorArticleVO();
+			saVO.setArticleId(vo.getId());
+			saVO.setCode(vo.getEmployeBasic().getCardCode());
+			saVO.setName(vo.getEmployeBasic().getName());
+			saVO.setPublicTime(vo.getPublished());
+			saVO.setType("employe");
+			saList.add(saVO);
+		}
+		if(saList.size()>(pageNumber+1)*row){
+			return saList.subList(pageNumber*row, (pageNumber+1)*row);
+		}else{
+			return saList.subList(pageNumber*row, saList.size());
+		}
+	}
+
+	@Override
+	public int getSectorArticleListCount(Long organId) {
+		List<ProjectArticle> paList = projectArticleService.findProjectArticleBySector(organId);
+		List<EnterpriseArticle> eaList = enterpriseArticleService.findEnterpriseArticleBySector(organId);
+		List<EmployeArticle> employeaList = employeArticleService.findEmployeArticleBySector(organId);
+		int count=0;
+		if(paList!=null){
+			count+=paList.size();
+		}
+		if(eaList!=null){
+			count+=eaList.size();
+		}	
+		if(employeaList!=null){
+			count+=employeaList.size();
+		}		
+		return count;
+	}
+
+	@Override
+	public Organ getPublishingSectorByCode(Long organId) {
+		return articleMainService.getPublishingSectorByCode(organId);
+	}
+
+	@Override
+	public String findChannelChildrensByChannelId(int channelId) {
+		return articleMainService.findChannelChildrensByChannelId(channelId);
+	}
+
+	@Override
+	public EnterpriseBasic findEnterpriseBasicByYyzzzch(String yyzzzch) {
+		return enterpriseArticleService.findEnterpriseBasicByYyzzzch(yyzzzch);
+	}
+
+	@Override
+	public EmployeBasic findEmployeBasicByCardCode(String code) {
+		// TODO Auto-generated method stub
+		return employeArticleService.findEmployeBasicByCardCode(code);
+	}
+	
 }

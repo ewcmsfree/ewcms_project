@@ -46,9 +46,7 @@ a:hover{ color: #FF0000;}
 .box td{ border-right:1px solid #cccccc;border-bottom:1px solid #cccccc; font-size:12px;}
 -->
 </style>
-<script language="javascript"> 
- document.domain="jiangxi.gov.cn";
-</script>
+
 </head>
 <body>
 <table width="1003" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
@@ -115,12 +113,12 @@ function SearchForm_onsubmit() {
                   </table></td>
 		<td width="130" align="center" valign="bottom"><table width="98" border="0" cellpadding="0" cellspacing="0">
                     <tr>
-                      <td height="34" id="xmxxgk" align="center" background="<s:url value="/ewcmssource/front/banner-0001.jpg"/>" class="STYLE10" onmousemove="topchange(this)"><a href="<s:url action="projectlist"/>" class="STYLE10">项目信息公开</a></td>
+                      <td height="34" id="xmxxgk" align="center" background="<s:url value="/ewcmssource/front/banner-0001.jpg"/>" class="STYLE10" onmousemove="topchange(this)"><a href="<s:url action="projectbasiclist"/>" class="STYLE10">项目信息公开</a></td>
                     </tr>
                   </table></td>
                 <td width="120" align="center" valign="bottom"><table width="98" border="0" cellpadding="0" cellspacing="0">
                     <tr>
-                      <td height="34" id="xyxxgk" align="center" background="<s:url value="/ewcmssource/front/banner-0001.jpg"/>" class="STYLE10" onmousemove="topchange(this)"><a href="<s:url action="enterpriselist"/>" class="STYLE10">信用信息公开</a></td>
+                      <td height="34" id="xyxxgk" align="center" background="<s:url value="/ewcmssource/front/banner-0001.jpg"/>" class="STYLE10" onmousemove="topchange(this)"><a href="<s:url action="enterprisebasiclist"/>" class="STYLE10">信用信息公开</a></td>
                     </tr>
                   </table></td>
  
@@ -221,7 +219,7 @@ function SearchForm_onsubmit() {
                                           </table></td>
                                         <td align="right"><table width="98%" border="0" cellpadding="0" cellspacing="0">
                                             <tr>
-                                              <td width="241" height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="sp2" onMouseMove="sp_change(this)" class="STYLE2"><a href="<s:url action="projecthezhunlist"/>?">项目核准信息</a></td>
+                                              <td width="241" height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="sp2" onMouseMove="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=<s:text name="project.channel2"/>">项目核准信息</a></td>
                                             </tr>
                                           </table></td>
                                       </tr>
@@ -239,12 +237,12 @@ function SearchForm_onsubmit() {
                                       <s:if test="#st.index<5">
                                       <tr>
                                         <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
-                                        <td align="center" class="STYLE1"><s:property value="code"/></td>
-                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?codeId=<s:property value="code"/>' title="<s:property value="name"/>" target="_blank" class="STYLE3"><s:property value="name"/></a></td>
+                                        <td align="center" class="STYLE1">&nbsp;<s:property value="projectBasic.code"/></td>
+                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
                                         <td align="center" class="STYLE1">
                                         &nbsp;
                                         	<script type="text/javascript">
-						                      var jsrq = "<s:property value="%{getText('global.date',{buildTime})}"/>";    
+						                      var jsrq = "<s:property value="%{getText('global.date',{published})}"/>";    
 						                      if(jsrq!="null"){
 						                    	  document.write(jsrq);
 						                      }
@@ -269,11 +267,11 @@ function SearchForm_onsubmit() {
                                       <s:if test="#st.index<5">
 	                                      <tr>
 	                                        <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
-	                                        <td align="center" class="STYLE1"><s:property value="code"/></td>
-	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?codeId=<s:property value="code"/>' title="<s:property value="name"/>" target="_blank" class="STYLE3"><s:property value="name"/></a></td>
+	                                        <td align="center" class="STYLE1"><s:property value="projectBasic.code"/></td>
+	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>'  target="_blank" class="STYLE3"><s:property value="projectBasic.name"/></a></td>
 	                                        <td align="center" class="STYLE1">&nbsp;
 	                                      	<script type="text/javascript">
-						                      var jsrq = "<s:property value="%{getText('global.date',{buildTime})}"/>";    
+						                      var jsrq = "<s:property value="%{getText('global.date',{published})}"/>";    
 						                      if(jsrq!="null"){
 						                    	  document.write(jsrq);
 						                      }
@@ -364,47 +362,47 @@ function SearchForm_onsubmit() {
                                       <tr>
                                         <td align="left" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008.jpg"/>" id="jsgl1" onMouseOver="sp_change(this)" class="STYLE7"><a href="<s:url action="projectchannellist"/>?channelId=16">基本信息</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008.jpg"/>" id="jsgl1" onMouseOver="sp_change(this)" class="STYLE7"><a href="<s:url action="projectbasiclist"/>">基本信息</a></td>
                                             </tr>
                                           </table></td>
                                         <td align="left" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl2" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=17">招标投标</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl2" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=<s:text name="project.channel4"/>">招标投标</a></td>
                                             </tr>
                                           </table></td>
                                         <td align="left" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl3" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=18">征地拆迁</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl3" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=<s:text name="project.channel5"/>">征地拆迁</a></td>
                                             </tr>
                                           </table></td>
                                         <td align="left" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl4" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=19">重大变更设计</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl4" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=<s:text name="project.channel6"/>">重大变更设计</a></td>
                                             </tr>
                                           </table></td>
                                         <td align="right" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl5" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=20">施工管理</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl5" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=<s:text name="project.channel7"/>">施工管理</a></td>
                                             </tr>
                                           </table></td>
                                         <td align="right" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl6" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=21">合同履约</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl6" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=<s:text name="project.channel8"/>">合同履约</a></td>
                                             </tr>
                                           </table></td>
                                         <td align="right" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl7" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=22">质量安全</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl7" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=<s:text name="project.channel9"/>">质量安全</a></td>
                                             </tr>
                                           </table></td>
                                         <td align="right" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl8" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=23">资金管理</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl8" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=<s:text name="project.channel10"/>">资金管理</a></td>
                                             </tr>
                                           </table></td>
                                         <td align="right" valign="bottom"><table border="0" cellpadding="0" cellspacing="0" width="98%">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl9" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=56">交(竣)验工</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="jsgl9" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=<s:text name="project.channel11"/>">交(竣)验工</a></td>
                                             </tr>
                                           </table></td>
                                       </tr>
@@ -424,7 +422,7 @@ function SearchForm_onsubmit() {
 	                                      <tr>
 	                                        <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
 	                                        <td align="center" class="STYLE1"><s:property value="code"/></td>
-	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?articleId=<s:property value="id"/>' title="<s:property value="name"/>" target="_blank" class="STYLE3"><s:property value="name"/></a></td>
+	                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectbasicdetail"/>?codeId=<s:property value="code"/>' title="<s:property value="name"/>" target="_blank" class="STYLE3"><s:property value="name"/></a></td>
 	                                        <td align="center" class="STYLE1">&nbsp;
 	                                         <script type="text/javascript">
 						                      var jsrq = "<s:property value="%{getText('global.date',{buildTime})}"/>";    
@@ -654,17 +652,17 @@ function SearchForm_onsubmit() {
                                       <tr>
                                         <td width="210" height="21" valign="bottom"><table width="200" border="0" cellpadding="0" cellspacing="0">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008.jpg"/>" id="tdzb1" onMouseOver="sp_change(this)" class="STYLE7"><a href="<s:url action="projectchannellist"/>?channelId=25">土地招标卖挂牌出让信息</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008.jpg"/>" id="tdzb1" onMouseOver="sp_change(this)" class="STYLE7"><a href="<s:url action="projectchannellist"/>?channelId=<s:text name="project.channel12"/>">土地招标卖挂牌出让信息</a></td>
                                             </tr>
                                           </table></td>
                                         <td width="210"><table width="200" border="0" cellpadding="0" cellspacing="0">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="tdzb2" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=26">国有土地使用权出让结果信息</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="tdzb2" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=<s:text name="project.channel13"/>">国有土地使用权出让结果信息</a></td>
                                             </tr>
                                           </table></td>
                                         <td><table width="204" border="0" cellpadding="0" cellspacing="0">
                                             <tr>
-                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="tdzb3" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=27">建设用地审批信息</a></td>
+                                              <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" id="tdzb3" onMouseOver="sp_change(this)" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=<s:text name="project.channel14"/>">建设用地审批信息</a></td>
                                             </tr>
                                           </table></td>
                                       </tr>
@@ -812,22 +810,22 @@ function SearchForm_onsubmit() {
                                 <tr>
                                   <td width="87" height="21" align="left" valign="bottom"><table width="85" border="0" cellpadding="0" cellspacing="0">
                                       <tr>
-                                        <td width="86" height="21" align="center" background="<s:url value="/ewcmssource/front/main-008.jpg"/>" onMouseOver="sp_change(this)" id="ky1" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=29">探矿权审批</a></td>
+                                        <td width="86" height="21" align="center" background="<s:url value="/ewcmssource/front/main-008.jpg"/>" onMouseOver="sp_change(this)" id="ky1" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=<s:text name="project.channel15"/>">探矿权审批</a></td>
                                       </tr>
                                     </table></td>
                                   <td width="87" align="right"><table width="85" border="0" cellpadding="0" cellspacing="0">
                                       <tr>
-                                        <td width="86" height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" onMouseOver="sp_change(this)" id="ky2" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=30">探矿权出让</a></td>
+                                        <td width="86" height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" onMouseOver="sp_change(this)" id="ky2" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=<s:text name="project.channel16"/>">探矿权出让</a></td>
                                       </tr>
                                     </table></td>
                                   <td width="88" align="right"><table width="85" border="0" cellpadding="0" cellspacing="0">
                                       <tr>
-                                        <td width="86" height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" onMouseOver="sp_change(this)" id="ky3" class="STYLE7"><a href="<s:url action="projectchannellist"/>?channelId=31">采矿权审批</a></td>
+                                        <td width="86" height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" onMouseOver="sp_change(this)" id="ky3" class="STYLE7"><a href="<s:url action="projectchannellist"/>?channelId=<s:text name="project.channel17"/>">采矿权审批</a></td>
                                       </tr>
                                     </table></td>
                                   <td width="88" align="right"><table width="85" border="0" cellpadding="0" cellspacing="0">
                                       <tr>
-                                        <td width="86" height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" onMouseOver="sp_change(this)" id="ky4" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=32">采矿权出让</a></td>
+                                        <td width="86" height="21" align="center" background="<s:url value="/ewcmssource/front/main-008-2.jpg"/>" onMouseOver="sp_change(this)" id="ky4" class="STYLE2"><a href="<s:url action="projectchannellist"/>?channelId=<s:text name="project.channel18"/>">采矿权出让</a></td>
                                       </tr>
                                     </table></td>
                                 </tr>
@@ -837,8 +835,8 @@ function SearchForm_onsubmit() {
                             <td valign="top"><table style="display:none" id="kycon1" width="350" border="0" align="center" cellpadding="0" cellspacing="0" class="box">
                                 <tr>
                                   <!--<td width="40" height="30" bgcolor="#EBEBEB" align="center">序号</td>-->
-                                  <td width="106" height="30" bgcolor="#EBEBEB" align="center">项目编码</td>
-                                  <td align="center" bgcolor="#EBEBEB">项目名称</td>
+                                  <td width="106" height="30"  align="center">项目编码</td>
+                                  <td align="center" >项目名称</td>
                                   <!--<td width="80" bgcolor="#EBEBEB" align="center">发布时间</td>-->
                                       </tr>
                                      <s:iterator value="projectChannel15Articles" status="st">
@@ -856,8 +854,8 @@ function SearchForm_onsubmit() {
                               <table style="display:none" id="kycon2" width="350" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#E7E7E7" class="box">
                                 <tr>
                                      <!--<td width="40" height="30" bgcolor="#EBEBEB" align="center">序号</td>-->
-                                  <td width="106" height="30" bgcolor="#EBEBEB" align="center">项目编码</td>
-                                  <td align="center" bgcolor="#EBEBEB">项目名称</td>
+                                  <td width="106" height="30" align="center">项目编码</td>
+                                  <td align="center">项目名称</td>
                                   <!--<td width="80" bgcolor="#EBEBEB" align="center">发布时间</td>-->
                                       </tr>
                                       <s:iterator value="projectChannel16Articles" status="st">
@@ -875,8 +873,8 @@ function SearchForm_onsubmit() {
                               <table style="display:block" id="kycon3" width="350" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#E7E7E7" class="box">
                                 <tr>
                                      <!--<td width="40" height="30" bgcolor="#EBEBEB" align="center">序号</td>-->
-                                  <td width="106" height="30" bgcolor="#EBEBEB" align="center">项目编码</td>
-                                  <td align="center" bgcolor="#EBEBEB">项目名称</td>
+                                  <td width="106" height="30"  align="center">项目编码</td>
+                                  <td align="center">项目名称</td>
                                   <!--<td width="80" bgcolor="#EBEBEB" align="center">发布时间</td>-->
                                       </tr>
                                       
@@ -896,8 +894,8 @@ function SearchForm_onsubmit() {
                               <table style="display:none" id="kycon4" width="350" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#E7E7E7" class="box">
                                 <tr>
                                      <!--<td width="40" height="30" bgcolor="#EBEBEB" align="center">序号</td>-->
-                                  <td width="106" height="30" bgcolor="#EBEBEB" align="center">项目编码</td>
-                                  <td align="center" bgcolor="#EBEBEB">项目名称</td>
+                                  <td width="106" height="30" align="center">项目编码</td>
+                                  <td align="center" >项目名称</td>
                                   <!--<td width="80" bgcolor="#EBEBEB" align="center">发布时间</td>-->
                                       </tr>
                                       <s:iterator value="projectChannel18Articles" status="st">
@@ -940,12 +938,12 @@ function SearchForm_onsubmit() {
                                 <tr>
                                   <td width="183" align="left" valign="bottom"><table width="172" border="0" cellpadding="0" cellspacing="0">
                                       <tr>
-                                        <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-009.jpg"/>" id="cydw1" onMouseOver="ry_change(this)" class="STYLE7"><a href="<s:url action="enterprisechannellist"/>?channelId=1">从业单位良好行为记录信息</a></td>
+                                        <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-009.jpg"/>" id="cydw1" onMouseOver="ry_change(this)" class="STYLE7"><a href="<s:url action="enterprisechannellist"/>?channelId=<s:text name="enterprise.channel1"/>">从业单位良好行为记录信息</a></td>
                                       </tr>
                                     </table></td>
                                   <td width="172" align="right"><table width="172" border="0" cellpadding="0" cellspacing="0">
                                       <tr>
-                                        <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-009-2.jpg"/>" class="STYLE2" id="cydw2" onMouseOver="ry_change(this)"><a href="<s:url action="enterprisechannellist"/>?channelId=2">从业单位不良行为记录信息</a></td>
+                                        <td height="21" align="center" background="<s:url value="/ewcmssource/front/main-009-2.jpg"/>" class="STYLE2" id="cydw2" onMouseOver="ry_change(this)"><a href="<s:url action="enterprisechannellist"/>?channelId=<s:text name="enterprise.channel2"/>">从业单位不良行为记录信息</a></td>
                                       </tr>
                                     </table></td>
                                 </tr>
@@ -1006,12 +1004,12 @@ function SearchForm_onsubmit() {
                                             <tr>
                                               <td width="183" height="29" align="left" valign="bottom"><table width="172" border="0" cellpadding="0" cellspacing="0">
                                                   <tr>
-                                                    <td height="29" align="center" background="<s:url value="/ewcmssource/front/main-009.jpg"/>" id="ry1" onMouseOver="ry_change(this)" class="STYLE7"><a href="<s:url action="employechannellist"/>?channelId=1">人员基本信息</a></td>
+                                                    <td height="29" align="center" background="<s:url value="/ewcmssource/front/main-009.jpg"/>" id="ry1" onMouseOver="ry_change(this)" class="STYLE7"><a href="<s:url action="employebasiclist"/>">人员基本信息</a></td>
                                                   </tr>
                                                 </table></td>
                                               <td width="172" align="right"><table width="172" border="0" cellpadding="0" cellspacing="0">
                                                   <tr>
-                                                    <td height="29" align="center" background="<s:url value="/ewcmssource/front/main-009-2.jpg"/>" class="STYLE2" id="ry2" onMouseOver="ry_change(this)"><a href="<s:url action="employechannellist"/>?channelId=2">执业资格信息 </a></td>
+                                                    <td height="29" align="center" background="<s:url value="/ewcmssource/front/main-009-2.jpg"/>" class="STYLE2" id="ry2" onMouseOver="ry_change(this)"><a href="<s:url action="employechannellist"/>?channelId=<s:text name="employe.channel1"/>">执业资格信息 </a></td>
                                                   </tr>
                                                 </table></td>
                                             </tr>
@@ -1031,7 +1029,7 @@ function SearchForm_onsubmit() {
                                       <s:if test="#st.index<4">
                                       <tr>
                                         <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
-                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="employedetail"/>?articleId=<s:property value="id"/>' title="<s:property value="name"/>" target="_blank" class="STYLE3"><s:property value="name"/></a></td>
+                                        <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="employebasicdetail"/>?codeId=<s:property value="cardCode"/>' title="<s:property value="name"/>" target="_blank" class="STYLE3"><s:property value="name"/></a></td>
                                         <td align="center" class="STYLE1"><s:property value="%{getText('global.date',{published})}"/>&nbsp;</td>
                                       </tr>
                                       </s:if>
@@ -1096,7 +1094,7 @@ function SearchForm_onsubmit() {
                                      <s:if test="#st.index%6==0">
                                 	 </tr><tr>
                                   </s:if> 
-                                  	<td height="32" align="left" valign="middle"><a href='<s:url action="sectorarticlelist"/>?code=<s:property value="code"/>'  target="_blank" class="STYLE3">&nbsp;&nbsp;<s:property value="name"/></a></td>                        					
+                                  	<td height="32" align="left" valign="middle"><a href='<s:url action="sectorarticlelist"/>?organId=<s:property value="id"/>'  target="_blank" class="STYLE3">&nbsp;&nbsp;<s:property value="name"/></a></td>                        					
 								</s:iterator>
                            								                               
 	                                <tr>

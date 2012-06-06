@@ -6,14 +6,7 @@
 
 <struts>
     <package name="front"  extends="struts-default"> 	
-        <action name="index" class="com.ewcms.frontweb.MainHomeAction">
-            <result>/WEB-INF/page/front/index.jsp</result>
-        </action>
-        
-        <action name="projectdetail" class="com.ewcms.frontweb.DetailAction" method="projectDetail">
-            <result>/WEB-INF/page/front/projectdetail.jsp</result>
-        </action>      
-        <action name="projectdir">
+         <action name="projectdir">
             <result>/WEB-INF/page/front/projectdir.jsp</result>
         </action>
         <action name="projectdescripe">
@@ -28,38 +21,55 @@
         <action name="trustdescripe">
             <result>/WEB-INF/page/front/trustdescripe.jsp</result>
         </action>   
-                                          
+         <action name="index" class="com.ewcms.frontweb.MainHomeAction">
+            <result>/WEB-INF/page/front/index.jsp</result>
+        </action>       
+               
+        <action name="projectdetail" class="com.ewcms.frontweb.DetailAction" method="projectDetail">
+            <result>/WEB-INF/page/front/projectdetail.jsp</result>
+        </action> 
+        <action name="projectbasicdetail" class="com.ewcms.frontweb.BasicDetailAction" method="projectBasicDetail">
+            <result>/WEB-INF/page/front/projectbasicdetail.jsp</result>
+        </action>              
+        <action name="projectshenpilist" class="com.ewcms.frontweb.ListAction" method="projectShenPiListByPage">
+            <result>/WEB-INF/page/front/projectshenpilist.jsp</result>
+        </action>                      
+        <action name="projectbasiclist" class="com.ewcms.frontweb.BasicListAction" method="projectBasicListByPage">
+            <result>/WEB-INF/page/front/projectbasiclist.jsp</result>
+        </action> 
+        <action name="projectchannellist" class="com.ewcms.frontweb.ChannelListAction" method="projectChannelArticleListByPage">
+            <result>/WEB-INF/page/front/projectchannellist.jsp</result>
+        </action>   
+        
+
+        <action name="employebasicdetail" class="com.ewcms.frontweb.BasicDetailAction" method="employeBasicDetail">
+            <result>/WEB-INF/page/front/employebasicdetail.jsp</result>
+        </action>               
+        <action name="employebasiclist" class="com.ewcms.frontweb.BasicListAction" method="employeBasicListByPage">
+            <result>/WEB-INF/page/front/employebasiclist.jsp</result>
+        </action> 
+        <action name="employechannellist" class="com.ewcms.frontweb.ChannelListAction" method="employeChannelArticleListByPage">
+            <result>/WEB-INF/page/front/employechannellist.jsp</result>
+        </action>    
          <action name="employedetail" class="com.ewcms.frontweb.DetailAction" method="employeDetail">
             <result>/WEB-INF/page/front/employedetail.jsp</result>
         </action>
+        
+        
+        <action name="enterprisebasicdetail" class="com.ewcms.frontweb.BasicDetailAction" method="enterpriseBasicDetail">
+            <result>/WEB-INF/page/front/enterprisebasicdetail.jsp</result>
+        </action>        
         <action name="enterprisedetail" class="com.ewcms.frontweb.DetailAction" method="enterpriseDetail">
             <result>/WEB-INF/page/front/enterprisedetail.jsp</result>
-        </action>  
-        <action name="projectshenpilist" class="com.ewcms.frontweb.ListAction" method="projectShenPiListByPage">
-            <result>/WEB-INF/page/front/projectlist.jsp</result>
+        </action>               
+        <action name="enterprisebasiclist" class="com.ewcms.frontweb.BasicListAction" method="enterpriseBasicListByPage">
+            <result>/WEB-INF/page/front/enterprisebasiclist.jsp</result>
         </action> 
-        <action name="projecthezhunlist" class="com.ewcms.frontweb.ListAction" method="projectHeZhunListByPage">
-            <result>/WEB-INF/page/front/projectlist.jsp</result>
-        </action> 
-                             
-        <action name="projectlist" class="com.ewcms.frontweb.ListAction" method="projectArticleListByPage">
-            <result>/WEB-INF/page/front/projectlist.jsp</result>
-        </action> 
-        <action name="projectchannellist" class="com.ewcms.frontweb.ListAction" method="projectChannelArticleListByPage">
-            <result>/WEB-INF/page/front/projectchannellist.jsp</result>
-        </action>         
-        <action name="employelist" class="com.ewcms.frontweb.ListAction" method="employeArticleListByPage">
-            <result>/WEB-INF/page/front/employelist.jsp</result>
-        </action> 
-        <action name="employechannellist" class="com.ewcms.frontweb.ListAction" method="employeChannelArticleListByPage">
-            <result>/WEB-INF/page/front/employechannellist.jsp</result>
-        </action>         
-        <action name="enterpriselist" class="com.ewcms.frontweb.ListAction" method="enterpriseArticleListByPage">
-            <result>/WEB-INF/page/front/enterpriselist.jsp</result>
-        </action> 
-        <action name="enterprisechannellist" class="com.ewcms.frontweb.ListAction" method="enterpriseChannelArticleListByPage">
+        <action name="enterprisechannellist" class="com.ewcms.frontweb.ChannelListAction" method="enterpriseChannelArticleListByPage">
             <result>/WEB-INF/page/front/enterprisechannellist.jsp</result>
         </action> 
+        
+        
         
          <action name="sectorarticlelist" class="com.ewcms.frontweb.SectorAction" method="sectorArticleList">
             <result>/WEB-INF/page/front/sectorarticlelist.jsp</result>

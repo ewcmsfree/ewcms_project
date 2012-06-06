@@ -10,7 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+
+import com.ewcms.content.particular.model.Dense;
+import com.ewcms.content.particular.model.ProjectArticle;
 import com.ewcms.frontweb.ArticleMainVO;
+import com.ewcms.frontweb.ChannelVO;
 
 @Repository
 public class FontArticleMainDAO {
@@ -40,5 +44,25 @@ public class FontArticleMainDAO {
     	vo.setTitle(rs.getString("title"));
     	vo.setLink(rs.getString("url"));
         return vo;
-    }    
+    }
+    
+    public List<ChannelVO> findChannelChildrensByChannelId(int channelId) {
+        String sql = "Select t1.id "
+                + "From site_channel t1 "
+        		+ "where t1.parent_id=? "
+        		+ "order by t1.id";
+        Object[] params = new Object[]{channelId};
+        List<ChannelVO> list = jdbcTemplate.query(sql, params, new RowMapper<ChannelVO>() {
+            @Override
+            public ChannelVO mapRow(ResultSet rs, int rowNum) throws SQLException {
+                return channelRowMapper(rs);
+            }
+        });
+        return list;
+    }     
+    private ChannelVO channelRowMapper(ResultSet rs) throws SQLException {
+    	ChannelVO vo = new ChannelVO();
+    	vo.setId(rs.getInt("id"));
+        return vo;
+    }   
 }

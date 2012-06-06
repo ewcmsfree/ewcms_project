@@ -9,6 +9,7 @@ import java.util.List;
 
 import com.ewcms.content.particular.model.EmployeArticle;
 import com.ewcms.content.particular.model.EmployeBasic;
+import com.ewcms.frontweb.EmployeArticleVO;
 
 
 public interface FrontEmployeArticleServiceable {
@@ -20,4 +21,7 @@ public interface FrontEmployeArticleServiceable {
 	public List<EmployeArticle> findEmployeChannelArticleByPage(int channelId,int page, int row);
 	public List<EmployeBasic> findEmployeBasicAll(Integer number);
 	public int getEmployeBasicCount();
+	public List<EmployeArticle> findEmployeArticleBySector(Long organId);
+	public List<EmployeArticleVO> findEmployeArticleByCode(String code);
+	public EmployeBasic findEmployeBasicByCardCode(String code);
 }

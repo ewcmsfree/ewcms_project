@@ -20,7 +20,6 @@ import org.springframework.stereotype.Repository;
 import com.ewcms.common.dao.JpaDAO;
 import com.ewcms.content.particular.model.Dense;
 import com.ewcms.content.particular.model.EnterpriseArticle;
-import com.ewcms.content.particular.model.ProjectArticle;
 
 @Repository
 public class FrontEnterpriseArticleDAO extends JpaDAO<Long, EnterpriseArticle> {
@@ -42,8 +41,21 @@ public class FrontEnterpriseArticleDAO extends JpaDAO<Long, EnterpriseArticle> {
 			TypedQuery<EnterpriseArticle> query = this.getEntityManager().createQuery(hql, EnterpriseArticle.class);
 			query.setParameter("channelId", channelId);
 			return query.getResultList();
-		}		
-
+		}
+		
+		public List<EnterpriseArticle> findEnterpriseArticleBySector(Long organId){
+			String hql = "From EnterpriseArticle As p where p.organ.id=:organId Order By p.published desc ";
+			TypedQuery<EnterpriseArticle> query = this.getEntityManager().createQuery(hql, EnterpriseArticle.class);
+			query.setParameter("organId",Integer.valueOf(organId.toString()));
+			return query.getResultList();
+		}
+		public List<EnterpriseArticle> findEnterpriseArticleByCode(String code){
+			String hql = "From EnterpriseArticle As p where p.enterpriseBasic.yyzzzch=:code Order By p.published desc ";
+			TypedQuery<EnterpriseArticle> query = this.getEntityManager().createQuery(hql, EnterpriseArticle.class);
+			query.setParameter("code", code);
+			return query.getResultList();
+		}
+		
 	    public List<EnterpriseArticle> findEnterpriseArticleByPage(int page, int row) {
 	        String sql = "Select * "
 	                + "From particular_enterprise_article "
@@ -94,9 +106,7 @@ public class FrontEnterpriseArticleDAO extends JpaDAO<Long, EnterpriseArticle> {
 	    	vo.setId(rs.getLong("id"));
 	    	vo.setDense(Dense.valueOf(rs.getString("dense")));
 	    	vo.setPublished(rs.getDate("published"));
-	    	vo.setEnterpriseBasic(frontEnterpriseBasicDAO.findEnterpriseBasicByYyzzzch(rs.getString("enterprisebasic_yyzzzch")));
+	    	vo.setEnterpriseBasic(frontEnterpriseBasicDAO.get(rs.getLong("enterprisebasic_yyzzzch")));
 	        return vo;
 	    }	
-	    
-	    
 }

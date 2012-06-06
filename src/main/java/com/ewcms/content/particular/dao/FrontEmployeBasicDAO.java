@@ -17,6 +17,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ewcms.common.dao.JpaDAO;
 import com.ewcms.content.particular.model.EmployeBasic;
+import com.ewcms.content.particular.model.ProjectBasic;
 
 @Repository
 public class FrontEmployeBasicDAO extends JpaDAO<Long, EmployeBasic> {
@@ -24,7 +25,8 @@ public class FrontEmployeBasicDAO extends JpaDAO<Long, EmployeBasic> {
     @Autowired
     public void setDataSource(DataSource dataSource) {
         jdbcTemplate = new JdbcTemplate(dataSource);
-    }	
+    }
+	
 	public List<EmployeBasic> findEmployeBasicAll(Integer number){
 		if(number==null){
 			String hql = "From EmployeBasic As e Order By e.published desc";

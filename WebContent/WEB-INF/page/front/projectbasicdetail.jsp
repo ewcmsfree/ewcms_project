@@ -22,17 +22,17 @@
                 <td><table cellpadding="0" cellspacing="0" border="0" width="100%" class="box2">
                     <tr>
                       <td width="10%" align="center" height="30px">项目编码</td>
-                      <td align="left">&nbsp;&nbsp;<s:property value="paVO.projectBasic.code"/></td>
+                      <td align="left">&nbsp;&nbsp;<s:property value="pbVO.code"/></td>
                     </tr>
 					<tr>
                       <td width="10%" align="center" height="30px">项目名称</td>
-                      <td align="left">&nbsp;&nbsp;<s:property value="paVO.projectBasic.name"/></td>
+                      <td align="left">&nbsp;&nbsp;<s:property value="pbVO.name"/></td>
                     </tr>
 					<tr>
                       <td width="10%" align="center" height="30px">建设时间</td>
                       <td align="left">&nbsp;&nbsp;
                       <script type="text/javascript">
-                      var jsrq = "<s:property value="%{getText('global.date',{paVO.projectBasic.buildTime})}"/>";    
+                      var jsrq = "<s:property value="%{getText('global.date',{pbVO.buildTime})}"/>";    
                       if(jsrq!="null"){
                     	  document.write(jsrq);
                       }
@@ -44,7 +44,7 @@
                       <td width="10%" align="center" height="30px">发布时间</td>
                       <td align="left">&nbsp;&nbsp;
                       <script type="text/javascript">
-                      var fbsj = "<s:property value="%{getText('global.date',{paVO.published})}"/>";    
+                      var fbsj = "<s:property value="%{getText('global.date',{pbVO.published})}"/>";    
                       if(fbsj!="null"){
                     	  document.write(fbsj);
                       }
@@ -61,7 +61,7 @@
 		</tr>
 		<tr id="">
           <td valign="top" align="center"><table cellpadding="0" cellspacing="0" width="80%" border="0">
-         
+           <s:iterator value="projectArticleList">
               <tr>
                 <td height="40px" class="fenlei"><s:property value="channelVO.channelName"/></td>
               </tr>
@@ -71,7 +71,7 @@
                     <tr>
                       <td align="left" height="100px" valign="top" id="articlecontent">
                     
-                      		<s:property value="paVO.content.detail" escape="false"/>
+                      		<s:property value="projectArticle.content.detail" escape="false"/>
 							<br><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -83,9 +83,9 @@
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      		——<s:property value="paVO.organ.name" escape="false"/> 
+                      		——<s:property value="projectArticle.organ.name" escape="false"/> 
                       <script type="text/javascript">
-	                      var fbsj = "<s:property value="%{getText('global.date',{paVO.published})}"/>";    
+	                      var fbsj = "<s:property value="%{getText('global.date',{projectArticle.published})}"/>";    
 	                      if(fbsj!="null"){
 	                    	  document.write(fbsj);
 	                      }
@@ -96,6 +96,7 @@
                    
                   </table></td>
               </tr>
+               </s:iterator>
 			  <tr><td width="100%" height="10px"></td></tr>
             </table></td>
         </tr>	        

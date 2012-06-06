@@ -13,9 +13,9 @@ import com.ewcms.content.particular.FrontParticularFacable;
 import com.ewcms.content.particular.model.EmployeArticle;
 import com.ewcms.content.particular.model.EmployeBasic;
 import com.ewcms.content.particular.model.EnterpriseArticle;
+import com.ewcms.content.particular.model.Organ;
 import com.ewcms.content.particular.model.ProjectArticle;
 import com.ewcms.content.particular.model.ProjectBasic;
-import com.ewcms.content.particular.model.PublishingSector;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class MainHomeAction extends ActionSupport{
@@ -25,8 +25,8 @@ public class MainHomeAction extends ActionSupport{
 		
 		return "success";
 	}
-	public List<ProjectBasic> getProjectChannel1Articles(){//项目审批信息 
-		return particularFac.findProjectShenPiBasicLimit("APPROVAL", 5);
+	public List<ProjectArticle> getProjectChannel1Articles(){//项目审批信息 
+		return particularFac.findProjectShenPiArticleLimit(particularFac.findChannelChildrensByChannelId(Integer.valueOf(getText("channel.parentId"))));
 	}
 
 	public List<ProjectArticle> getProjectChannel2Articles(){//项目 核准信息
@@ -93,21 +93,21 @@ public class MainHomeAction extends ActionSupport{
 		return particularFac.findEmployeBasicAll(4);
 	}	
 	public List<EmployeArticle> getZyzgxxArticles(){//职业 资格 信息 
-		return particularFac.findEmployeChannelArticleLimit(Integer.valueOf(getText("employe.zyzgxx")), 4);
+		return particularFac.findEmployeChannelArticleLimit(Integer.valueOf(getText("employe.channel1")), 4);
 	}
 	
 	
 	public List<EnterpriseArticle> getLhxwjlxxEnterprises(){//从业单位 良好行为记录信息
-		return particularFac.findEnterpriseChannelArticleLimit(Integer.valueOf(getText("enterprise.lhxwjlxx")), 4);
+		return particularFac.findEnterpriseChannelArticleLimit(Integer.valueOf(getText("enterprise.channel1")), 4);
 	}	
 	public List<EnterpriseArticle> getBlxwjlxxEnterprises(){//从业单位不良行为记录信息
-		return particularFac.findEnterpriseChannelArticleLimit(Integer.valueOf(getText("enterprise.blxwjlxx")),4);
+		return particularFac.findEnterpriseChannelArticleLimit(Integer.valueOf(getText("enterprise.channel2")),4);
 	}
 	
-	public List<ArticleMainVO> getXianShiLinkList(){
+	public List<ArticleMainVO> getXianShiLinkList(){//县市链接
 		return particularFac.findArticleMainByChannelId(Integer.valueOf(getText("link.xiangshi")));
 	}
-	public List<PublishingSector> getDanWeiLinkList(){
+	public List<Organ> getDanWeiLinkList(){//部门链接
 		return particularFac.findPublishSelectorAll();
 	}	
 }

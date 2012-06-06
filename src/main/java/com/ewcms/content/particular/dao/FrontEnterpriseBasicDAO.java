@@ -16,6 +16,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.ewcms.common.dao.JpaDAO;
+import com.ewcms.content.particular.model.EmployeBasic;
 import com.ewcms.content.particular.model.EnterpriseBasic;
 
 @Repository
@@ -25,7 +26,7 @@ public class FrontEnterpriseBasicDAO extends JpaDAO<Long, EnterpriseBasic> {
     public void setDataSource(DataSource dataSource) {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }	
-    
+	
 	public List<EnterpriseBasic> findEnterpriseBasicAll(Integer number){
 		if(number==null){
 			String hql = "From EnterpriseBasic As e Order By e.yyzzzch";

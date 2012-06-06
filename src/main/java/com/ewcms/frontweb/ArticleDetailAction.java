@@ -15,13 +15,12 @@ import com.ewcms.content.particular.model.EnterpriseArticle;
 import com.ewcms.content.particular.model.ProjectArticle;
 import com.ewcms.content.particular.model.ProjectBasic;
 
-public class DetailAction {
+public class ArticleDetailAction {
 	private Long articleId;
 	private ProjectArticle paVO;
 	private EmployeArticle eaVO;
 	private EnterpriseArticle epaVO;
 	private ChannelVO channelVO;
-
 	@Autowired
 	private FrontParticularFacable particularFac;
 
@@ -33,6 +32,7 @@ public class DetailAction {
 	public void setChannelVO(ChannelVO channelVO) {
 		this.channelVO = channelVO;
 	}
+
 
 	public Long getArticleId() {
 		return articleId;
@@ -64,12 +64,13 @@ public class DetailAction {
 	public void setEpaVO(EnterpriseArticle epaVO) {
 		this.epaVO = epaVO;
 	}
+
 	public String projectDetail(){
 		setPaVO(particularFac.findProjectArticleById(articleId));
 		this.setChannelVO(particularFac.findChannel(paVO.getChannelId()));
 		return "success";
 	}
-
+	
 	public String employeDetail(){
 		setEaVO(particularFac.getEmployeArticle(articleId));
 		this.setChannelVO(particularFac.findChannel(eaVO.getChannelId()));

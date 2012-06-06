@@ -10,6 +10,7 @@ import java.util.List;
 import com.ewcms.content.particular.model.EmployeArticle;
 import com.ewcms.content.particular.model.EnterpriseArticle;
 import com.ewcms.content.particular.model.EnterpriseBasic;
+import com.ewcms.frontweb.EnterpriseArticleVO;
 
 
 public interface FrontEnterpriseArticleServiceable {
@@ -21,4 +22,7 @@ public interface FrontEnterpriseArticleServiceable {
 	public List<EnterpriseArticle> findEnterpriseChannelArticleLimit(Integer channelId,Integer number);
 	public List<EnterpriseBasic> findEnterpriseBasicAll(Integer number);
 	public int getEnterpriseBasicCount();
+	public List<EnterpriseArticle> findEnterpriseArticleBySector(Long organId);
+	public List<EnterpriseArticleVO> findEnterpriseArticleByCode(String code);
+	public EnterpriseBasic findEnterpriseBasicByYyzzzch(String yyzzzch);
 }

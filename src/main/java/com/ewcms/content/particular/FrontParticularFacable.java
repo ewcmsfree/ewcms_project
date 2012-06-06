@@ -11,12 +11,15 @@ import com.ewcms.content.particular.model.EmployeArticle;
 import com.ewcms.content.particular.model.EmployeBasic;
 import com.ewcms.content.particular.model.EnterpriseArticle;
 import com.ewcms.content.particular.model.EnterpriseBasic;
+import com.ewcms.content.particular.model.Organ;
 import com.ewcms.content.particular.model.ProjectArticle;
 import com.ewcms.content.particular.model.ProjectBasic;
-import com.ewcms.content.particular.model.PublishingSector;
 import com.ewcms.frontweb.ArticleMainVO;
 import com.ewcms.frontweb.ChannelVO;
+import com.ewcms.frontweb.EmployeArticleVO;
+import com.ewcms.frontweb.EnterpriseArticleVO;
 import com.ewcms.frontweb.ProjectArticleVO;
+import com.ewcms.frontweb.SectorArticleVO;
 
 public interface FrontParticularFacable {
 	public ProjectArticle findProjectArticleById(Long id);
@@ -26,8 +29,8 @@ public interface FrontParticularFacable {
 	public List<ProjectArticle> findProjectChannellArticleLimit(Integer channelId,Integer number);
 	public List<ProjectArticle> findProjectChannelArticleByPage(int channelId,int page, int row);
 	public ChannelVO findChannel(int channelId) ;
-	public List<ProjectArticle> findProjectShenPiArticleLimit(String shape,Integer number);
-	public int getProjectShapeArticleCount(String shape);
+	public List<ProjectArticle> findProjectShenPiArticleLimit(String channelChildrens);
+	public int getProjectShenPiArticleCount(String channelChildrens) ;
 	public List<ProjectBasic> findProjectBasicAll(Integer number);
 	public int getProjectBasicCount() ;
 	public List<ProjectBasic> findProjectShenPiBasicLimit(String shape,Integer number); 
@@ -42,7 +45,8 @@ public interface FrontParticularFacable {
 	public List<EnterpriseArticle> findEnterpriseChannelArticleLimit(Integer channelId,Integer number);
 	public List<EnterpriseBasic> findEnterpriseBasicAll(Integer number);
 	public int getEnterpriseBasicCount();
-	
+	public List<EnterpriseArticleVO> findEnterpriseArticleByCode(String code);
+	public EnterpriseBasic findEnterpriseBasicByYyzzzch(String yyzzzch);
 	
 	public List<EmployeArticle> findEmployeArticleLimit(Integer number);
 	public List<EmployeArticle> findEmployeArticleByPage(int page, int row) ;
@@ -52,7 +56,15 @@ public interface FrontParticularFacable {
 	public List<EmployeArticle> findEmployeChannelArticleByPage(int channelId,int page, int row);
 	public List<EmployeBasic> findEmployeBasicAll(Integer number);
 	public int getEmployeBasicCount();	
+	public List<EmployeArticleVO> findEmployeArticleByCode(String code);
+	public EmployeBasic findEmployeBasicByCardCode(String code);
+	
+	
 	
 	public List<ArticleMainVO> findArticleMainByChannelId(int channelId);
-	public List<PublishingSector> findPublishSelectorAll();
+	public List<Organ> findPublishSelectorAll();
+	public List<SectorArticleVO> getSectorArticleList(Long organId,int pageNumber, int row);
+	public int getSectorArticleListCount(Long organId);
+	public Organ getPublishingSectorByCode(Long organId);
+	public String findChannelChildrensByChannelId(int channelId);
 }

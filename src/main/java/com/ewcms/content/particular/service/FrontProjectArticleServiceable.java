@@ -21,12 +21,13 @@ public interface FrontProjectArticleServiceable {
 	public List<ProjectArticle> findProjectChannellArticleLimit(Integer channelId,Integer number);
 	public List<ProjectArticle> findProjectChannelArticleByPage(int channelId,int page, int row);
 	public ChannelVO findChannel(int channelId) ;
-	public List<ProjectArticle> findProjectShenPiArticleLimit(String shape,Integer number);
-	public int getProjectShapeArticleCount(String shape);
+	public List<ProjectArticle> findProjectShenPiArticleLimit(String channelChildrens);
+	public int getProjectShenPiArticleCount(String channelChildrens) ;
 	public List<ProjectBasic> findProjectBasicAll(Integer number);
 	 public int getProjectBasicCount() ;
 	 public List<ProjectBasic> findProjectShenPiBasicLimit(String shape,Integer number);
 	 public List<ProjectArticleVO> findProjectArticleByCode(String code);
 	 public ProjectBasic findProjectBasicByCode(final String code);
-	
+	 public List<ProjectArticle> findProjectArticleBySector(Long organId);
+	 
 }

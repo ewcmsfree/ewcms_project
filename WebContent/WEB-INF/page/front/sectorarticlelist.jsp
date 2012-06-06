@@ -23,7 +23,7 @@
                           <td height="27" valign="bottom" background="<s:url value="/ewcmssource/front/main-07.jpg"/>"><table border="0" cellspacing="0" cellpadding="0">
                               <tr>
                                 <td width="10" height="23">&nbsp;</td>
-                                <td background="<s:url value="/ewcmssource/front/main-07-3.jpg"/>" align="center" style="padding-left:10px; padding-right:10px"><span class="STYLE4"><s:property value="sectorVO.name"/></span></td>
+                                <td background="<s:url value="/ewcmssource/front/main-07-3.jpg"/>" align="center" style="padding-left:10px; padding-right:10px"><span class="STYLE4"><s:property value="organVO.name"/></span></td>
                               </tr>
                           </table></td>
                         </tr>
@@ -45,12 +45,26 @@
                                     </tr>
 									<s:iterator value="sectorArticleList" status="st">
                                     <tr>
-                                      <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1+((page.page-1)*20)'/></td>
+                                      <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
                                       <td align="center" class="STYLE1"><s:property value="code"/></td>
-                                      <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="projectdetail"/>?codeId=<s:property value="code"/>' title="<s:property value="projectBasic.name"/>" target="_blank" class="STYLE3"><s:property value="name"/></a></td>
+                                      <td align="left" class="STYLE1">
+                                      <script type="text/javascript">
+                                      var type='<s:property value="type"/>'
+                                    	  
+                                      if(type=='project'){                                    	  
+                                    	  document.write('<a href="<s:url action="projectdetail"/>?articleId=<s:property value="articleId"/>"  target="_blank" class="STYLE3"><s:property value="name"/></a>')
+                                      }
+                                      if(type=='enterprise'){
+                                    	  document.write('<a href="<s:url action="enterprisedetail"/>?articleId=<s:property value="articleId"/>"  target="_blank" class="STYLE3"><s:property value="name"/></a>')
+                                      }
+                                      if(type=='employe'){
+                                    	  document.write('<a href="<s:url action="employedetail"/>?articleId=<s:property value="articleId"/>"  target="_blank" class="STYLE3"><s:property value="name"/></a>')
+                                      }
+                                      </script>
+                                      </td>
                                       <td align="center" class="STYLE1">&nbsp;
                                         	<script type="text/javascript">
-						                      var jsrq = "<s:property value="%{getText('global.date',{buildTime})}"/>";    
+						                      var jsrq = "<s:property value="%{getText('global.date',{publicTime})}"/>";    
 						                      if(jsrq!="null"){
 						                    	  document.write(jsrq);
 						                      }
@@ -59,8 +73,7 @@
                                     </tr>
                                     </s:iterator>
 								</table>
-								  
- 								 <br>
+ <br>
                                         <table width="95%"  border="0" cellspacing="0" cellpadding="0">
                                             <tr>
                                                 <td height="30" bgcolor="#F2F2F2" class="li_line"><div align="center" class="hui">
@@ -111,6 +124,7 @@
                                                 </td>
                                             </tr>
                                         </table>
+                                   
                                       </td>
                                       </tr>
                                       </table>

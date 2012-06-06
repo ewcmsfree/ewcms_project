@@ -62,14 +62,18 @@ public class FrontProjectArticleService implements FrontProjectArticleServiceabl
 	}
 
 	@Override
-	public List<ProjectArticle> findProjectShenPiArticleLimit(String shape,
-			Integer number) {
-		return projectArticleDAO.findProjectShenPiArticleLimit(shape, number);
+	public List<ProjectArticle> findProjectShenPiArticleLimit(String channelChildrens) {
+		return projectArticleDAO.findProjectShenPiArticleLimit(channelChildrens);
 	}
 
 	@Override
-	public int getProjectShapeArticleCount(String shape) {
-		return projectArticleDAO.getProjectShapeArticleCount(shape);
+	public int getProjectShenPiArticleCount(String channelChildrens)  {
+		return projectArticleDAO.getProjectShenPiArticleCount(channelChildrens);
+	}
+
+	@Override
+	public List<ProjectArticle> findProjectArticleBySector(Long organId) {
+		return projectArticleDAO.findProjectArticleBySector(organId);
 	}
 
 	@Override
