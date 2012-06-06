@@ -961,7 +961,7 @@ function SearchForm_onsubmit() {
                                         <td width="230" align="center">单位名称 </td>
                                         <td width="80" align="center">发布时间</td>
                                       </tr>
-                                     <s:iterator value="lhxwjlxxEnterprises" status="st">\
+                                     <s:iterator value="lhxwjlxxEnterprises" status="st">
                                       <s:if test="#st.index<4">
                                       <tr>
                                         <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
