@@ -54,6 +54,7 @@ import javax.persistence.TemporalType;
  * <li>organ:组织机构</li>
  * <li>channelId:专栏编号</li>
  * <li>release:发布</li>
+ * <li>published:发布日期</li>
  * </ul>
  * 
  * @author wuzhijun
@@ -158,6 +159,9 @@ public class ProjectBasic implements Serializable {
 	private Integer channelId;
 	@Column(name = "release")
 	private Boolean release;
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "published")
+	private Date published;
 
 	public ProjectBasic() {
 		release = false;
@@ -385,6 +389,14 @@ public class ProjectBasic implements Serializable {
 
 	public void setRelease(Boolean release) {
 		this.release = release;
+	}
+
+	public Date getPublished() {
+		return published;
+	}
+
+	public void setPublished(Date published) {
+		this.published = published;
 	}
 
 	@Override
