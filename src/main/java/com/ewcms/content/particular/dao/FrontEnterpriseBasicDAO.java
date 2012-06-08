@@ -29,18 +29,18 @@ public class FrontEnterpriseBasicDAO extends JpaDAO<Long, EnterpriseBasic> {
 	
 	public List<EnterpriseBasic> findEnterpriseBasicAll(Integer number){
 		if(number==null){
-			String hql = "From EnterpriseBasic As e Order By e.yyzzzch";
+			String hql = "From EnterpriseBasic As e where e.release=true Order By e.yyzzzch";
 			TypedQuery<EnterpriseBasic> query = this.getEntityManager().createQuery(hql, EnterpriseBasic.class);
 			return query.getResultList();
 		}else{
-			String hql = "From EnterpriseBasic As e Order By e.yyzzzch limit "+number;
+			String hql = "From EnterpriseBasic As e where e.release=true Order By e.yyzzzch limit "+number;
 			TypedQuery<EnterpriseBasic> query = this.getEntityManager().createQuery(hql, EnterpriseBasic.class);
 			return query.getResultList();			
 		}
 	}
 	
 	public EnterpriseBasic findEnterpriseBasicByYyzzzch(final String yyzzzch){
-		String hql = "From EnterpriseBasic As p Where p.yyzzzch=:yyzzzch";
+		String hql = "From EnterpriseBasic As p Where p.yyzzzch=:yyzzzch and p.release=true ";
 		TypedQuery<EnterpriseBasic> query = this.getEntityManager().createQuery(hql, EnterpriseBasic.class);
 		query.setParameter("yyzzzch", yyzzzch);
 		EnterpriseBasic enterpriseBasic = null;
@@ -51,7 +51,7 @@ public class FrontEnterpriseBasicDAO extends JpaDAO<Long, EnterpriseBasic> {
 		return enterpriseBasic;
 	}
     public int getEnterpriseBasicCount() {
-        String sql = "Select count(id) From particular_enterprise_basic";
+        String sql = "Select count(id) From particular_enterprise_basic where release=true";
         return (int) jdbcTemplate.queryForLong(sql);
     } 
     

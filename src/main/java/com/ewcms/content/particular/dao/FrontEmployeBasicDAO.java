@@ -29,11 +29,11 @@ public class FrontEmployeBasicDAO extends JpaDAO<Long, EmployeBasic> {
 	
 	public List<EmployeBasic> findEmployeBasicAll(Integer number){
 		if(number==null){
-			String hql = "From EmployeBasic As e Order By e.published desc";
+			String hql = "From EmployeBasic As e where e.release=true Order By e.published desc";
 			TypedQuery<EmployeBasic> query = this.getEntityManager().createQuery(hql, EmployeBasic.class);
 			return query.getResultList();
 		}else{
-			String hql = "From EmployeBasic As e Order By e.published desc limit " + number;
+			String hql = "From EmployeBasic As e where e.release=true Order By e.published desc limit " + number;
 			TypedQuery<EmployeBasic> query = this.getEntityManager().createQuery(hql, EmployeBasic.class);
 			return query.getResultList();		
 		}
@@ -52,7 +52,7 @@ public class FrontEmployeBasicDAO extends JpaDAO<Long, EmployeBasic> {
 	}
 	
     public int getEmployeBasicCount() {
-        String sql = "Select count(id) From particular_employe_basic";
+        String sql = "Select count(id) From particular_employe_basic where release=true ";
         return (int) jdbcTemplate.queryForLong(sql);
     } 	
 }

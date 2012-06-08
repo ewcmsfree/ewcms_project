@@ -32,25 +32,25 @@ public class FrontEnterpriseArticleDAO extends JpaDAO<Long, EnterpriseArticle> {
 	    }
 	    
 		public List<EnterpriseArticle> findEnterpriseArticleLimit(Integer number){
-			String hql = "From EnterpriseArticle As p Order By p.published desc limit "+number;
+			String hql = "From EnterpriseArticle As p where p.release=true Order By p.published desc limit "+number;
 			TypedQuery<EnterpriseArticle> query = this.getEntityManager().createQuery(hql, EnterpriseArticle.class);
 			return query.getResultList();
 		}
 		public List<EnterpriseArticle> findEnterpriseChannelArticleLimit(Integer channelId,Integer number){
-			String hql = "From EnterpriseArticle As p where p.channelId=:channelId Order By p.published desc limit "+number;
+			String hql = "From EnterpriseArticle As p where p.channelId=:channelId and p.release=true Order By p.published desc limit "+number;
 			TypedQuery<EnterpriseArticle> query = this.getEntityManager().createQuery(hql, EnterpriseArticle.class);
 			query.setParameter("channelId", channelId);
 			return query.getResultList();
 		}
 		
 		public List<EnterpriseArticle> findEnterpriseArticleBySector(Long organId){
-			String hql = "From EnterpriseArticle As p where p.organ.id=:organId Order By p.published desc ";
+			String hql = "From EnterpriseArticle As p where p.organ.id=:organId and p.release=true Order By p.published desc ";
 			TypedQuery<EnterpriseArticle> query = this.getEntityManager().createQuery(hql, EnterpriseArticle.class);
 			query.setParameter("organId",Integer.valueOf(organId.toString()));
 			return query.getResultList();
 		}
 		public List<EnterpriseArticle> findEnterpriseArticleByCode(String code){
-			String hql = "From EnterpriseArticle As p where p.enterpriseBasic.yyzzzch=:code Order By p.published desc ";
+			String hql = "From EnterpriseArticle As p where p.enterpriseBasic.yyzzzch=:code and p.release=true Order By p.published desc ";
 			TypedQuery<EnterpriseArticle> query = this.getEntityManager().createQuery(hql, EnterpriseArticle.class);
 			query.setParameter("code", code);
 			return query.getResultList();
@@ -58,7 +58,7 @@ public class FrontEnterpriseArticleDAO extends JpaDAO<Long, EnterpriseArticle> {
 		
 	    public List<EnterpriseArticle> findEnterpriseArticleByPage(int page, int row) {
 	        String sql = "Select * "
-	                + "From particular_enterprise_article "
+	                + "From particular_enterprise_article where release=true "
 	                + "Order By published desc Limit ? OffSet ?";
 	        int offset = page * row;
 	        Object[] params = new Object[]{row, offset};
@@ -76,7 +76,7 @@ public class FrontEnterpriseArticleDAO extends JpaDAO<Long, EnterpriseArticle> {
 	    public List<EnterpriseArticle> findEnterpriseChannelArticleByPage(int channelId,int page, int row){
 	        String sql = "Select * "
 	                + "From particular_enterprise_article "
-	                + "where channel_id=? "
+	                + "where channel_id=? and release=true "
 	                + "Order By published desc Limit ? OffSet ?";
 	        int offset = page * row;
 	        Object[] params = new Object[]{channelId,row, offset};
@@ -93,10 +93,10 @@ public class FrontEnterpriseArticleDAO extends JpaDAO<Long, EnterpriseArticle> {
 	    
 	    public int getEnterpriseArticleCount(Integer channelId) {
 	    	if(channelId == null){
-	        String sql = "Select count(id) From particular_enterprise_article";
+	        String sql = "Select count(id) From particular_enterprise_article where release=true ";
 	        return (int) jdbcTemplate.queryForLong(sql);
 	    	}else{
-	            String sql = "Select count(id) From particular_enterprise_article where channel_id=?";
+	            String sql = "Select count(id) From particular_enterprise_article where channel_id=? and release=true";
 	            Object[] params = new Object[]{channelId};
 	            return (int) jdbcTemplate.queryForLong(sql,params);    		
 	    	}

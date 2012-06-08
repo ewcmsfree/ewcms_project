@@ -32,33 +32,33 @@ public class FrontProjectArticleDAO extends JpaDAO<Long, ProjectArticle> {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
 	public List<ProjectArticle> findProjectArticleLimit(Integer number){
-		String hql = "From ProjectArticle As p Order By p.published desc limit "+number;
+		String hql = "From ProjectArticle As p where p.release=true Order By p.published desc limit "+number;
 		TypedQuery<ProjectArticle> query = this.getEntityManager().createQuery(hql, ProjectArticle.class);
 		return query.getResultList();
 	}
 	
 	public List<ProjectArticle> findProjectArticleBySector(Long organId){
-		String hql = "From ProjectArticle As p where p.organ.id=:organId Order By p.published desc ";
+		String hql = "From ProjectArticle As p where p.organ.id=:organId and p.release=true Order By p.published desc ";
 		TypedQuery<ProjectArticle> query = this.getEntityManager().createQuery(hql, ProjectArticle.class);
 		query.setParameter("organId", Integer.valueOf(organId.toString()));
 		return query.getResultList();
 	}
 	
 	public List<ProjectArticle> findProjectArticleByCode(String code){
-		String hql = "From ProjectArticle As p where p.projectBasic.code=:code Order By p.published desc ";
+		String hql = "From ProjectArticle As p where p.projectBasic.code=:code and p.release=true Order By p.published desc ";
 		TypedQuery<ProjectArticle> query = this.getEntityManager().createQuery(hql, ProjectArticle.class);
 		query.setParameter("code", code);
 		return query.getResultList();
 	}
 	
 	public List<ProjectArticle> findProjectShenPiArticleLimit(String channelChildrens){
-		String hql = "From ProjectArticle As p where p.channelId in("+channelChildrens+") Order By p.published desc ";
+		String hql = "From ProjectArticle As p where p.channelId in("+channelChildrens+") and p.release=true Order By p.published desc ";
 		TypedQuery<ProjectArticle> query = this.getEntityManager().createQuery(hql, ProjectArticle.class);
 		return query.getResultList();
 	}
 	
 	public List<ProjectArticle> findProjectChannellArticleLimit(Integer channelId,Integer number){
-		String hql = "From ProjectArticle As p where p.channelId=:channelId Order By p.published desc limit "+number;
+		String hql = "From ProjectArticle As p where p.channelId=:channelId and p.release=true Order By p.published desc limit "+number;
 		TypedQuery<ProjectArticle> query = this.getEntityManager().createQuery(hql, ProjectArticle.class);
 		query.setParameter("channelId", channelId);
 		return query.getResultList();
@@ -66,7 +66,7 @@ public class FrontProjectArticleDAO extends JpaDAO<Long, ProjectArticle> {
 	
     public List<ProjectArticle> findProjectArticleByPage(int page, int row) {
         String sql = "Select * "
-                + "From particular_project_article "
+                + "From particular_project_article where release=true "
                 + "Order By published desc Limit ? OffSet ?";
         int offset = page * row;
         Object[] params = new Object[]{row, offset};
@@ -84,10 +84,10 @@ public class FrontProjectArticleDAO extends JpaDAO<Long, ProjectArticle> {
 
     public int getProjectArticleCount(Integer channelId) {
     	if(channelId == null){
-        String sql = "Select count(id) From particular_project_article";
+        String sql = "Select count(id) From particular_project_article where release=true";
         return (int) jdbcTemplate.queryForLong(sql);
     	}else{
-            String sql = "Select count(id) From particular_project_article where channel_id=?";
+            String sql = "Select count(id) From particular_project_article where channel_id=? and release=true ";
             Object[] params = new Object[]{channelId};
             return (int) jdbcTemplate.queryForLong(sql,params);    		
     	}
@@ -95,7 +95,7 @@ public class FrontProjectArticleDAO extends JpaDAO<Long, ProjectArticle> {
   
     public int getProjectShenPiArticleCount(String channelChildrens) {
 
-            String sql = "Select count(p.id) From ProjectArticle as p where p.channelId in("+channelChildrens+") ";
+            String sql = "Select count(p.id) From ProjectArticle as p where p.channelId in("+channelChildrens+") and p.release=true ";
         	TypedQuery<Long> query = this.getEntityManager().createQuery(sql, Long.class);
         	return Integer.parseInt(query.getSingleResult().toString());
     } 
@@ -112,7 +112,7 @@ public class FrontProjectArticleDAO extends JpaDAO<Long, ProjectArticle> {
     public List<ProjectArticle> findProjectChannelArticleByPage(int channelId,int page, int row) {
         String sql = "Select * "
                 + "From particular_project_article "
-        		+ "where channel_id=? "
+        		+ "where channel_id=? and release=true "
                 + "Order By published desc Limit ? OffSet ?";
         int offset = page * row;
         Object[] params = new Object[]{channelId,row, offset};

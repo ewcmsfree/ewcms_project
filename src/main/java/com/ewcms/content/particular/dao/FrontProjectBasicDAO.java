@@ -29,7 +29,7 @@ public class FrontProjectBasicDAO extends JpaDAO<Long, ProjectBasic> {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }	
 	public ProjectBasic findProjectBasicByCode(final String code){
-		String hql = "From ProjectBasic As p Where p.code=:code";
+		String hql = "From ProjectBasic As p Where p.code=:code and p.release=true";
 		TypedQuery<ProjectBasic> query = this.getEntityManager().createQuery(hql, ProjectBasic.class);
 		query.setParameter("code", code);
 		ProjectBasic projectBasic = null;
@@ -42,23 +42,23 @@ public class FrontProjectBasicDAO extends JpaDAO<Long, ProjectBasic> {
 	
 	public List<ProjectBasic> findProjectBasicAll(Integer number){
 		if(number==null){
-			String hql = "From ProjectBasic As e Order By e.buildTime desc ";
+			String hql = "From ProjectBasic As e where e.release=true Order By e.buildTime desc ";
 			TypedQuery<ProjectBasic> query = this.getEntityManager().createQuery(hql, ProjectBasic.class);
 			return query.getResultList();
 		}else{
-			String hql = "From ProjectBasic As p Order By p.buildTime desc limit "+number;
+			String hql = "From ProjectBasic As p where p.release=true Order By p.buildTime desc limit "+number;
 			TypedQuery<ProjectBasic> query = this.getEntityManager().createQuery(hql, ProjectBasic.class);
 			return query.getResultList();		
 		}
 	}
 	
     public int getProjectBasicCount() {
-        String sql = "Select count(id) From particular_project_basic";
+        String sql = "Select count(id) From particular_project_basic where release=true";
         return (int) jdbcTemplate.queryForLong(sql);
     } 
     
 	public List<ProjectBasic> findProjectShenPiBasicLimit(String shape,Integer number){
-		String hql = "From ProjectBasic As p where p.shape=:shape Order By p.buildTime desc limit "+number;
+		String hql = "From ProjectBasic As p where p.shape=:shape and p.release=true Order By p.buildTime desc limit "+number;
 		TypedQuery<ProjectBasic> query = this.getEntityManager().createQuery(hql, ProjectBasic.class);
 		query.setParameter("shape", Shape.valueOf(shape));
 		return query.getResultList();
