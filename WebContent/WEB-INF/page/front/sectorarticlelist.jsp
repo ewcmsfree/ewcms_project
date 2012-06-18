@@ -44,6 +44,7 @@
                                       <td width="100" align="center"><span class="STYLE4">发布日期</span></td>
                                     </tr>
 									<s:iterator value="sectorArticleList" status="st">
+									<s:if test="#st.index>=(page.page-1)*20&&#st.index<page.page*20">
                                     <tr>
                                       <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
                                       <td align="center" class="STYLE1"><s:property value="code"/></td>
@@ -71,6 +72,7 @@
 						                     </script>
                                       </td>
                                     </tr>
+                                    </s:if>
                                     </s:iterator>
 								</table>
  <br>
@@ -82,9 +84,11 @@
                                                             上一页
                                                         </s:if>
                                                         <s:else>
-                                                            <s:url action="index" id="pageUrl" escapeAmp="false">
-                                                                <s:param name="type" value="%{type}"/>
+                                                            <s:url action="sectorarticlelist" id="pageUrl" escapeAmp="false">
+                                                                <s:param name="organId" value="%{organVO.id}"/>
                                                                 <s:param name="pageNumber" value="%{page.pagePrev-1}"/>
+                                                                
+                                                                
                                                             </s:url>
                                                             <a href="<s:property value="pageUrl"/>">上一页</a>
                                                         </s:else>
@@ -93,8 +97,8 @@
                                                                 <strong><s:property value="top"/></strong>
                                                             </s:if>
                                                             <s:else>
-                                                                <s:url action="index" id="pageUrl" escapeAmp="false">
-                                                                    <s:param name="type" value="%{type}"/>
+                                                                <s:url action="sectorarticlelist" id="pageUrl" escapeAmp="false">
+                                                                    <s:param name="organId" value="%{organVO.id}"/>
                                                                     <s:param name="pageNumber" value="%{top-1}"/>
                                                                 </s:url>
                                                                 <a href="<s:property value="pageUrl"/>"><s:property value="top"/></a>
@@ -104,8 +108,8 @@
                                                             下一页
                                                         </s:if>
                                                         <s:else>
-                                                            <s:url action="index" id="pageUrl" escapeAmp="false">
-                                                                <s:param name="type" value="%{type}"/>
+                                                            <s:url action="sectorarticlelist" id="pageUrl" escapeAmp="false">
+                                                                <s:param name="organId" value="%{organVO.id}"/>
                                                                 <s:param name="pageNumber" value="%{page.pageNext-1}"/>
                                                             </s:url>
                                                             <a href="<s:property value="pageUrl"/>">下一页</a>
@@ -147,6 +151,11 @@
 </table>
 </body>
 <script language="javascript"> 
+
+function jumpPage(obj){
+    var page = obj.options[obj.selectedIndex].text -1 ;
+    window.location = ' <s:url action="sectorarticlelist"/>?organId=<s:property value="organVO.id"/>&pageNumber=' + page ;
+}
   function $(id){
     return document.getElementById(id);
   }
