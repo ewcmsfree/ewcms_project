@@ -71,7 +71,7 @@ public class SectorAction {
 	public String sectorArticleList() {
 		sectorArticleList = particularFac.getSectorArticleList(organId,pageNumber, row);
 		setOrganVO(particularFac.getPublishingSectorByCode(organId));
-		page =  new Page.Builder(particularFac.getSectorArticleListCount(organId), pageNumber + 1).setPageSize(row).build();
+		page =  new Page.Builder(sectorArticleList.size(), pageNumber + 1).setPageSize(row).build();
 		return "success";
 	}
 }

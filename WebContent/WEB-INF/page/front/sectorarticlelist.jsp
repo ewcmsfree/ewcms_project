@@ -55,11 +55,20 @@
                                       if(type=='project'){                                    	  
                                     	  document.write('<a href="<s:url action="projectdetail"/>?articleId=<s:property value="articleId"/>"  target="_blank" class="STYLE3"><s:property value="name"/></a>')
                                       }
+                                      if(type=='projectbasic'){                                    	  
+                                    	  document.write('<a href="<s:url action="projectbasicdetail"/>?codeId=<s:property value="code"/>"  target="_blank" class="STYLE3"><s:property value="name"/></a>')
+                                      }
                                       if(type=='enterprise'){
                                     	  document.write('<a href="<s:url action="enterprisedetail"/>?articleId=<s:property value="articleId"/>"  target="_blank" class="STYLE3"><s:property value="name"/></a>')
                                       }
+                                      if(type=='enterprisebasic'){
+                                    	  document.write('<a href="<s:url action="enterprisebasicdetail"/>?codeId=<s:property value="code"/>"  target="_blank" class="STYLE3"><s:property value="name"/></a>')
+                                      }
                                       if(type=='employe'){
                                     	  document.write('<a href="<s:url action="employedetail"/>?articleId=<s:property value="articleId"/>"  target="_blank" class="STYLE3"><s:property value="name"/></a>')
+                                      }
+                                      if(type=='employebasic'){
+                                    	  document.write('<a href="<s:url action="employebasicdetail"/>?codeId=<s:property value="code"/>"  target="_blank" class="STYLE3"><s:property value="name"/></a>')
                                       }
                                       </script>
                                       </td>

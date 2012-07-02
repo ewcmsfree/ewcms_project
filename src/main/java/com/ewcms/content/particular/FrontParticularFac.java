@@ -32,8 +32,6 @@ import com.ewcms.frontweb.SectorArticleVO;
 
 @Service
 public class FrontParticularFac implements FrontParticularFacable {
-
-
 	@Autowired
 	private FrontProjectArticleServiceable projectArticleService;
 	@Autowired
@@ -227,6 +225,11 @@ public class FrontParticularFac implements FrontParticularFacable {
 		List<ProjectArticle> paList = projectArticleService.findProjectArticleBySector(organId);
 		List<EnterpriseArticle> eaList = enterpriseArticleService.findEnterpriseArticleBySector(organId);
 		List<EmployeArticle> employeaList = employeArticleService.findEmployeArticleBySector(organId);
+		
+		List<ProjectBasic> pbList = projectArticleService.findProjectBasicBySector(organId);
+		List<EnterpriseBasic> ebList = enterpriseArticleService.findEnterpriseBasicBySector(organId);
+		List<EmployeBasic> employebList = employeArticleService.findEmployeBasicBySector(organId);
+		
 		for(ProjectArticle vo:paList){
 			SectorArticleVO saVO = new SectorArticleVO();
 			saVO.setArticleId(vo.getId());
@@ -257,11 +260,41 @@ public class FrontParticularFac implements FrontParticularFacable {
 			saVO.setType("employe");
 			saList.add(saVO);
 		}
-		if(saList.size()>(pageNumber+1)*row){
-			return saList.subList(pageNumber*row, (pageNumber+1)*row);
-		}else{
-			return saList.subList(pageNumber*row, saList.size());
+		
+		for(ProjectBasic vo:pbList){
+			SectorArticleVO saVO = new SectorArticleVO();
+			saVO.setArticleId(vo.getId());
+			saVO.setCode(vo.getCode());
+			saVO.setName(vo.getName());
+			saVO.setPublicTime(vo.getPublished());
+			saVO.setType("projectbasic");
+			saList.add(saVO);
+		}		
+		for(EnterpriseBasic vo:ebList){
+			SectorArticleVO saVO = new SectorArticleVO();
+			saVO.setArticleId(vo.getId());
+			saVO.setCode(vo.getYyzzzch());
+			saVO.setName(vo.getName());
+			saVO.setPublicTime(vo.getPublished());
+			saVO.setType("enterprisebasic");
+			saList.add(saVO);
+		}	
+		
+		for(EmployeBasic vo:employebList){
+			SectorArticleVO saVO = new SectorArticleVO();
+			saVO.setArticleId(vo.getId());
+			saVO.setCode(vo.getCardCode());
+			saVO.setName(vo.getName());
+			saVO.setPublicTime(vo.getPublished());
+			saVO.setType("employebasic");
+			saList.add(saVO);
 		}
+//		if(saList.size()>(pageNumber+1)*row){
+//			return saList.subList(pageNumber*row, (pageNumber+1)*row);
+//		}else{
+//			return saList.subList(pageNumber*row, saList.size());
+//		}
+		return saList;
 	}
 
 	@Override

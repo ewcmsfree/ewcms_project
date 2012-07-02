@@ -94,4 +94,10 @@ public class FrontEmployeArticleService implements FrontEmployeArticleServiceabl
 		// TODO Auto-generated method stub
 		return employeBasicDAO.findEmployeBasicByCardCode(code);
 	}
+
+	@Override
+	public List<EmployeBasic> findEmployeBasicBySector(Long organId) {
+		// TODO Auto-generated method stub
+		return employeBasicDAO.findEmployeBasicBySector(organId);
+	}
 }

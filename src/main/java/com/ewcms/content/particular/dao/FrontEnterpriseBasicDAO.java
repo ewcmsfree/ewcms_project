@@ -17,6 +17,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ewcms.common.dao.JpaDAO;
 import com.ewcms.content.particular.model.EmployeBasic;
+import com.ewcms.content.particular.model.EnterpriseArticle;
 import com.ewcms.content.particular.model.EnterpriseBasic;
 
 @Repository
@@ -55,5 +56,10 @@ public class FrontEnterpriseBasicDAO extends JpaDAO<Long, EnterpriseBasic> {
         return (int) jdbcTemplate.queryForLong(sql);
     } 
     
-    
+	public List<EnterpriseBasic> findEnterpriseBasicBySector(Long organId){
+		String hql = "From EnterpriseBasic As p where p.organ.id=:organId and p.release=true Order By p.published desc ";
+		TypedQuery<EnterpriseBasic> query = this.getEntityManager().createQuery(hql, EnterpriseBasic.class);
+		query.setParameter("organId",Integer.valueOf(organId.toString()));
+		return query.getResultList();
+	}    
 }

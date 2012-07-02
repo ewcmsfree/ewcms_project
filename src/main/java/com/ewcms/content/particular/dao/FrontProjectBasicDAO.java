@@ -28,6 +28,7 @@ public class FrontProjectBasicDAO extends JpaDAO<Long, ProjectBasic> {
     public void setDataSource(DataSource dataSource) {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }	
+    
 	public ProjectBasic findProjectBasicByCode(final String code){
 		String hql = "From ProjectBasic As p Where p.code=:code and p.release=true";
 		TypedQuery<ProjectBasic> query = this.getEntityManager().createQuery(hql, ProjectBasic.class);
@@ -61,6 +62,13 @@ public class FrontProjectBasicDAO extends JpaDAO<Long, ProjectBasic> {
 		String hql = "From ProjectBasic As p where p.shape=:shape and p.release=true Order By p.buildTime desc limit "+number;
 		TypedQuery<ProjectBasic> query = this.getEntityManager().createQuery(hql, ProjectBasic.class);
 		query.setParameter("shape", Shape.valueOf(shape));
+		return query.getResultList();
+	}
+	
+	public List<ProjectBasic> findProjectBasicBySector(Long organId){
+		String hql = "From ProjectBasic As p where p.organ.id=:organId and p.release=true Order By p.published desc ";
+		TypedQuery<ProjectBasic> query = this.getEntityManager().createQuery(hql, ProjectBasic.class);
+		query.setParameter("organId", Integer.valueOf(organId.toString()));
 		return query.getResultList();
 	}
 }

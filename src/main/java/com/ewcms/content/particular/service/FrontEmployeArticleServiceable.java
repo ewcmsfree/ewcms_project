@@ -24,4 +24,5 @@ public interface FrontEmployeArticleServiceable {
 	public List<EmployeArticle> findEmployeArticleBySector(Long organId);
 	public List<EmployeArticleVO> findEmployeArticleByCode(String code);
 	public EmployeBasic findEmployeBasicByCardCode(String code);
+	public List<EmployeBasic> findEmployeBasicBySector(Long organId);
 }

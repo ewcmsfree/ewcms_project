@@ -93,4 +93,10 @@ public class FrontEnterpriseArticleService implements FrontEnterpriseArticleServ
 	public EnterpriseBasic findEnterpriseBasicByYyzzzch(String yyzzzch) {
 		return enterpriseBasicDAO.findEnterpriseBasicByYyzzzch(yyzzzch);
 	}
+
+	@Override
+	public List<EnterpriseBasic> findEnterpriseBasicBySector(Long organId) {
+		// TODO Auto-generated method stub
+		return enterpriseBasicDAO.findEnterpriseBasicBySector(organId);
+	}
 }

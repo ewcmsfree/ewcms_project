@@ -46,7 +46,7 @@
 									<s:iterator value="employeBasicList" status="st">
 									<s:if test="#st.index>=(page.page-1)*20&&#st.index<page.page*20">
                                     <tr>
-                                      <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1+((page.page-1)*20)'/></td>
+                                      <td align="center" class="STYLE1" height="24px"><s:property value='#st.index+1'/></td>
                                       <td align="center" class="STYLE1"><s:property value="cardCode"/></td>
                                       <td align="left" class="STYLE1">&nbsp;<a href=' <s:url action="employebasicdetail"/>?codeId=<s:property value="cardCode"/>'  target="_blank" class="STYLE3"><s:property value="name"/></a></td>
                                       <td align="center" class="STYLE1">&nbsp;

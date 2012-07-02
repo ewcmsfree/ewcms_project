@@ -109,4 +109,12 @@ public class FrontProjectArticleService implements FrontProjectArticleServiceabl
 	public ProjectBasic findProjectBasicByCode(String code) {
 		return projectBasicAO.findProjectBasicByCode(code);
 	}
+
+	@Override
+	public List<ProjectBasic> findProjectBasicBySector(Long organId) {
+		// TODO Auto-generated method stub
+		return projectBasicAO.findProjectBasicBySector(organId);
+	}
+	
+	
 }

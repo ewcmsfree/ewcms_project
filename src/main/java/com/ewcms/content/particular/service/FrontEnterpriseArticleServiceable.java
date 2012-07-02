@@ -25,4 +25,5 @@ public interface FrontEnterpriseArticleServiceable {
 	public List<EnterpriseArticle> findEnterpriseArticleBySector(Long organId);
 	public List<EnterpriseArticleVO> findEnterpriseArticleByCode(String code);
 	public EnterpriseBasic findEnterpriseBasicByYyzzzch(String yyzzzch);
+	public List<EnterpriseBasic> findEnterpriseBasicBySector(Long organId);
 }

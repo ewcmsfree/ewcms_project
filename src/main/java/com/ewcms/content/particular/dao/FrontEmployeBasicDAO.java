@@ -16,6 +16,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.ewcms.common.dao.JpaDAO;
+import com.ewcms.content.particular.model.EmployeArticle;
 import com.ewcms.content.particular.model.EmployeBasic;
 import com.ewcms.content.particular.model.ProjectBasic;
 
@@ -54,5 +55,12 @@ public class FrontEmployeBasicDAO extends JpaDAO<Long, EmployeBasic> {
     public int getEmployeBasicCount() {
         String sql = "Select count(id) From particular_employe_basic where release=true ";
         return (int) jdbcTemplate.queryForLong(sql);
-    } 	
+    } 
+    
+	public List<EmployeBasic> findEmployeBasicBySector(Long organId){
+		String hql = "From EmployeBasic As p where p.organ.id=:organId and p.release=true Order By p.published desc ";
+		TypedQuery<EmployeBasic> query = this.getEntityManager().createQuery(hql, EmployeBasic.class);
+		query.setParameter("organId", Integer.valueOf(organId.toString()));
+		return query.getResultList();
+	}
 }

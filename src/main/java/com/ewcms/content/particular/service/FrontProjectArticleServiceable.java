@@ -29,5 +29,6 @@ public interface FrontProjectArticleServiceable {
 	 public List<ProjectArticleVO> findProjectArticleByCode(String code);
 	 public ProjectBasic findProjectBasicByCode(final String code);
 	 public List<ProjectArticle> findProjectArticleBySector(Long organId);
+	 public List<ProjectBasic> findProjectBasicBySector(Long organId);
 	 
 }
