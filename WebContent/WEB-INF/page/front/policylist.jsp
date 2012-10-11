@@ -23,7 +23,7 @@
                           <td height="27" valign="bottom" background="<s:url value="/ewcmssource/front/main-07.jpg"/>"><table border="0" cellspacing="0" cellpadding="0">
                               <tr>
                                 <td width="10" height="23">&nbsp;</td>
-                                <td background="<s:url value="/ewcmssource/front/main-07-3.jpg"/>" align="center" style="padding-left:10px; padding-right:10px"><span class="STYLE4">工作动态</span></td>
+                                <td background="<s:url value="/ewcmssource/front/main-07-3.jpg"/>" align="center" style="padding-left:10px; padding-right:10px"><span class="STYLE4">政策法规</span></td>
                               </tr>
                           </table></td>
                         </tr>
