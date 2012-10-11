@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.ewcms.content.particular.dao.FontArticleMainDAO;
 import com.ewcms.content.particular.dao.FontOrganDAO;
+import com.ewcms.content.particular.model.ArticleMain;
 import com.ewcms.content.particular.model.Organ;
 import com.ewcms.frontweb.ArticleMainVO;
 import com.ewcms.frontweb.ChannelVO;
@@ -45,6 +46,16 @@ public class FontArticleMainService implements FontArticleMainServiceable {
 			childrens += vo.getId()+",";
 		}
 		return childrens.substring(0, childrens.length()-1);
+	}
+
+	@Override
+	public List<ArticleMain> findArticleMainListByChannel(Integer channelId) {
+		return articleMainDAO.findArticleMainListByChannel(channelId);
+	}
+
+	@Override
+	public ArticleMain getArticleMain(Long pk) {
+		return articleMainDAO.get(pk);
 	}
 
 }

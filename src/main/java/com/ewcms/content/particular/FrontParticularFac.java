@@ -11,6 +11,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ewcms.content.particular.model.ArticleMain;
 import com.ewcms.content.particular.model.EmployeArticle;
 import com.ewcms.content.particular.model.EmployeBasic;
 import com.ewcms.content.particular.model.EnterpriseArticle;
@@ -334,6 +335,16 @@ public class FrontParticularFac implements FrontParticularFacable {
 	public EmployeBasic findEmployeBasicByCardCode(String code) {
 		// TODO Auto-generated method stub
 		return employeArticleService.findEmployeBasicByCardCode(code);
+	}
+
+	@Override
+	public List<ArticleMain> findArticleMainListByChannel(Integer channelId) {
+		return articleMainService.findArticleMainListByChannel(channelId);
+	}
+
+	@Override
+	public ArticleMain getArticleMain(Long pk) {
+		return articleMainService.getArticleMain(pk);
 	}
 	
 }

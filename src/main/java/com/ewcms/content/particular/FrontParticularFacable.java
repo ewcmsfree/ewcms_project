@@ -7,6 +7,7 @@ package com.ewcms.content.particular;
 
 import java.util.List;
 
+import com.ewcms.content.particular.model.ArticleMain;
 import com.ewcms.content.particular.model.EmployeArticle;
 import com.ewcms.content.particular.model.EmployeBasic;
 import com.ewcms.content.particular.model.EnterpriseArticle;
@@ -67,4 +68,6 @@ public interface FrontParticularFacable {
 	public int getSectorArticleListCount(Long organId);
 	public Organ getPublishingSectorByCode(Long organId);
 	public String findChannelChildrensByChannelId(int channelId);
+	 public List<ArticleMain> findArticleMainListByChannel(Integer channelId);
+	 public ArticleMain getArticleMain(Long pk);
 }

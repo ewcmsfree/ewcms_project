@@ -7,6 +7,7 @@ package com.ewcms.content.particular.service;
 
 import java.util.List;
 
+import com.ewcms.content.particular.model.ArticleMain;
 import com.ewcms.content.particular.model.Organ;
 import com.ewcms.frontweb.ArticleMainVO;
 
@@ -15,4 +16,6 @@ public interface FontArticleMainServiceable {
 	 public List<Organ> findPublishSelectorAll();
 	 public Organ getPublishingSectorByCode(Long organId);
 	 public String findChannelChildrensByChannelId(int channelId);
+	 public List<ArticleMain> findArticleMainListByChannel(Integer channelId);
+	 public ArticleMain getArticleMain(Long pk);
 }

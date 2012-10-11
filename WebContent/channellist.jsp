@@ -335,4 +335,50 @@
                 <td height="16" background="<s:url value="/ewcmssource/front/3-main-03.jpg"/>"></td>
               </tr>
               <tr></tr>
-            </table></td>
+            </table>
+            <br>
+			<table width="241" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td height="41" align="center" valign="middle" background="<s:url value="/ewcmssource/front/3-main-02.jpg"/>"></td>
+              </tr>
+			  <tr><td width="100%" height="5px" background="<s:url value="/ewcmssource/front/3-main-04.jpg"/>"></td></tr>
+			  <tr>
+                <td valign="top" background="<s:url value="/ewcmssource/front/3-main-04.jpg"/>"><table width="225" border="0" align="center" cellpadding="0" cellspacing="0">
+				    
+                    <tr>
+                      <td height="30"><table width="225" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="31" background="<s:url value="/ewcmssource/front/3-main-05.jpg"/>"><table width="225" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="40">&nbsp;</td>
+                                  <td height="25" style="cursor:pointer"><a href="<s:url action="workdynamic"/>" ><span class="STYLE4">工作动态</span></a></td>
+                                </tr>
+                              </table></td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                    <tr>
+                      <td height="30"><table width="225" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="31" background="<s:url value="/ewcmssource/front/3-main-05.jpg"/>"><table width="225" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td width="40">&nbsp;</td>
+                                  <td height="25" style="cursor:pointer"><a href="<s:url action="policy"/>" ><span class="STYLE4">政策法规</span></a></td>
+                                </tr>
+                              </table></td>
+                          </tr>
+                        </table></td>
+                    </tr>
+
+					
+                    <tr>
+                      <td width="100%"></td>
+                    </tr>
+                </table></td>
+              </tr>
+              <tr>
+                <td height="16" background="<s:url value="/ewcmssource/front/3-main-03.jpg"/>"></td>
+              </tr>
+              <tr></tr>
+            </table>            
+            </td>

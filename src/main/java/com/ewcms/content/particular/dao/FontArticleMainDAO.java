@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.persistence.TypedQuery;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +17,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.ewcms.content.particular.model.Dense;
-import com.ewcms.content.particular.model.ProjectArticle;
+import com.ewcms.common.dao.JpaDAO;
+import com.ewcms.content.particular.model.ArticleMain;
 import com.ewcms.frontweb.ArticleMainVO;
 import com.ewcms.frontweb.ChannelVO;
 
 @Repository
-public class FontArticleMainDAO {
+public class FontArticleMainDAO extends JpaDAO<Long, ArticleMain>{
     private JdbcTemplate jdbcTemplate;
     @Autowired
     public void setDataSource(DataSource dataSource) {
@@ -69,5 +70,12 @@ public class FontArticleMainDAO {
     	ChannelVO vo = new ChannelVO();
     	vo.setId(rs.getInt("id"));
         return vo;
-    }   
+    }
+    
+	public List<ArticleMain> findArticleMainListByChannel(Integer channelId){
+		String hql = "From ArticleMain As p where p.channelId=:channelId  Order By p.article.published desc ";
+		TypedQuery<ArticleMain> query = this.getEntityManager().createQuery(hql, ArticleMain.class);
+		query.setParameter("channelId", channelId);
+		return query.getResultList();
+	}    
 }

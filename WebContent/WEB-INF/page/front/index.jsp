@@ -121,7 +121,16 @@ function SearchForm_onsubmit() {
                       <td height="34" id="xyxxgk" align="center" background="<s:url value="/ewcmssource/front/banner-0001.jpg"/>" class="STYLE10" onmousemove="topchange(this)"><a href="<s:url action="enterprisebasiclist"/>" class="STYLE10">信用信息公开</a></td>
                     </tr>
                   </table></td>
- 
+                <td width="120" align="center" valign="bottom"><table width="98" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td height="34" id="xyxxgk" align="center" background="<s:url value="/ewcmssource/front/banner-0001.jpg"/>" class="STYLE10" onmousemove="topchange(this)"><a href="<s:url action="workdynamic"/>" class="STYLE10">工作动态</a></td>
+                    </tr>
+                  </table></td>
+                 <td width="120" align="center" valign="bottom"><table width="98" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td height="34" id="xyxxgk" align="center" background="<s:url value="/ewcmssource/front/banner-0001.jpg"/>" class="STYLE10" onmousemove="topchange(this)"><a href="<s:url action="policy"/>" class="STYLE10">政策法规</a></td>
+                    </tr>
+                  </table></td> 
 		 <td><table width="100%" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                       <td height="34" id align="right" background="<s:url value="/ewcmssource/front/banner-0001.jpg"/>" class="STYLE11"><a href="http://app.jiangxi.gov.cn/was40/outside/shengbao.jsp" class="STYLE11">项目基本信息申请表&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
