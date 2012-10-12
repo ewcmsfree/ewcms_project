@@ -36,7 +36,7 @@ body {
       <tbody><tr>
         <td style="border:#CCCCCC 1px solid" valign="top"><table align="center" border="0" cellpadding="0" cellspacing="0" width="983">
           <tbody><tr>
-            <td align="center" background="<s:url value="/ewcmssource/front/2-main-01.jpg"/>" height="33"><span class="STYLE4"><s:property value="articlemainVo.article.title"/></span></td>
+            <td height="33" align="center" background="<s:url value="/ewcmssource/front/2-main-01.jpg"/>"><span class="STYLE5"><strong><s:property value="articlemainVo.article.title"/></strong></span></td>
           </tr>
           <tr>
             <td height="39" valign="bottom"><table align="center" border="0" cellpadding="0" cellspacing="0" width="950">
@@ -49,7 +49,7 @@ body {
           <tr>
             <td align="center" valign="top"><table align="center" border="0" cellpadding="0" cellspacing="0" width="963">
               <tbody><tr><td class="STYLE17" align="left"><p align="center">
-<s:property value="articlemainVo.article.content.detail"/>
+<s:property value="articlemainVo.article.content.detail" escape="false"/>
 </p></td></tr>
 			</tbody></table></td>
           </tr>
